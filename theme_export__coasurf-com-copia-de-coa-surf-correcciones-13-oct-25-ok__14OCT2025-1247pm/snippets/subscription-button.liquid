@@ -1,0 +1,35 @@
+<a class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+  {% if product.selected_or_first_available_variant.available == false %}
+    disabled
+  {% endif %}
+  id="subsciption-button"
+><span>Suscribirme</span></a>
+<script type="module">
+  const variantsPayku = {};
+  {% liquid
+    for variant in product.variants
+      if variant.metafields.payku_subscription != blank
+        echo 'variantsPayku["' | append: variant.name | append: '"] 0 ' | append: variant.metafields.payku_subscription
+        echo ';'
+      endif
+    endfor
+  %}
+  const variants = document.querySelector(".product__info-container")
+  const anchor = document.querySelector("#subsciption-button")
+  const buy = anchor.parentElement.querySelector('button[name="add"]');
+
+  const switcher = name => {
+    const link = variantsPayku[name]
+    if(!link) {
+      anchor.style.display = "none"
+      buy.style.display = "block"
+      return
+    }
+    anchor.href = link
+    anchor.style.display = "block"
+    buy.style.display = "none"
+  }
+
+  if(variants) variants.addEventListener("input",(e) => switcher(e.target.name))
+  switcher("DEFAULT_VARIANT")
+</script>

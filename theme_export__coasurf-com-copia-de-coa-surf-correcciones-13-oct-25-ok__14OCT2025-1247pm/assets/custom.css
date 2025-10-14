@@ -1,0 +1,27 @@
+table {
+  overflow-x: auto;
+  width: 100%;
+}
+
+table tr {
+  display: flex;
+}
+table tr th {
+  flex: 1;
+}
+table tr:nth-child(odd) th {
+  background: #E7E9EB;
+}
+table:not([class]) td,
+table:not([class]) th {
+  border: 0;
+}
+table tr th:nth-child(odd) {
+  text-align: left;
+}
+table tr th:nth-child(even) {
+  text-align: right;
+}
+table tr th[colspan] {
+  text-align: center;
+}

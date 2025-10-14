@@ -1,0 +1,364 @@
+<style>
+  .background-swiper {
+    overflow: hidden;
+  }
+
+  img.swiper-slide--bg_image {
+    height: 80vh;
+    width: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  .product-sliders--container {
+    position: relative;
+  }
+
+  .product-slider {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    overflow: hidden;
+    width: 672px;
+    height: 672px;
+    border-radius: 50%;
+    text-align: center;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    z-index: 1;
+  }
+
+  .product-slider .product-swiper--slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 672px;
+    overflow: hidden;
+    margin: 0 auto;
+    user-select: none;
+  }
+
+  .product-slider .product-swiper--slide-image img {
+    width: 317px;
+    height: 317px;
+    object-fit: contain;
+    object-position: 50% 50%;
+    margin: 0 auto;
+  }
+
+
+  {% for block in section.blocks %}
+
+    #{{ section.id }} .product-sliders--container .product-slider .swiper-button-prev{
+      left: 15%;
+    }
+
+
+    #{{ section.id }} .product-sliders--container .product-slider .swiper-button-next{
+      right: 15%;
+    }
+
+    #{{ section.id }} .product-sliders--container .product-slider .swiper-button-next, 
+    #{{ section.id }} .product-sliders--container .product-slider  .swiper-button-prev{
+      top:35%;
+    }
+
+
+    .product-slider--{{ section.id }} #arrow-prev--{{ block.id }} svg path{
+      fill: {{ block.settings.content_color }};
+    }
+  
+    .product-slider--{{ section.id }} #arrow-next--{{ block.id }} svg {
+      fill: {{ block.settings.content_color }};
+    }
+
+    #product-slide--{{ block.id }} .product-swiper--slide-title {
+      color: {{ block.settings.content_color }};
+      font-size: 18px;
+      letter-spacing: .1em;
+      max-width: 400px;
+    }
+
+    #product-slide--{{ block.id }} .product-swiper--slide-subtitle {
+      color: {{ block.settings.content_color }};
+    }
+
+    #product-slide--{{ block.id }} .btn {
+      background-color: {{ block.settings.content_color }};
+    }
+  {% endfor %}
+
+  .slide-empty-bg {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .background-swiper--btn {
+    display: none;
+  }
+  
+  @media screen and (max-width: 1000px) {
+    .product-slider {
+      width: 345px;
+      height: 345px;
+    }
+
+    .product-sliders--container .product-slider--{{ section.id }} .button--primary {
+      display: none;
+    }
+
+    .product-slider .product-swiper--slide {
+      height: 345px;
+    }
+
+    
+    .product-swiper--slide-title {
+      font-size: 18px;
+    }
+
+    .product-swiper--slide-subtitle {
+      display: none;
+    }
+
+    .product-slider .product-swiper--slide-image img {
+      height: 170px;
+    }
+
+    .product-swiper--slide-btn {
+      display: none;
+    }
+
+    .background-swiper--btn {
+      display: block;
+    }
+    .background-swiper--btn {
+      position: absolute ;
+      bottom: 30px;
+      left: 50%;
+      transform: translate(-50%);
+    }
+    
+  {% for block in section.blocks %}
+    #product-slide--{{ block.id }} .product-swiper--slide-title {
+      font-size: 18px;
+    }
+    #backbround-slider--{{ block.id }} .background-swiper--btn {
+      background-color: {{ block.settings.content_color }} !important;
+    }
+  {% endfor %}
+  }
+
+  .slide-empty-bg .background-swiper--btn {
+    position: relative;
+    left: 50%;
+    top: 66%;
+    transform: translate(-50%);
+    width: 40%;
+  }
+
+  .slide-empty-bg .background-swiper--btn .product-swiper--slide-btn-mobile {
+    border: 1px solid white;
+  }
+
+  
+  .product-sliders--container .swiper-button-prev:after,
+  .product-sliders--container .swiper-button-next:after {
+    content: '' !important;
+  }
+
+ .product-sliders--container .product-slider--{{ section.id }} .button--primary{
+    background-color: {{ section.settings.button_bg_color }};
+    color: {{ section.settings.button_text_color }};
+ }
+
+ .product-sliders--container .product-slider--{{ section.id }} .button::after,
+ .product-sliders--container .product-slider--{{ section.id }} .button::before {
+    box-shadow: unset;
+ }
+</style>
+
+<section id="{{ section.id }}">
+  <div class="product-sliders--container">
+    <div class="background-slider">
+      <div class="background-swiper">
+        <div class="swiper-wrapper background-swiper--wrapper">
+          {% for block in section.blocks %}
+            {%- liquid 
+              assign product = block.settings.product_slide 
+              assign bgImage = product.metafields.custom.background_image
+              assign product_url = product.url
+            -%}
+            <div class="swiper-slide background-swiper--slide" id="backbround-slider--{{ block.id }}" {{ block.shopify_attributes }}>
+                {% if bgImage != blank %}
+                  {% assign img_url = bgImage | img_url: 'master' %}
+                  <img
+                  class="lazyload swiper-slide--bg_image"
+                  src="{{ img_url }}"
+                  data-src="{{ img_url }}"
+                  data-aspectratio="{{ bgImage.aspect_ratio }}"
+                  data-widths="[720, 900, 1080, 1800, 2400]"
+                  data-sizes="auto"
+                  alt="{{ bgImage.alt | escape }}"
+                  >
+                <div class="background-swiper--btn">
+                  <a href="{{ product_url }}" class="button button--primary">
+                    Ver producto
+                  </a>
+                </div>
+
+                {% else %}
+                <div class="slide-empty-bg" style="background-color:{{block.settings.content_color }};">
+                  <div class="background-swiper--btn">
+                    <a href="{{ product_url }}" class="button button--primary">
+                    Ver producto
+                    </a>
+                  </div>
+                </div>
+                {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="product-slider product-slider--{{ section.id }}">
+      {% assign product = block.settings.product_slide %}
+      {% assign content_color = block.settings.content_color %}
+      <div class="product-swiper">
+        <div class="swiper-wrapper product-swiper--wrapper">
+        {% for block in section.blocks %}
+          {%- liquid 
+            assign product = block.settings.product_slide 
+            assign subtitle = block.settings.subtitle
+            assign product_url = product.url
+            assign current_variant = product.selected_or_first_available_variant
+
+            -%}
+            <div class="swiper-slide product-swiper--slide" id="product-slide--{{ block.id }}" {{ block.shopify_attributes }}>
+              {% assign img_url = product.featured_image | img_url: 'master' %}
+              <div class="product-swiper--slide-image">
+                <img
+                class="lazyload"
+                src="{{ img_url }}"
+                alt="{{ img_url.alt | escape }}"
+                >
+                <h4 class="product-swiper--slide-title">{{ product.title }}</h4>
+                <p class="product-swiper--slide-subtitle">{{ subtitle }}</p>
+                <a href="{{ product_url }}" class="button button--primary">
+                  Ver producto
+                </a>
+              </div>
+              <div class="swiper-button-prev" id="arrow-prev--{{ block.id }}">
+                {% render 'prev-arrow',
+                 fill: content_color
+                %}
+              </div>
+              <div class="swiper-button-next" id="arrow-next--{{ block.id }}">
+                {% render 'next-arrow',
+                  fill: content_color
+                %}
+              </div>
+            </div>
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<link rel="stylesheet" href="{{ 'swiper.min.css' | asset_url }}" />
+<script type="module">
+  import Swiper from "{{ 'swiper-bundle.esm.browser.min.js' | asset_url }}"
+
+  const productSwiper = new Swiper('.product-swiper', {
+    slidesPerView: 1,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    allowTouchMove: false,
+    autoplay: {
+      delay: 3000,
+    },
+    loop: true,
+  })
+
+  const backgroundSwiper = new Swiper('.background-swiper', {
+    slidesPerView: 1,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    allowTouchMove: false,
+    autoplay: {
+      delay: 3000,
+    },
+    loop: true,
+  })
+</script>
+
+{% schema %}
+{
+  "name": "Product carousel",
+  "class": "product-carousel",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Button styles"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Button color",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color",
+      "default": "#FFF"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "productslide",
+      "name": "Product slide",
+      "settings": [
+        {
+         "type": "product",
+         "id": "product_slide",
+         "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Product subtitle",
+          "default": "Subtitle here"
+        },
+       {
+         "type": "color",
+         "id": "content_color",
+         "label": "Content color",
+         "default": "#000"
+       }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product carousel",
+      "blocks": [
+        {
+          "type": "productslide"
+        },
+        {
+          "type": "productslide"
+        },
+        {
+          "type": "productslide"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

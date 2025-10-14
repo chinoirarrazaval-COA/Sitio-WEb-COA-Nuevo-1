@@ -1,0 +1,86 @@
+{% if section.settings.desktop_image != blank or section.settings.mobile_image != blank %}
+<div class="responsive-banner">
+{% if section.settings.url_banner != blank %}
+<a href="{{ section.settings.url_banner }}" class="banner-link">
+{% endif %}
+{% if section.settings.desktop_image != blank %}
+<div class="desktop-banner-container hide-on-mobile">
+<img src="{{ section.settings.desktop_image | img_url: 'master' }}" alt="{{ section.settings.desktop_image.alt | escape }}" class="desktop-banner">
+</div>
+{% endif %}
+{% if section.settings.mobile_image != blank %}
+<div class="mobile-banner-container hide-on-desktop">
+<img src="{{ section.settings.mobile_image | img_url: 'master' }}" alt="{{ section.settings.mobile_image.alt | escape }}" class="mobile-banner">
+</div>
+{% endif %}
+{% if section.settings.url_banner != blank %}
+</a>
+{% endif %}
+</div>
+<style>
+.responsive-banner {
+width: 100%;
+position: relative;
+overflow: hidden;
+}
+.desktop-banner, .mobile-banner {
+width: 100%;
+display: block;
+}
+@media screen and (max-width: 768px) {
+.hide-on-mobile {
+display: none;
+}
+.hide-on-desktop {
+display: block;
+}
+}
+@media screen and (min-width: 769px) {
+.hide-on-desktop {
+display: none;
+}
+.hide-on-mobile {
+display: block;
+}
+}
+</style>
+{% endif %}
+{% schema %}
+{
+"name": "Banner Responsive",
+"settings": [
+{
+"type": "header",
+"content": "Desktop Banner"
+},
+{
+"type": "url",
+"id": "url_banner",
+"label": "URL button",
+"default": "/collections/all"
+},
+{
+"type": "image_picker",
+"label": "Desktop Image",
+"id": "desktop_image"
+},
+{
+"type": "header",
+"content": "Mobile Banner"
+},
+{
+"type": "image_picker",
+"label": "Mobile Image",
+"id": "mobile_image"
+}
+],
+"presets": [
+{
+"name": "Banner Responsive",
+"category": "Image",
+"settings": {
+}
+}
+]
+}
+{% endschema %}

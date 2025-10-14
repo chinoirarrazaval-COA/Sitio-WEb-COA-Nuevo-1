@@ -1,0 +1,201 @@
+<style>
+  multiname-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+  }
+  .multiname-section__images {
+    width: 50%;
+  }
+
+  .multiname-section__image:not(.active) {
+    display: none;
+  }
+
+  .multiname-section__images img {
+    max-width: 100%;
+    display: block;
+  }
+
+  .multiname-section__content {
+    text-align: var(--desktop-align);
+  }
+
+  .multiname-section__title {
+    font-weight: bold;
+    font-size: 32px;
+  }
+
+  multiname-section destacar {
+    color: var(--highlight-color);
+  }
+
+
+  @media (max-width: 768px) {
+    .multiname-section__content {
+      width: 100%;
+      text-align: var(--mobile-align);
+    }
+    multiname-section {
+      flex-direction: column-reverse;
+      gap: 0;
+    }
+    .multiname-section__images {
+      width: 100%;
+    }
+  }
+</style>
+<multiname-section
+  class="page-width"
+  style="
+    --highlight-color: {{ section.settings.highlight }};
+    --desktop-align: {{ section.settings.desktop-align }};
+    --mobile-align: {{ section.settings.mobile-align }};
+  "
+  data-duration="{{ section.settings.duration }}"
+>
+  <div class="multiname-section__content">
+    <h3 class="multiname-section__title">{{ section.settings.title | newline_to_br | replace: "@nombre", '<destacar class="multiname-names"></destacar>' }}</h3>
+    <a href="{{ section.settings.link }}" class="button">{{ section.settings.link_text }}</a>
+  </div>
+  <div class="multiname-section__images">
+    {% for block in section.blocks %}
+      <div class="multiname-section__image" data-name="{{ block.settings.title }}" data-index="{{ forloop.index0 }}">
+        <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.image.alt }}">
+      </div>
+    {% endfor %}
+  </div>
+</multiname-section>
+
+<script type="module">
+  if(!customElements.get("multiname-section")) {
+    class MultinameSection extends HTMLElement {
+      constructor() {
+        super();
+        this.index = 0
+        this.name = this.querySelector(".multiname-names")
+        this.slides = [...this.querySelectorAll(".multiname-section__image")]
+        this.next()
+      }
+      next() {
+        let element = this.slides[this.index]
+        if(!element) {
+          this.index = 0
+          element = this.slides[this.index]
+        }
+        if(this.name) this.name.textContent = element.dataset.name
+        const active = this.querySelector(".multiname-section__image.active")
+        if(active) active.classList.remove("active")
+        element.classList.add("active")
+
+        this.index++
+        setTimeout(() => this.next(), Number(this.dataset.duration) * 1000)
+      }
+    }
+    customElements.define("multiname-section", MultinameSection)
+  }
+</script>
+
+{% schema %}
+{
+  "name": "H - Multiname & Gif",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "title",
+      "info": "Use \"@nombre\" para la zona intercambiable. También: <destacar>Texto coloreado</destacar>",
+      "label": "Contenido"
+    },
+    {
+      "type": "color",
+      "id": "highlight",
+      "label": "Color para destacar",
+      "info": "El color del texto entre las etiquetas <destacar></destacar>"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link del botón"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Texto del botón"
+    },
+    {
+      "type": "range",
+      "id": "duration",
+      "label": "Duración de cada slide",
+      "min": 1,
+      "max": 5,
+      "step": 0.5,
+      "default": 3,
+      "unit": "s"
+    },
+    {
+      "type": "select",
+      "id": "desktop-align",
+      "label": "Text align (desktop)",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "mobile-align",
+      "label": "Text align (mobile)",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "right"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "name",
+      "name": "Nombre",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Nombre"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Imagen"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "H - Multiname & Gif"
+    }
+  ]
+}
+{% endschema %}
