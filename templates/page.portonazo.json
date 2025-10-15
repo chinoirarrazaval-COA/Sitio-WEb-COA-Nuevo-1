@@ -1,0 +1,378 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "166084294425d5068b": {
+      "type": "background-video",
+      "disabled": true,
+      "settings": {
+        "shopify_video": "https://cdn.shopify.com/videos/c/o/v/5724d7e153ac4634a484bb36fcd066ca.mov",
+        "sub_heading": "PORTONAZO",
+        "subheading_size": 46,
+        "mobile_subheading_size": 14,
+        "subheading_color": "#ffffff",
+        "heading": "En un 115% aumentan los portonazos y encerronas en el país",
+        "heading_size": 18,
+        "mobile_heading_size": 14,
+        "heading_color": "#ffffff",
+        "text_alignment": "center",
+        "button_label_1": "",
+        "button_link_1": "",
+        "button_style_secondary_1": false,
+        "button_label_2": "",
+        "button_link_2": "",
+        "button_style_secondary_2": false,
+        "desktop_content_position": "middle-center"
+      }
+    },
+    "16625998433ce9b6db": {
+      "type": "multicolumn-text",
+      "blocks": {
+        "16625998439107444d-0": {
+          "type": "column",
+          "settings": {
+            "preheading": "CUIDAO",
+            "preheading_weight": "normal",
+            "preheading_color": "#000000",
+            "preheading_size": 14,
+            "preheading_mobile_size": 12,
+            "title": "PORTONAZO",
+            "title_weight": "bold",
+            "title_color": "#e22120",
+            "title_size": 24,
+            "title_mobile_size": 18,
+            "text": "<p><strong>Nosotros ponemos la plata para comprar el auto, para comprar repuestos y realizar reparaciones y los jóvenes tienen la tarea de llevar todo esto acabo.</strong></p>",
+            "text_weight": "normal",
+            "text_color": "#000000",
+            "text_size": 18,
+            "text_mobile_size": 14,
+            "link_label": "",
+            "link": "",
+            "text_alignment": "center",
+            "mobile_text_alignment": "left"
+          }
+        }
+      },
+      "block_order": [
+        "16625998439107444d-0"
+      ],
+      "settings": {
+        "enable_wave_border": false,
+        "wave_border_color": "#ffffff",
+        "title": "",
+        "heading_size": "h1",
+        "heading_color": "#000000",
+        "background_color": "#ffffff",
+        "column_background_color": "#ffffff",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 100,
+        "padding_bottom": 36
+      }
+    },
+    "1662600186a53fd34c": {
+      "type": "haciendola-imagenes-regular",
+      "blocks": {
+        "16626001869b2c8fd0-0": {
+          "type": "big_image",
+          "settings": {
+            "image": "shopify://shop_images/mercurioportonazo.png",
+            "image_padding": 100,
+            "title": "",
+            "body": "",
+            "link": "",
+            "link-text": "",
+            "h-position": "center",
+            "v-position": "center",
+            "text-alignment": "center",
+            "color": "",
+            "content-spacing": 25
+          }
+        },
+        "16626001869b2c8fd0-1": {
+          "type": "text",
+          "settings": {
+            "reverse_rows": true,
+            "text_alignment": "left",
+            "preheading": "SORPRENDENTE",
+            "preheading_color": "#e22120",
+            "preheading_fs": 18,
+            "heading": "<p><strong>EN UN 115% AUMENTANLAS ENCERRONAS</strong></p>",
+            "heading_color": "#000000",
+            "heading_fs": 18,
+            "subheading": "",
+            "subheading_color": "#000000",
+            "subheading_fs": 18,
+            "body": "Según nuestro análisis luego de consulta abierta a jóvenes\n condenados por este delito nos dimos cuenta que el monto \nfinal que gana cada uno por auto robado ronda ente los \n300.000 a 500.000 por integrante de la banda y la mayor \nganancia la obtiene los líderes del crimen organizado con la \nventa de los repuestos, estos últimos son mayores de edad \npor lo tanto se aprovechan de los menores por que son de \nmás bajo costo, caen en la ley de menores no de adultos \ny sus condenas son menores.",
+            "body_color": "#121212",
+            "body_fs": 16,
+            "bg_color": "#ffffff",
+            "button_label": "",
+            "button_link": "",
+            "button_color": "#000000",
+            "image_height": 50,
+            "mobile_image": "shopify://shop_images/mercurioportonazo.png",
+            "padding": 50,
+            "block_bg_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "16626001869b2c8fd0-0",
+        "16626001869b2c8fd0-1"
+      ],
+      "settings": {
+        "pattern_bg": "shopify://shop_images/elemento-iz1.png",
+        "pattern_bg_position": "center center",
+        "pattern_bg_color": "#44bbbb",
+        "color1": "#ffffff",
+        "color2": "#ffffff",
+        "gradient_position": 80,
+        "irregular_section": true,
+        "small_image": false
+      }
+    },
+    "1662600575715e4ac8": {
+      "type": "image-with-text",
+      "blocks": {
+        "16626005751ac0b164-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Lo que buscamos con  ésta nueva área es </p><p><strong>MANTENER LOS MÁRGENES DE GANANCIA POR AUTO</strong></p><p></p>",
+            "text_size": 20,
+            "mobile_text_size": 14,
+            "text_color": "#000000",
+            "text_weight": "normal"
+          }
+        },
+        "16626005751ac0b164-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "DISMINUYENDO EL RIESGO",
+            "heading_size": 32,
+            "mobile_heading_size": 18,
+            "heading_color": "#e22120",
+            "heading_weight": "bold"
+          }
+        },
+        "8d13f785-1745-471f-bf5f-03835ad0a68a": {
+          "type": "caption",
+          "settings": {
+            "caption": "Tanto de ellos como de las víctimas y enseñar una carrera en el transcurso, aprender mecánica básica y comercialización",
+            "caption_size": 14,
+            "mobile_caption_size": 14,
+            "caption_color": "#000000",
+            "highlighted_color": "#000000",
+            "highlighted_font_size": 1,
+            "caption_weight": "normal"
+          }
+        }
+      },
+      "block_order": [
+        "16626005751ac0b164-1",
+        "16626005751ac0b164-0",
+        "8d13f785-1745-471f-bf5f-03835ad0a68a"
+      ],
+      "settings": {
+        "pattern_bg_position": "top left",
+        "pattern_bg_color": "",
+        "image": "shopify://shop_images/Copia_de_Video.gif",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "right",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "166260143546c8288e": {
+      "type": "rich-text",
+      "blocks": {
+        "166260143579a02d4c-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>CON CREATIVIDAD SE PUEDEN RESOLVER TODOS LOS PROBLEMAS</p>",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "166260143579a02d4c-0"
+      ],
+      "settings": {
+        "enable_wave_border": false,
+        "wave_border_color": "#ffffff",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "1662601577fbaf3003": {
+      "type": "multicolumn-text",
+      "blocks": {
+        "16626015772c65fd60-0": {
+          "type": "column",
+          "settings": {
+            "preheading": "",
+            "preheading_weight": "normal",
+            "preheading_color": "#000000",
+            "preheading_size": 14,
+            "preheading_mobile_size": 12,
+            "title": "",
+            "title_weight": "normal",
+            "title_color": "#000000",
+            "title_size": 24,
+            "title_mobile_size": 18,
+            "text": "<p>En concreto esta área se dedica a buscar autos potenciales para ser reparados, sacar detalles como pintura, tapices, alineación, y panas pequeñas que puedan aumentar el valor de venta para sí ponerlo en venta en el mercado.</p>",
+            "text_weight": "normal",
+            "text_color": "#000000",
+            "text_size": 19,
+            "text_mobile_size": 14,
+            "link_label": "",
+            "link": "",
+            "text_alignment": "right",
+            "mobile_text_alignment": "center"
+          }
+        },
+        "16626015772c65fd60-1": {
+          "type": "column",
+          "settings": {
+            "preheading": "",
+            "preheading_weight": "normal",
+            "preheading_color": "#000000",
+            "preheading_size": 14,
+            "preheading_mobile_size": 12,
+            "title": "LOGRAR SACAR EL MISMO MARGEN QUE UN PORTONAZO",
+            "title_weight": "bold",
+            "title_color": "#000000",
+            "title_size": 24,
+            "title_mobile_size": 18,
+            "text": "<p>PERO CON TODAS LAS COSAS POSITIVASQUE CONLLEVA PARA ELLOS Y LA SOCIEDAD</p>",
+            "text_weight": "bold",
+            "text_color": "#e22120",
+            "text_size": 19,
+            "text_mobile_size": 14,
+            "link_label": "",
+            "link": "",
+            "text_alignment": "center",
+            "mobile_text_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "16626015772c65fd60-0",
+        "16626015772c65fd60-1"
+      ],
+      "settings": {
+        "enable_wave_border": false,
+        "wave_border_color": "#ffffff",
+        "title": "",
+        "heading_size": "h1",
+        "heading_color": "#000000",
+        "background_color": "#ffffff",
+        "column_background_color": "#ffffff",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1662602066ac7d7703": {
+      "type": "h-divider",
+      "settings": {
+        "texture": "shopify://shop_images/portonazo.png",
+        "enable_wave_border": false,
+        "wave_border_color": "#ffffff",
+        "spacing-t": 20,
+        "spacing-b": 65,
+        "enable-line": false,
+        "line-color": "#cccccc",
+        "full-width": false
+      }
+    },
+    "1662602176ee40f187": {
+      "type": "multicolumn-text",
+      "blocks": {
+        "16626021761755039e-0": {
+          "type": "column",
+          "settings": {
+            "preheading": "NOSOTROS PONEMOS LA PLATA",
+            "preheading_weight": "bold",
+            "preheading_color": "#e22120",
+            "preheading_size": 25,
+            "preheading_mobile_size": 12,
+            "title": "LOS JÓVENES LA MANO DE OBRA",
+            "title_weight": "bold",
+            "title_color": "#121212",
+            "title_size": 15,
+            "title_mobile_size": 18,
+            "text": "<p><strong>Nosotros ponemos la plata </strong>para comprar el auto, para comprar repuestos y realizar reparaciones y <strong>los jóvenes</strong> tiene la tarea de llevar todo esto acabo, <strong>buscar el auto</strong>, lleva al taller donde se definen los arreglos a realizar, llevar a cada uno de los talleres específicos <strong>para realizar estas mejoras, lavar, pulir, fotografiar,</strong> subir a nuestro sitio, otros portales de venta y mostrar el vehículo al cliente potencial. Esta área también será desarrollada para motos cumpliendo el mismo objetivo.</p>",
+            "text_weight": "normal",
+            "text_color": "#000000",
+            "text_size": 18,
+            "text_mobile_size": 14,
+            "link_label": "",
+            "link": "",
+            "text_alignment": "center",
+            "mobile_text_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "16626021761755039e-0"
+      ],
+      "settings": {
+        "enable_wave_border": false,
+        "wave_border_color": "#ffffff",
+        "title": "",
+        "heading_size": "h1",
+        "heading_color": "#000000",
+        "background_color": "#ffffff",
+        "column_background_color": "#ffffff",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 96
+      }
+    }
+  },
+  "order": [
+    "main",
+    "166084294425d5068b",
+    "16625998433ce9b6db",
+    "1662600186a53fd34c",
+    "1662600575715e4ac8",
+    "166260143546c8288e",
+    "1662601577fbaf3003",
+    "1662602066ac7d7703",
+    "1662602176ee40f187"
+  ]
+}

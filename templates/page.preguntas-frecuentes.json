@@ -1,0 +1,159 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1662400503535c2c8e": {
+      "type": "image-banner",
+      "blocks": {
+        "1662400503480a7a07-0": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Image banner",
+            "heading_size": "h1"
+          }
+        },
+        "1662400503480a7a07-1": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text_style": "body"
+          }
+        },
+        "1662400503480a7a07-2": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "1662400503480a7a07-0",
+        "1662400503480a7a07-1",
+        "1662400503480a7a07-2"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/IMG_7559_2.png",
+        "image_mobile": "shopify://shop_images/banner-mobile_bae7acf5-aae6-48bd-9248-b5ad747b9eb5.png",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "adapt_height_first_image": false,
+        "desktop_content_position": "middle-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": false
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "1662400450535631d8": {
+      "type": "collapsible-content",
+      "blocks": {
+        "1662400450a544d733-0": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Todo lo hacen los presos?",
+            "icon": "check_mark",
+            "row_content": "<p>No, lo hemos intentado varias veces pero es inviable, así que no todo es hecho en las cárceles, por motivos de tiempo, costo y tecnología solo hacemos los productos que sean viables de hacer adentro.</p>",
+            "page": ""
+          }
+        },
+        "1662400450a544d733-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Como mantienen el aporte social si no hacen todos los productos adentro?",
+            "icon": "check_mark",
+            "row_content": "<p>De los productos no desarrollados adentro usamos parte de la utilidad para pagar los talleres socioculturales que realizamos a jóvenes del SENAME, de esta forma les abrimos las puertas a nuevas experiencias</p>",
+            "page": ""
+          }
+        },
+        "1662400450a544d733-2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Que significa COA?",
+            "icon": "check_mark",
+            "row_content": "<p>Coa es un lenguaje que nace en las cárceles de Chile para poder comunicarse y robar sin ser entendidos por las personas comunes, hoy en día es la jerga que usamos todos los chilenos, palabras como luka, quina, gamba, brigido, flaite, peluzón, pelolais, pelarse, y muchas mas, revisa el <a href=\"/pages/jerga-coa\" title=\"Jerga COA\">diccionario.</a></p>",
+            "page": "jerga-coa"
+          }
+        },
+        "1662400450a544d733-3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Con qué cárceles o centros trabajan?",
+            "icon": "check_mark",
+            "row_content": "<p>Hemos trabajado según su disposición y disponibilidad con, SENAME Calera de Tango,  SENAME La Cisterna, SENAME Arica,  Cárcel de Mujeres San Joaquín, Cárcel Colina 1, Cárcel Colina 2, Cárcel La Pólvora.</p>",
+            "page": ""
+          }
+        },
+        "16e9f0f7-76cc-4c71-932a-0b7cef14bf17": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Quienes hacen las tablas de surf?",
+            "icon": "check_mark",
+            "row_content": "<p>Nos gusta trabajar e innovar con diferentes shapers de esta forma podemos probar diferentes manos y diferentes talentos en la fabricación de tablas y no cerrarnos a un solo estilo. Hemos trabajado con Edwuard Madrid shpaer de Perú, Fabio García  de Brasil, actualmente con Matt Kinoshita de Kazuma surfboards Hawaii, y  Snapy Surfboards  de Brasil</p>",
+            "page": ""
+          }
+        },
+        "036a7483-3af9-40bb-9776-49ab28ff1ad1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Dónde están ubicados?",
+            "icon": "check_mark",
+            "row_content": "<p>Tenemos 2 puntos propios, uno en Santiago el cual es nuestro head quarter donde coordinamos todo lo que pasa y otro en Puertecillo nuestra única tienda surf donde conectamos todo, si quieres ver tablas a esta es donde debes ir!</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "1662400450a544d733-0",
+        "1662400450a544d733-1",
+        "1662400450a544d733-2",
+        "1662400450a544d733-3",
+        "16e9f0f7-76cc-4c71-932a-0b7cef14bf17",
+        "036a7483-3af9-40bb-9776-49ab28ff1ad1"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Preguntas frecuentes",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "background-1",
+        "container_color_scheme": "background-2",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "1662400503535c2c8e",
+    "main",
+    "1662400450535631d8"
+  ]
+}

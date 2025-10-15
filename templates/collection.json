@@ -1,0 +1,144 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text_MqUGf8": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_TdETri": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h2>Calidad y estilo surfero chileno, nacido para los que sueñan con olas. Vive el mar donde quiera que estés. 🌊🤙<br/></h2><p></p>",
+            "heading_size": "h2"
+          }
+        },
+        "text_YcKV6c": {
+          "type": "text",
+          "settings": {
+            "text": ""
+          }
+        },
+        "buttons_tbFkw7": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false,
+            "target_blank": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_TdETri",
+        "text_YcKV6c",
+        "buttons_tbFkw7"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "enable_wave_border": false,
+        "wave_border_color": "#ffffff",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": true,
+        "color_scheme": "background-1"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "dbb7b562-63c3-43bd-8e98-bb669496fd14": {
+          "type": "promo-block",
+          "settings": {
+            "image": "shopify://shop_images/footer_ce5f3215-7c65-4eee-a19c-3a8f83e66926.png",
+            "secondary_image": "shopify://shop_images/footer_ce5f3215-7c65-4eee-a19c-3a8f83e66926.png",
+            "title": "",
+            "content": "",
+            "promo_position": 4,
+            "link_url": ""
+          }
+        },
+        "9af4ea85-6499-4c03-a31d-2315abf7be92": {
+          "type": "promo-block",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/1-03.png",
+            "secondary_image": "shopify://shop_images/1-03.png",
+            "title": "",
+            "content": "",
+            "promo_position": 4,
+            "link_url": "shopify://pages/que-es-coa"
+          }
+        },
+        "80989deb-6eee-4bc7-88bf-4846f023b7e9": {
+          "type": "promo-block",
+          "settings": {
+            "image": "shopify://shop_images/1-02.png",
+            "secondary_image": "shopify://shop_images/1-02.png",
+            "title": "",
+            "content": "",
+            "promo_position": 10,
+            "link_url": ""
+          }
+        },
+        "222af7ec-192b-479d-90b0-caae9c192c9c": {
+          "type": "promo-block",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/1-04.png",
+            "secondary_image": "shopify://shop_images/1-04.png",
+            "title": "",
+            "content": "",
+            "promo_position": 10,
+            "link_url": "shopify://pages/nosotros"
+          }
+        }
+      },
+      "block_order": [
+        "dbb7b562-63c3-43bd-8e98-bb669496fd14",
+        "9af4ea85-6499-4c03-a31d-2315abf7be92",
+        "80989deb-6eee-4bc7-88bf-4846f023b7e9",
+        "222af7ec-192b-479d-90b0-caae9c192c9c"
+      ],
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "horizontal",
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "rich_text_MqUGf8",
+    "banner",
+    "product-grid"
+  ]
+}
