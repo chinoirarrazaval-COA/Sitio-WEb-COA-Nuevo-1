@@ -337,6 +337,59 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "image_with_text_ADj7bF": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_HfhGHg": {
+          "type": "heading",
+          "settings": {
+            "heading": "Daniel Silvagni",
+            "heading_size": 32,
+            "mobile_heading_size": 18,
+            "heading_color": "#000",
+            "heading_weight": "normal"
+          }
+        },
+        "text_eDAh9B": {
+          "type": "text",
+          "settings": {
+            "text": "<p>La trayectoria del surfista argentino Daniel Silvagni, radicado en Maui, es legendaria en el surf de olas grandes (fue parte del equipo de rescate en Jaws/Pe’ahi) . Como propietario de D-Glassing Co. en Hawaii, Silvagni colabora con shapers de renombre (por ejemplo, Matt Kinoshita, fundador de Kazuma Surfboards), aplicando un glassaje de la más alta calidad en tablas de alto rendimiento . Gracias a su experiencia surfeando en condiciones extremas –incluso ha remolcado a surfistas en Jaws  y facilitado motos acuáticas para probar tablas en olas gigantes – conoce al detalle las exigencias de los surfistas más avanzados. Todo esto asegura que las tablas COA Surf, elaboradas con el aporte de expertos como Silvagni, ofrezcan rendimiento superior, solidez y credibilidad comprobada.</p><p>Especialistas de surf y medios del sector destacan la labor de Daniel Silvagni en la patrulla acuática de Pe’ahi (Jaws)  y su rol como “glasser” dueño de D-Glassing Co. en Hawaii ; incluso fotografías del surf de olas grandes lo muestran remolcando a otros surfistas en Jaws  y ayudando a probar tablas en esas olas , respaldando así la calidad de las tablas COA.</p>",
+            "text_size": 14,
+            "mobile_text_size": 14,
+            "text_color": "#000",
+            "text_weight": "normal"
+          }
+        },
+        "button_6Q6cry": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_HfhGHg",
+        "text_eDAh9B",
+        "button_6Q6cry"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "pattern_bg_position": "top left",
+        "pattern_bg_color": "",
+        "image": "shopify://shop_images/Daniel-Silvagni-surfing.jpg",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -347,6 +400,7 @@
     "image_with_text_aFibTa",
     "image_with_text_WtULmy",
     "image_with_text_PjH9ix",
-    "image_with_text_MVrdAg"
+    "image_with_text_MVrdAg",
+    "image_with_text_ADj7bF"
   ]
 }
