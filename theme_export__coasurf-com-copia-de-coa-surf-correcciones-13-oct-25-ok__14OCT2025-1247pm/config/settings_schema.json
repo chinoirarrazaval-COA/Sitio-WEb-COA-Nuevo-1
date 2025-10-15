@@ -22,7 +22,7 @@
         "type": "range",
         "default": 1,
         "min": 1,
-        "max": 6,
+        "max": 7,
         "step": 1
       }
     ]
