@@ -284,6 +284,59 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "image_with_text_MVrdAg": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_ziDP87": {
+          "type": "heading",
+          "settings": {
+            "heading": "Edwuard Madrid",
+            "heading_size": 32,
+            "mobile_heading_size": 18,
+            "heading_color": "#000",
+            "heading_weight": "normal"
+          }
+        },
+        "text_akkH3w": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Es un shaper peruano con más de 30 años de trayectoria y fundador de Madrid Surfboards, cuya vida siempre estuvo ligada al mar . Comenzó a surfear desde niño en Chancay  y cumplió su sueño de fabricar tablas en 1990, cuando shapeó su primera tabla . Sus diseños se caracterizan por la <strong>innovación</strong> y la dedicación <strong>artesanal</strong>: le gusta mezclar conceptos clásicos y modernos para crear tablas de alto rendimiento adaptadas a diferentes tipos de olas , poniendo atención meticulosa a cada detalle del shape y alineando cada ángulo para un desempeño óptimo tanto en tablas high-performance como en modelos clásicos . Edwuard ha colaborado estrechamente con la comunidad surfista y ha shapeado tablas para numerosos surfistas profesionales de Perú y Chile , ganándose reconocimiento como uno de los shapers <strong>referentes</strong> de la región . Hoy, Madrid Surfboards es una marca respetada en la escena local e internacional, con presencia en playas de Perú y Chile , y sus tablas – fruto de <strong>calidad</strong> artesanal, <strong>autenticidad</strong> y pasión por la cultura surf – son una elección ideal para COA Surf por la afinidad con los valores y el espíritu del surf que la marca promueve.</p>",
+            "text_size": 14,
+            "mobile_text_size": 14,
+            "text_color": "#000",
+            "text_weight": "normal"
+          }
+        },
+        "button_qXHDTw": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_ziDP87",
+        "text_akkH3w",
+        "button_qXHDTw"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "pattern_bg_position": "top left",
+        "pattern_bg_color": "",
+        "image": "shopify://shop_images/Captura_de_pantalla_2025-05-15_a_las_1.42.32_a._m..png",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -293,6 +346,7 @@
     "image_with_text_8i3c4n",
     "image_with_text_aFibTa",
     "image_with_text_WtULmy",
-    "image_with_text_PjH9ix"
+    "image_with_text_PjH9ix",
+    "image_with_text_MVrdAg"
   ]
 }
