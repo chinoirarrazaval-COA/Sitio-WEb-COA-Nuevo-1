@@ -11,10 +11,17 @@ class HaciendolaMegaMenu extends HTMLElement {
       const summary = item.querySelector('summary')
       const search = (summary || item).textContent.toLowerCase().trim()
 
-      if (summary && summary.nextElementSibling)
-        summary.nextElementSibling.remove()
+      // Don't remove anything during search, only find the match
       return search === this.linkTitle
     })
+
+    if (!this.trigger) return
+
+    // Only remove the native dropdown if we found a matching trigger
+    const summary = this.trigger.querySelector('summary')
+    if (summary && summary.nextElementSibling) {
+      summary.nextElementSibling.remove()
+    }
 
     this.parent = this.trigger.closest('.header')
 
