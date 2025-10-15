@@ -178,6 +178,59 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "image_with_text_WtULmy": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_Pwa9pr": {
+          "type": "heading",
+          "settings": {
+            "heading": "Fabio Garcia",
+            "heading_size": 32,
+            "mobile_heading_size": 18,
+            "heading_color": "#000",
+            "heading_weight": "normal"
+          }
+        },
+        "text_mbxjDn": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Shaper brasileño con casi 30 años de experiencia, es el fundador de <strong>XFlex Surfboards</strong>, una marca dedicada desde sus inicios a crear tablas de surf de alta calidad . Su trayectoria personal siempre ha estado ligada al surf: comenzó impulsando la escena local en Brasil en los años 90 y perfeccionó su oficio trabajando en fábricas de tablas alrededor del mundo , absorbiendo técnicas y conocimientos para lograr diseños de <strong>excelencia</strong>. En sus creaciones combina la artesanía tradicional con innovaciones técnicas, desarrollando un estilo distintivo enfocado en el <strong>rendimiento</strong> y la <strong>flexibilidad</strong> de las tablas. Fabio ha colaborado estrechamente con surfistas profesionales y apoya activamente a la comunidad surfista – su marca incluso ha sido presentadora de importantes circuitos de surf en Brasil  – ganándose reconocimiento tanto en la escena brasileña como a nivel internacional. <em>Para COA Surf, sus tablas son una elección inmejorable:</em> ofrecen la <strong>calidad</strong>, la <strong>autenticidad</strong> y la conexión con la cultura surf que representan los valores de nuestra comunidad.</p>",
+            "text_size": 14,
+            "mobile_text_size": 14,
+            "text_color": "#000",
+            "text_weight": "normal"
+          }
+        },
+        "button_E8TJeF": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_Pwa9pr",
+        "text_mbxjDn",
+        "button_E8TJeF"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "pattern_bg_position": "top left",
+        "pattern_bg_color": "",
+        "image": "shopify://shop_images/Fabio-Garcia-xflex.jpg",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -185,6 +238,7 @@
     "rich_text_wGbxzC",
     "16624805290c84aa8b",
     "image_with_text_8i3c4n",
-    "image_with_text_aFibTa"
+    "image_with_text_aFibTa",
+    "image_with_text_WtULmy"
   ]
 }
