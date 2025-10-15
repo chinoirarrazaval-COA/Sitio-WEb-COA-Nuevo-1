@@ -381,7 +381,7 @@
         "image": "shopify://shop_images/Daniel-Silvagni-surfing.jpg",
         "height": "adapt",
         "desktop_image_width": "small",
-        "layout": "image_first",
+        "layout": "text_first",
         "desktop_content_position": "top",
         "desktop_content_alignment": "left",
         "content_layout": "no-overlap",
@@ -395,12 +395,12 @@
   "order": [
     "main",
     "rich_text_wGbxzC",
-    "16624805290c84aa8b",
     "image_with_text_8i3c4n",
     "image_with_text_aFibTa",
     "image_with_text_WtULmy",
     "image_with_text_PjH9ix",
     "image_with_text_MVrdAg",
-    "image_with_text_ADj7bF"
+    "image_with_text_ADj7bF",
+    "16624805290c84aa8b"
   ]
 }
