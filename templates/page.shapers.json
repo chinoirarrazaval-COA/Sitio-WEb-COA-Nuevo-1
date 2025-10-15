@@ -25,10 +25,57 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "rich_text_wGbxzC": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_8MKbEx": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h3><strong>Shapers de COA: Maestros del Surf</strong></h3>",
+            "heading_size": "h1"
+          }
+        },
+        "text_ycKcyN": {
+          "type": "text",
+          "settings": {
+            "text": "<p>En COA, creemos que una tabla de surf es más que una pieza de equipo; es una obra de arte creada por manos expertas. En esta sección, te presentamos a nuestros shapers, maestros del diseño y la innovación, cuyas tablas combinan calidad, precisión y pasión por el surf. Cada uno aporta su experiencia única y su visión al agua, garantizando que cada tabla COA sea una extensión de tu estilo y una conexión auténtica con el océano.</p><p> </p>"
+          }
+        },
+        "buttons_eDDDyi": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false,
+            "target_blank": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_8MKbEx",
+        "text_ycKcyN",
+        "buttons_eDDDyi"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "enable_wave_border": false,
+        "wave_border_color": "#ffffff",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
     "main",
-    "16624805290c84aa8b"
+    "16624805290c84aa8b",
+    "rich_text_wGbxzC"
   ]
 }
