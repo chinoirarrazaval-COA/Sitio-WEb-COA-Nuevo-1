@@ -72,11 +72,65 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "image_with_text_8i3c4n": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_tCnzh9": {
+          "type": "heading",
+          "settings": {
+            "heading": "Matt “Kazuma” Kinoshita",
+            "heading_size": 32,
+            "mobile_heading_size": 18,
+            "heading_color": "#000",
+            "heading_weight": "normal"
+          }
+        },
+        "text_6ULQHR": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Matt “Kazuma” Kinoshita</strong>, fundador de Kazuma Surfboards Hawaii, es un legendario shaper hawaiano con más de 30 años de experiencia como diseñador de tablas  y un pasado como surfista profesional de élite: fue campeón de surf de Estados Unidos y representó a Hawái en campeonatos mundiales  antes de volcarse de lleno a la fabricación de tablas bajo la tutela del maestro Ben Aipa . Formado por este pionero, Kinoshita incorporó un enfoque de alto rendimiento en cada diseño: desde modelos tipo fish y tablas híbridas hasta poderosas guns para olas gigantes, sus innovaciones han elevado las tablas Kazuma a un rendimiento legendario . A lo largo de su trayectoria, ha fabricado artesanalmente más de 50.000 tablas  y ha trabajado junto a numerosos surfistas profesionales, impulsando las carreras de estrellas como Dusty Payne e Ian Walsh . Sus tablas hechas a mano se prueban en las olas más exigentes de Hawái bajo los pies de surfistas de élite , y la marca Kazuma se ha consolidado a nivel internacional por su calidad; prueba de ello es que Kinoshita fue durante años shaper principal de Hawaiian Island Creations, atendiendo los mercados de Japón y Estados Unidos . La combinación de calidad artesanal, experiencia y pasión que Kinoshita imprime en cada tabla hacen que sus modelos de alto rendimiento sean una elección inmejorable para COA Surf, ofreciendo a nuestros surfistas la confianza de montar <strong>equipamiento de clase mundial</strong>.</p>",
+            "text_size": 14,
+            "mobile_text_size": 14,
+            "text_color": "#000",
+            "text_weight": "normal"
+          }
+        },
+        "button_XBxfwV": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_tCnzh9",
+        "text_6ULQHR",
+        "button_XBxfwV"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "pattern_bg_position": "top left",
+        "pattern_bg_color": "",
+        "image": "shopify://shop_images/Mat_Kinoshita_foto.jpg",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
     "rich_text_wGbxzC",
-    "16624805290c84aa8b"
+    "16624805290c84aa8b",
+    "image_with_text_8i3c4n"
   ]
 }
