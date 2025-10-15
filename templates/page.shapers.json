@@ -125,12 +125,66 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "image_with_text_aFibTa": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_9Vbie3": {
+          "type": "heading",
+          "settings": {
+            "heading": "Charlie Smith",
+            "heading_size": 32,
+            "mobile_heading_size": 18,
+            "heading_color": "#000",
+            "heading_weight": "normal"
+          }
+        },
+        "text_fGjMLU": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Fundador de Smith Surfboards Hawaii, es un legendario <em>shaper</em> (diseñador de tablas) hawaiano con casi cinco décadas de experiencia dedicadas al surf de alto rendimiento. La trayectoria de Smith se forjó en el North Shore de Hawái, cuna del surf de alto nivel: allí fue considerado el mejor surfista de Haleiwa en los años 70 y se formó como diseñador de tablas bajo la tutela del mítico Tom Parrish en la marca Lightning Bolt; colaboró como piloto de pruebas en el desarrollo de tablas para campeones mundiales como Shaun Tomson, Margo Oberg o Rabbit Bartholomew . A lo largo de los años, Charlie ha aportado innovaciones técnicas al diseño de tablas –desde la refinación de diseños para olas grandes hasta la creación de plantillas de quillas de alto desempeño– convirtiendo a Smith Surfboards Hawaii en un referente internacional de calidad y rendimiento. Sus tablas, hechas a mano con una combinación única de tradición hawaiana y modernidad, se distinguen por su velocidad, maniobrabilidad y control; cualidades que han conquistado a surfistas en todo el mundo y que reflejan la pasión y excelencia con la que trabaja. En COA Surf nos enorgullece ofrecer las tablas de Charlie Smith, una elección de alto rendimiento avalada por la experiencia de un maestro <em>shaper</em>, ideal para los surfistas que buscan la máxima calidad y una conexión auténtica con la esencia del surf</p>",
+            "text_size": 14,
+            "mobile_text_size": 14,
+            "text_color": "#000",
+            "text_weight": "normal"
+          }
+        },
+        "button_QBAayg": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_9Vbie3",
+        "text_fGjMLU",
+        "button_QBAayg"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "pattern_bg_position": "top left",
+        "pattern_bg_color": "",
+        "image": "shopify://shop_images/Charlie-Smith-400x300-1.jpg",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
     "rich_text_wGbxzC",
     "16624805290c84aa8b",
-    "image_with_text_8i3c4n"
+    "image_with_text_8i3c4n",
+    "image_with_text_aFibTa"
   ]
 }
