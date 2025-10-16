@@ -17,6 +17,116 @@
         "padding_bottom": 28
       }
     },
+    "image_banner_HD8QEH": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_GFcYCm": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "heading_size": "h1"
+          }
+        },
+        "text_PzetAp": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "body"
+          }
+        },
+        "buttons_GVimDb": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_GFcYCm",
+        "text_PzetAp",
+        "buttons_GVimDb"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "bg_color": "",
+        "padding_y": 0,
+        "padding_x": 0,
+        "pattern_bg_position": "top left",
+        "pattern_bg_color": "",
+        "image": "shopify://shop_images/Captura_de_pantalla_2025-10-16_a_las_3.14.12_p._m..png",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "adapt_height_first_image": false,
+        "page-width": false,
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "image_banner_cqFLy8": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_RfU3gG": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "heading_size": "h1"
+          }
+        },
+        "text_eGdPma": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "body"
+          }
+        },
+        "buttons_UXLgi4": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_RfU3gG",
+        "text_eGdPma",
+        "buttons_UXLgi4"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "bg_color": "",
+        "padding_y": 0,
+        "padding_x": 0,
+        "pattern_bg_position": "top left",
+        "pattern_bg_color": "",
+        "image": "shopify://shop_images/Captura_de_pantalla_2025-10-16_a_las_3.41.47_p._m..png",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "adapt_height_first_image": false,
+        "page-width": false,
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
     "image_banner_TyMNrH": {
       "type": "image-banner",
       "blocks": {
@@ -181,66 +291,12 @@
         "stack_images_on_mobile": true,
         "show_text_below": true
       }
-    },
-    "image_banner_HD8QEH": {
-      "type": "image-banner",
-      "blocks": {
-        "heading_GFcYCm": {
-          "type": "heading",
-          "settings": {
-            "heading": "",
-            "heading_size": "h1"
-          }
-        },
-        "text_PzetAp": {
-          "type": "text",
-          "settings": {
-            "text": "",
-            "text_style": "body"
-          }
-        },
-        "buttons_GVimDb": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "",
-            "button_link_1": "",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_GFcYCm",
-        "text_PzetAp",
-        "buttons_GVimDb"
-      ],
-      "name": "t:sections.image-banner.presets.name",
-      "settings": {
-        "bg_color": "",
-        "padding_y": 0,
-        "padding_x": 0,
-        "pattern_bg_position": "top left",
-        "pattern_bg_color": "",
-        "image": "shopify://shop_images/Captura_de_pantalla_2025-10-16_a_las_3.14.12_p._m..png",
-        "image_overlay_opacity": 0,
-        "image_height": "medium",
-        "adapt_height_first_image": false,
-        "page-width": false,
-        "desktop_content_position": "middle-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "background-1",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
-      }
     }
   },
   "order": [
     "main",
     "image_banner_HD8QEH",
+    "image_banner_cqFLy8",
     "image_banner_TyMNrH",
     "image_banner_KiwDNQ",
     "image_banner_eTqpgc"
