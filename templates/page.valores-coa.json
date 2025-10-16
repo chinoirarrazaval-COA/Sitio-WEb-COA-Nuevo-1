@@ -280,7 +280,7 @@
         "pattern_bg_color": "",
         "image": "shopify://shop_images/Captura_de_pantalla_2025-10-16_a_las_3.10.51_p._m..png",
         "image_overlay_opacity": 0,
-        "image_height": "medium",
+        "image_height": "large",
         "adapt_height_first_image": false,
         "page-width": false,
         "desktop_content_position": "middle-center",
