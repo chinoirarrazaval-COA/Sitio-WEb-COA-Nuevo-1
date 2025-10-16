@@ -54,7 +54,7 @@
       "name": "t:sections.image-banner.presets.name",
       "settings": {
         "bg_color": "",
-        "padding_y": 0,
+        "padding_y": 17,
         "padding_x": 0,
         "pattern_bg_position": "top left",
         "pattern_bg_color": "",
@@ -109,7 +109,7 @@
       "name": "t:sections.image-banner.presets.name",
       "settings": {
         "bg_color": "",
-        "padding_y": 0,
+        "padding_y": 32,
         "padding_x": 0,
         "pattern_bg_position": "top left",
         "pattern_bg_color": "",
@@ -164,7 +164,7 @@
       "name": "t:sections.image-banner.presets.name",
       "settings": {
         "bg_color": "",
-        "padding_y": 0,
+        "padding_y": 32,
         "padding_x": 0,
         "pattern_bg_position": "top left",
         "pattern_bg_color": "",
@@ -219,7 +219,7 @@
       "name": "t:sections.image-banner.presets.name",
       "settings": {
         "bg_color": "",
-        "padding_y": 0,
+        "padding_y": 32,
         "padding_x": 0,
         "pattern_bg_position": "top left",
         "pattern_bg_color": "",
