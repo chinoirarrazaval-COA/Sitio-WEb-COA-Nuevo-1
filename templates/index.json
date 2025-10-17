@@ -95,35 +95,6 @@
         "padding_bottom": 36
       }
     },
-    "haciendola_featured_collection_yr9rii": {
-      "type": "haciendola-featured-collection",
-      "settings": {
-        "slider_visual": "dots",
-        "title": "Polerones",
-        "heading_size": "h2",
-        "description": "<p><strong>COA es una marca de surf de espíritu libre que ofrece productos de alta calidad con diseño auténtico y promueve la reinserción social.</strong></p>",
-        "text_alignment": "left",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "poleron-hombre",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "full_width": true,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "background-2",
-        "image_ratio": "adapt",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": true,
-        "enable_quick_add": true,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "rich_text_M4YrVe": {
       "type": "rich-text",
       "blocks": {
@@ -341,6 +312,35 @@
         "mobile_layout": "collage",
         "card_styles": "none",
         "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "haciendola_featured_collection_yr9rii": {
+      "type": "haciendola-featured-collection",
+      "settings": {
+        "slider_visual": "dots",
+        "title": "Polerones",
+        "heading_size": "h2",
+        "description": "<p><strong>COA es una marca de surf de espíritu libre que ofrece productos de alta calidad con diseño auténtico y promueve la reinserción social.</strong></p>",
+        "text_alignment": "left",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "poleron-hombre",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "full_width": true,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-2",
+        "image_ratio": "adapt",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "enable_quick_add": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -1042,12 +1042,12 @@
   "order": [
     "banner_responsive_kCmhYV",
     "1662138878fd85f8b1",
-    "haciendola_featured_collection_yr9rii",
     "rich_text_M4YrVe",
     "image_banner_hK9Qkp",
     "featured_collection_aFA8TM",
     "image_banner_i6CFfD",
     "collage_RUectX",
+    "haciendola_featured_collection_yr9rii",
     "icon_tabs_Nx9hF4",
     "1662130778381de5a1",
     "image_banner",
