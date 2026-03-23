@@ -201,6 +201,7 @@
     },
     "featured_collection_aFA8TM": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "title": "Rayas que antes contaban días. Hoy cuentan otra historia.",
         "heading_size": "h2",
@@ -305,6 +306,7 @@
         "product_A8rM8y",
         "collection_Hpnt3g"
       ],
+      "disabled": true,
       "settings": {
         "heading": "¡Para los de verdad! Las cicatrices son una medalla, una prueba visible de haberlo hecho. Hicimos esta polera para representar a los que de verdad se arriesgan, superan sus limites y se llevan una marca en el cuerpo.",
         "heading_size": "h2",
@@ -318,6 +320,7 @@
     },
     "haciendola_featured_collection_yr9rii": {
       "type": "haciendola-featured-collection",
+      "disabled": true,
       "settings": {
         "slider_visual": "dots",
         "title": "Polerones",
