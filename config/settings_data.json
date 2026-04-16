@@ -12,7 +12,7 @@
     "colors_solid_button_labels": "#ffffff",
     "colors_accent_1": "#121212",
     "gradient_accent_1": "",
-    "colors_accent_2": "#e4032c",
+    "colors_accent_2": "#e11683",
     "gradient_accent_2": "",
     "colors_text": "#121212",
     "colors_outline_button_labels": "#121212",
@@ -25,7 +25,7 @@
     "badges_custom_color_agotado_text": "#ffffff",
     "type_header_font": "chivo_n7",
     "heading_scale": 100,
-    "type_body_font": "assistant_n4",
+    "type_body_font": "chivo_n4",
     "body_scale": 100,
     "page_width": 1200,
     "spacing_sections": 0,
@@ -152,7 +152,7 @@
           "announcement-bar-0": {
             "type": "announcement",
             "settings": {
-              "text": "Welcome to our store",
+              "text": "Surf chileno con propósito: 1% de cada venta apoya inclusión social.",
               "color_scheme": "background-1",
               "link": ""
             }
@@ -181,22 +181,22 @@
           "footer-0": {
             "type": "link_list",
             "settings": {
-              "heading": "Quick links",
+              "heading": "Enlaces rápidos",
               "menu": "footer"
             }
           },
           "footer-1": {
             "type": "link_list",
             "settings": {
-              "heading": "Info",
+              "heading": "Información",
               "menu": "footer"
             }
           },
           "footer-2": {
             "type": "text",
             "settings": {
-              "heading": "Our mission",
-              "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
+              "heading": "Nuestra misión",
+              "subtext": "<p>COA es surf con propósito: diseño auténtico, calidad duradera y compromiso social. Cada compra suma al cambio.</p>"
             }
           }
         },
@@ -208,7 +208,7 @@
         "settings": {
           "color_scheme": "background-1",
           "newsletter_enable": true,
-          "newsletter_heading": "Subscribe to our emails",
+          "newsletter_heading": "Suscríbete para novedades y lanzamientos",
           "show_social": true,
           "enable_country_selector": false,
           "enable_language_selector": false,
@@ -531,7 +531,7 @@
             "announcement-bar-0": {
               "type": "announcement",
               "settings": {
-                "text": "Welcome to our store",
+                "text": "Surf chileno con propósito: 1% de cada venta apoya inclusión social.",
                 "color_scheme": "background-1",
                 "link": ""
               }
@@ -560,22 +560,22 @@
             "footer-0": {
               "type": "link_list",
               "settings": {
-                "heading": "Quick links",
+                "heading": "Enlaces rápidos",
                 "menu": "footer"
               }
             },
             "footer-1": {
               "type": "link_list",
               "settings": {
-                "heading": "Info",
+                "heading": "Información",
                 "menu": "footer"
               }
             },
             "footer-2": {
               "type": "text",
               "settings": {
-                "heading": "Our mission",
-                "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
+                "heading": "Nuestra misión",
+                "subtext": "<p>COA es surf con propósito: diseño auténtico, calidad duradera y compromiso social. Cada compra suma al cambio.</p>"
               }
             }
           },
@@ -587,7 +587,7 @@
           "settings": {
             "color_scheme": "background-1",
             "newsletter_enable": true,
-            "newsletter_heading": "Subscribe to our emails",
+            "newsletter_heading": "Suscríbete para novedades y lanzamientos",
             "show_social": true,
             "enable_country_selector": false,
             "enable_language_selector": false,

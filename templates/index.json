@@ -201,12 +201,12 @@
     },
     "featured_collection_aFA8TM": {
       "type": "featured-collection",
-      "disabled": true,
+      "disabled": false,
       "settings": {
-        "title": "Rayas que antes contaban días. Hoy cuentan otra historia.",
+        "title": "Colección COA: surf y propósito",
         "heading_size": "h2",
-        "description": "<p>Nuestros diseños tienen origen en códigos reales:</p><p>marcas de encierro, tatuajes, líneas que dicen más de lo que parecen.</p><p>Hoy son parte de una marca que transforma.</p><p><strong>Lo llevás puesto, lo hacés propio.</strong></p>",
-        "show_description": false,
+        "description": "<p>Descubre productos creados con espíritu chileno, diseño auténtico y impacto social. El 1% de cada venta apoya programas de surf educativo y reinserción social.</p>",
+        "show_description": true,
         "description_style": "body",
         "collection": "coleccion-simbolos-coa",
         "products_to_show": 8,
@@ -229,6 +229,7 @@
     },
     "image_banner_i6CFfD": {
       "type": "image-banner",
+      "disabled": true,
       "blocks": {
         "heading_mmA9NR": {
           "type": "heading",
@@ -415,6 +416,7 @@
     },
     "1662130778381de5a1": {
       "type": "rich-text",
+      "disabled": true,
       "blocks": {
         "1662130778fb8c0f72-0": {
           "type": "heading",
@@ -579,6 +581,7 @@
     },
     "1662070280349f6da1": {
       "type": "rich-text",
+      "disabled": true,
       "blocks": {
         "16620702807688ba7e-0": {
           "type": "heading",
@@ -661,6 +664,7 @@
     },
     "16627507600f0abf9c": {
       "type": "rich-text",
+      "disabled": true,
       "blocks": {
         "1662750760bd39a13d-1": {
           "type": "text",
@@ -827,6 +831,7 @@
     },
     "1662130345f5a66a31": {
       "type": "collage",
+      "disabled": true,
       "blocks": {
         "1662130345b0990a10-0": {
           "type": "video",
@@ -871,6 +876,7 @@
     },
     "16621326336839161f": {
       "type": "h-multiname-section",
+      "disabled": true,
       "blocks": {
         "0b97f46c-944f-4f10-9959-1b98eb63fc2c": {
           "type": "name",

@@ -183,8 +183,8 @@
             <div class="grid--image__inner">
               {% if block.settings.image != blank %}
                 <img
-                  src="{{ block.settings.image | img_url: 'master'}}"
-                  alt="{{block.settings.image.alt}}"
+                  src="{{ block.settings.image | image_url: width: 1400 }}"
+                  alt="{{ block.settings.image.alt | escape }}"
                   loading="lazy"
                   height="{{ block.settings.image.height }}"
                   width="{{ block.settings.image.width }}"
@@ -223,25 +223,21 @@
             <div id="grid--content-{{ block.id }}" class="grid--content">
               <div class="grid--content-small-img">
                 {% if block.settings.image != blank %}
-                  <img 
-                    src="{{ block.settings.image | img_url: 'master'}}" 
-                    alt="{{ block.settings.image.alt }}"
-                    height="0"
-                    width="0"
-                    loading="lazy"
-                  > 
+                <img
+                  src="{{ block.settings.image | image_url: width: 900 }}"
+                  alt="{{ block.settings.image.alt | escape }}"
+                  loading="lazy"
+                >
                 {% endif %}
               </div>
 
               <div id="grid--content-text-{{ block.id }}" class="grid--content-text" style="text-align: {{ block.settings.text_alignment }} ;">
                 <div class="grid-content--mobile-img">
-                  <img 
-                    src="{{ block.settings.mobile_image | img_url: 'master'}}" 
-                    alt="{{ block.settings.mobile_image.alt }}"
-                    height="{{ block.settings.mobile_image.height}}"
-                    width="{{ block.settings.mobile_image.width }}"
+                  <img
+                    src="{{ block.settings.mobile_image | image_url: width: 900 }}"
+                    alt="{{ block.settings.mobile_image.alt | escape }}"
                     loading="lazy"
-                  > 
+                  >
                 </div>
                 <div class="grid--content-preheading">{{ block.settings.preheading }}</div>
                 <div class="grid--content-heading">{{ block.settings.heading }}</div>
