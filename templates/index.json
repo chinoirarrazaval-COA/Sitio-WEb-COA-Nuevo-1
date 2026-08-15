@@ -13,8 +13,17 @@
       "type": "banner-responsive",
       "settings": {
         "url_banner": "shopify://collections/all",
-        "desktop_image": "shopify://shop_images/Desktop-no-seguimos-tendencias-segimos-propositos_copia33333.jpg",
-        "mobile_image": "shopify://shop_images/Tendencias-proposito-1.122.jpg"
+        "desktop_image": "shopify://shop_images/banner_2_5551eb39-4538-4d15-acbb-7779e2c36d15.png",
+        "mobile_image": "shopify://shop_images/banner_2_5551eb39-4538-4d15-acbb-7779e2c36d15.png"
+      }
+    },
+    "banner_responsive_Ld4GUn": {
+      "type": "banner-responsive",
+      "disabled": true,
+      "settings": {
+        "url_banner": "shopify://collections/all",
+        "desktop_image": "shopify://shop_images/Banner_mujer1.png",
+        "mobile_image": "shopify://shop_images/banner_2_5551eb39-4538-4d15-acbb-7779e2c36d15.png"
       }
     },
     "1662138878fd85f8b1": {
@@ -23,7 +32,7 @@
         "1662138878de4ecdd9-2": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Poleron-Camuflado-con-cierre-frente.jpg",
+            "image": "shopify://shop_images/Cortaviento-Camo-Verde_d62a026d-4fcf-47df-9617-745269f8129b.jpg",
             "title": "",
             "text": "",
             "link_label": "POLERONES",
@@ -1044,6 +1053,7 @@
   },
   "order": [
     "banner_responsive_kCmhYV",
+    "banner_responsive_Ld4GUn",
     "1662138878fd85f8b1",
     "rich_text_M4YrVe",
     "image_banner_hK9Qkp",
