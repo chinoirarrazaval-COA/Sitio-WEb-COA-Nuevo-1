@@ -593,7 +593,7 @@
         "16620702807688ba7e-0": {
           "type": "heading",
           "settings": {
-            "heading": "<p>Ponemos el tema sobre la mesa, ¿crees que solo el gobierno debe hacerse cargo o es labor de <strong>todos los chilenos</strong>?</p>",
+            "heading": "",
             "heading_size": "h2"
           }
         },
@@ -623,6 +623,7 @@
         "16620702807688ba7e-1",
         "16620702807688ba7e-2"
       ],
+      "disabled": true,
       "settings": {
         "enable_wave_border": false,
         "wave_border_color": "#ffffff",
@@ -650,9 +651,12 @@
       "block_order": [
         "16621256294cbf5e3f-0"
       ],
+      "custom_css": [
+        ".page-width{max-width:100%; padding-left:0; padding-right:0;}"
+      ],
       "settings": {
         "heading": "",
-        "heading_size": "h2",
+        "heading_size": "h0",
         "desktop_layout": "left",
         "mobile_layout": "collage",
         "card_styles": "none",
