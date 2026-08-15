@@ -279,8 +279,8 @@
         "padding_x": 0,
         "pattern_bg_position": "top left",
         "pattern_bg_color": "",
-        "image": "shopify://shop_images/CICATRIZ-1-1-1.png",
-        "image_mobile": "shopify://shop_images/2c26305b-7746-4025-92fc-11f4c6871e65.png",
+        "image": "shopify://shop_images/cicatriz.png",
+        "image_mobile": "shopify://shop_images/cicatriz.png",
         "image_overlay_opacity": 0,
         "image_height": "medium",
         "adapt_height_first_image": true,
@@ -457,6 +457,7 @@
         "1662130778fb8c0f72-1",
         "1662130778fb8c0f72-2"
       ],
+      "disabled": true,
       "settings": {
         "enable_wave_border": true,
         "wave_border_color": "#ffffff",
@@ -474,21 +475,21 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "¡Tan simple como una oportunidad te puede cambiar la vida!",
+            "heading": "",
             "heading_size": "h2"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "¡En COA les damos una segunda oportunidad a los que no han tenido ni siquiera una!",
+            "text": "",
             "text_style": "subtitle"
           }
         },
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "¿Qué es COA?",
+            "button_label_1": "",
             "button_link_1": "shopify://pages/que-es-coa",
             "button_style_secondary_1": true,
             "button_label_2": "",
@@ -508,8 +509,8 @@
         "padding_x": 0,
         "pattern_bg_position": "top left",
         "pattern_bg_color": "",
-        "image": "shopify://shop_images/banner_2.png",
-        "image_mobile": "shopify://shop_images/banner-2-mobile.png",
+        "image": "shopify://shop_images/baner_story.png",
+        "image_mobile": "shopify://shop_images/baner_story.png",
         "image_overlay_opacity": 40,
         "image_height": "medium",
         "adapt_height_first_image": false,
