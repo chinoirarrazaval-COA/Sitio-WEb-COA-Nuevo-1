@@ -96,7 +96,7 @@
         "column_alignment": "left",
         "background_style": "none",
         "button_label": "Navega por nuestras categorías.",
-        "button_link": "shopify://collections",
+        "button_link": "shopify://collections/all",
         "color_scheme": "background-1",
         "columns_mobile": "2",
         "swipe_on_mobile": true,
@@ -138,6 +138,7 @@
         "text_WhTicj",
         "buttons_HrwDYt"
       ],
+      "disabled": true,
       "settings": {
         "enable_wave_border": true,
         "wave_border_color": "#ffffff",
@@ -869,7 +870,7 @@
         "51de9525-09c0-4354-b31c-3ffeadfddf92"
       ],
       "custom_css": [
-        ".page-width{max-width:100%; padding-left:0; padding-right:0;}"
+        ".page-width {max-width: 100%; padding-left: 0; padding-right: 0;}"
       ],
       "settings": {
         "heading": "",
