@@ -839,6 +839,7 @@
       "blocks": {
         "1662130345b0990a10-0": {
           "type": "video",
+          "disabled": true,
           "settings": {
             "cover_image": "shopify://shop_images/portada-video_d903f197-108e-4e29-b328-657de8d48403.png",
             "video_url": "https://www.youtube.com/watch?v=BLZsNvL8KAM",
@@ -849,7 +850,7 @@
         "a04af46a-b3fd-4304-a7ea-391208dca188": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/escuelita-horizontal-home.png",
+            "image": "shopify://shop_images/escuela_de_surf.png",
             "image_padding": false
           }
         },
@@ -867,15 +868,18 @@
         "a04af46a-b3fd-4304-a7ea-391208dca188",
         "51de9525-09c0-4354-b31c-3ffeadfddf92"
       ],
+      "custom_css": [
+        ".page-width{max-width:100%; padding-left:0; padding-right:0;}"
+      ],
       "settings": {
-        "heading": "Escuela de Surf",
+        "heading": "",
         "heading_size": "h2",
         "desktop_layout": "right",
         "mobile_layout": "collage",
         "card_styles": "none",
         "color_scheme": "background-1",
-        "padding_top": 20,
-        "padding_bottom": 24
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "16621326336839161f": {
