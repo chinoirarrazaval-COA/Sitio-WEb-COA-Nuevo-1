@@ -640,33 +640,25 @@
         "16621256294cbf5e3f-0": {
           "type": "video",
           "settings": {
-            "cover_image": "shopify://shop_images/portada-video_a6285f2a-73fa-48e6-b0be-bcc459cca402.png",
+            "cover_image": "shopify://shop_images/baner_oportunidades.png",
             "video_url": "https://youtu.be/70msym8XQFo?si=A6AxuG85kh9H4-3c",
-            "description": "Reinserción de reos en la sociedad",
+            "description": "",
             "image_padding": true
-          }
-        },
-        "cee388cd-f2c1-42a7-bd25-dd1c24850df7": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/foto2-sin_raya.png",
-            "image_padding": false
           }
         }
       },
       "block_order": [
-        "16621256294cbf5e3f-0",
-        "cee388cd-f2c1-42a7-bd25-dd1c24850df7"
+        "16621256294cbf5e3f-0"
       ],
       "settings": {
-        "heading": "Ve este video de nuestras actividades",
+        "heading": "",
         "heading_size": "h2",
         "desktop_layout": "left",
         "mobile_layout": "collage",
         "card_styles": "none",
         "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "16627507600f0abf9c": {
