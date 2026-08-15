@@ -652,7 +652,7 @@
         "16621256294cbf5e3f-0"
       ],
       "custom_css": [
-        ".page-width{max-width:100%; padding-left:0; padding-right:0;}"
+        ".page-width {max-width: 100%; padding-left: 0; padding-right: 0;}"
       ],
       "settings": {
         "heading": "",
@@ -691,6 +691,7 @@
         "1662750760bd39a13d-1",
         "1662750760bd39a13d-2"
       ],
+      "disabled": true,
       "settings": {
         "enable_wave_border": false,
         "wave_border_color": "#ffffff",
@@ -765,7 +766,7 @@
         "166212771331566eba-0": {
           "type": "video",
           "settings": {
-            "cover_image": "shopify://shop_images/portada-video-sename.png",
+            "cover_image": "shopify://shop_images/sename_1.png",
             "video_url": "https://www.youtube.com/watch?v=cKMBdvyE7Xg",
             "description": "Describe the video",
             "image_padding": false
@@ -773,6 +774,7 @@
         },
         "a5d5f647-3cd5-4dba-8706-6b465e414265": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/sename-peque_cf0408f0-b3c6-470e-9463-050791f0d60e.gif",
             "image_padding": false
@@ -784,7 +786,7 @@
         "a5d5f647-3cd5-4dba-8706-6b465e414265"
       ],
       "settings": {
-        "heading": "El 1% de las ventas va a talleres y actividades para el SENAME",
+        "heading": "",
         "heading_size": "h2",
         "desktop_layout": "left",
         "mobile_layout": "collage",
@@ -820,6 +822,7 @@
         "1662751065c037c45a-1",
         "1662751065c037c45a-2"
       ],
+      "disabled": true,
       "settings": {
         "enable_wave_border": false,
         "wave_border_color": "#ffffff",
