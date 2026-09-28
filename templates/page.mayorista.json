@@ -37,23 +37,36 @@
     "1662405593f7424deb": {
       "type": "rich-text",
       "blocks": {
-        "16624055921422f43d-0": {
+        "titulo": {
           "type": "heading",
           "settings": {
-            "heading": "<p>Negocios mayoristas</p>",
+            "heading": "<p>Ropa corporativa con algo que contar</p>",
             "heading_size": "h1"
           }
         },
-        "16624055921422f43d-1": {
+        "bajada": {
           "type": "text",
           "settings": {
-            "text": "<p>¿Quieres ser parte? Escríbenos</p>"
+            "text": "<p>Poleras, polerones, polars, chaquetas, camisas, pantalón de trabajo y regalos corporativos con el logo de tu empresa bordado o estampado. Diseños que salen del coa y un aporte real: el 1% de cada pedido vuelve a jóvenes en reinserción.</p>"
+          }
+        },
+        "boton": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Cotizar por WhatsApp",
+            "button_link_1": "https://wa.me/56964326322?text=Hola%20COA%2C%20quiero%20cotizar%20ropa%20corporativa",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false,
+            "target_blank": true
           }
         }
       },
       "block_order": [
-        "16624055921422f43d-0",
-        "16624055921422f43d-1"
+        "titulo",
+        "bajada",
+        "boton"
       ],
       "settings": {
         "enable_wave_border": true,
@@ -82,12 +95,217 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "empresas_clientes": {
+      "type": "multicolumn",
+      "blocks": {
+        "empresas_clientes_0": {
+          "type": "column",
+          "settings": {
+            "title": "Coca-Cola Andina",
+            "text": "<p>Polerones y poleras con su mensaje de seguridad y sus pilares de sustentabilidad.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "empresas_clientes_1": {
+          "type": "column",
+          "settings": {
+            "title": "Lollapalooza Chile",
+            "text": "<p>Ropa para su equipo de producción.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "empresas_clientes_2": {
+          "type": "column",
+          "settings": {
+            "title": "PF Alimentos, DyD Cargo y Andes Containers",
+            "text": "<p>Uniformes y regalos para sus equipos, dos veces al año.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "empresas_clientes_0",
+        "empresas_clientes_1",
+        "empresas_clientes_2"
+      ],
+      "settings": {
+        "title": "Empresas que ya se visten con COA",
+        "heading_size": "h2",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "empresas_como": {
+      "type": "multicolumn",
+      "blocks": {
+        "empresas_como_0": {
+          "type": "column",
+          "settings": {
+            "title": "1. Nos cuentas",
+            "text": "<p>Qué prendas, cuántas unidades, para cuándo y tu logo.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "empresas_como_1": {
+          "type": "column",
+          "settings": {
+            "title": "2. Te cotizamos",
+            "text": "<p>En menos de 24 horas, con opciones de prenda y precio por unidad.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "empresas_como_2": {
+          "type": "column",
+          "settings": {
+            "title": "3. Muestra",
+            "text": "<p>Antes de producir, apruebas cómo queda el bordado o estampado.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "empresas_como_3": {
+          "type": "column",
+          "settings": {
+            "title": "4. Entrega",
+            "text": "<p>Te lo llevamos listo y te contamos a dónde fue el aporte de tu pedido.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "empresas_como_0",
+        "empresas_como_1",
+        "empresas_como_2",
+        "empresas_como_3"
+      ],
+      "settings": {
+        "title": "Cómo trabajamos",
+        "heading_size": "h2",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "empresas_datos": {
+      "type": "multicolumn",
+      "blocks": {
+        "empresas_datos_0": {
+          "type": "column",
+          "settings": {
+            "title": "Desde 12 unidades",
+            "text": "<p>Por diseño de bordado. Sin mínimos imposibles.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "empresas_datos_1": {
+          "type": "column",
+          "settings": {
+            "title": "Todo tipo de prendas",
+            "text": "<p>Poleras, polerones, polars, chaquetas, camisas, pantalón de trabajo y regalos.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "empresas_datos_2": {
+          "type": "column",
+          "settings": {
+            "title": "Con propósito",
+            "text": "<p>El 1% de cada pedido va a jóvenes en reinserción: surf, nieve, bici y un taller de serigrafía.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "empresas_datos_0",
+        "empresas_datos_1",
+        "empresas_datos_2"
+      ],
+      "settings": {
+        "title": "Lo que necesitas saber",
+        "heading_size": "h2",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "empresas_cotizar": {
+      "type": "rich-text",
+      "blocks": {
+        "t": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Cotiza tu pedido</p>",
+            "heading_size": "h2"
+          }
+        },
+        "x": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Déjanos tus datos y te respondemos en menos de 24 horas. Si prefieres, escríbenos a <a href=\"mailto:arturo.irarrazaval@coachile.com\">arturo.irarrazaval@coachile.com</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "t",
+        "x"
+      ],
+      "settings": {
+        "enable_wave_border": false,
+        "wave_border_color": "#ffffff",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 8
+      }
     }
   },
   "order": [
     "1662405453d6a8a2db",
     "main",
     "1662405593f7424deb",
+    "empresas_clientes",
+    "empresas_como",
+    "empresas_datos",
+    "empresas_cotizar",
     "1661790790aca96d1b"
   ]
 }

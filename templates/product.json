@@ -114,6 +114,12 @@
             "text": "Envío gratis sobre $45.000 a todo Chile · Cambios gratis, siempre",
             "text_style": "subtitle"
           }
+        },
+        "guia_tallas": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'coa-guia-tallas', product: product %}"
+          }
         }
       },
       "block_order": [
@@ -122,6 +128,7 @@
         "caption",
         "price",
         "variant_picker",
+        "guia_tallas",
         "quantity_selector",
         "buy_buttons",
         "envio_cambios",

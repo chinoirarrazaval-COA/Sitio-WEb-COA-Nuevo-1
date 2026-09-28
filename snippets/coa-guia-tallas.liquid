@@ -1,0 +1,90 @@
+{% comment %}
+  Guía de tallas en la ficha de producto.
+  Uso: {% render 'coa-guia-tallas', product: product %}
+  Solo se muestra en productos con opción "Talla".
+  Si el producto tiene el metafield custom.guia_tallas (texto enriquecido o HTML con una tabla),
+  se muestra esa tabla. Si no, se muestra cómo medir y el contacto por WhatsApp.
+{% endcomment %}
+{%- liquid
+  assign tiene_talla = false
+  for option in product.options
+    assign op = option | downcase
+    if op == 'talla' or op == 'size' or op == 'tallas'
+      assign tiene_talla = true
+    endif
+  endfor
+  assign tabla = product.metafields.custom.guia_tallas
+  assign tabla_html = ''
+  if tabla != blank
+    if tabla.type == 'rich_text_field'
+      assign tabla_html = tabla | metafield_tag
+    else
+      assign tabla_html = tabla.value
+    endif
+  elsif product.description contains '<table'
+    assign partes = product.description | split: '<table'
+    assign resto = partes[1] | split: '</table>'
+    assign tabla_html = '<table' | append: resto.first | append: '</table>'
+  endif
+  assign whatsapp_texto = 'Hola COA, ¿qué talla me recomiendan para ' | append: product.title | append: '? Mido ___ cm y peso ___ kg.'
+-%}
+{%- if tiene_talla -%}
+  <div class="coa-tallas">
+    <button type="button" class="coa-tallas__abrir" onclick="document.getElementById('CoaTallas-{{ product.id }}').showModal()">
+      Guía de tallas
+    </button>
+    <dialog id="CoaTallas-{{ product.id }}" class="coa-tallas__dialogo" aria-labelledby="CoaTallasTitulo-{{ product.id }}">
+      <div class="coa-tallas__cabecera">
+        <h2 id="CoaTallasTitulo-{{ product.id }}" class="h3">Guía de tallas</h2>
+        <button type="button" class="coa-tallas__cerrar" aria-label="Cerrar" onclick="this.closest('dialog').close()">&times;</button>
+      </div>
+
+      {%- if tabla_html != blank -%}
+        <div class="coa-tallas__tabla rte">{{ tabla_html }}</div>
+        <p class="coa-tallas__nota">Medidas de la prenda en centímetros, tomadas en plano. Pueden variar 1 a 2 cm.</p>
+      {%- endif -%}
+
+      <h3 class="coa-tallas__subtitulo">Cómo elegir tu talla</h3>
+      <ol class="coa-tallas__pasos">
+        <li>Toma una prenda tuya que te quede bien y estírala sobre una mesa.</li>
+        <li>Mide el <strong>ancho</strong> de axila a axila.</li>
+        <li>Mide el <strong>largo</strong> desde el hombro, junto al cuello, hasta el borde de abajo.</li>
+        {%- if tabla_html != blank -%}
+          <li>Compara esas medidas con la tabla de arriba.</li>
+        {%- else -%}
+          <li>Escríbenos con esas medidas y te decimos qué talla te queda.</li>
+        {%- endif -%}
+      </ol>
+
+      <p class="coa-tallas__ayuda">¿Dudas? Mándanos tu estatura y peso por WhatsApp y te decimos cuál te queda.</p>
+      <a
+        class="button button--secondary coa-tallas__whatsapp"
+        href="https://wa.me/56964326322?text={{ whatsapp_texto | url_encode }}"
+        target="_blank"
+        rel="noopener"
+      >
+        Preguntar por WhatsApp
+      </a>
+      <p class="coa-tallas__cambios">Y si igual no te queda, el cambio es gratis. Siempre.</p>
+    </dialog>
+  </div>
+  <style>
+    .coa-tallas { margin: 0.4rem 0 1.2rem; }
+    .coa-tallas__abrir { background: none; border: 0; padding: 0; font: inherit; font-size: 1.4rem; text-decoration: underline; text-underline-offset: 0.3rem; cursor: pointer; color: inherit; }
+    .coa-tallas__dialogo { width: min(52rem, calc(100vw - 3.2rem)); max-height: 85vh; border: 0; border-radius: 0.4rem; padding: 2.4rem; }
+    .coa-tallas__dialogo::backdrop { background: rgba(0, 0, 0, 0.55); }
+    .coa-tallas__cabecera { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+    .coa-tallas__cabecera h2 { margin: 0; }
+    .coa-tallas__cerrar { background: none; border: 0; font-size: 3rem; line-height: 1; cursor: pointer; color: inherit; }
+    .coa-tallas .coa-tallas__tabla table { width: 100%; table-layout: fixed; border-collapse: collapse; border: 0; margin-top: 1.6rem; font-size: 1.4rem; }
+    .coa-tallas .coa-tallas__tabla th, .coa-tallas .coa-tallas__tabla td { border: 0; border-bottom: 1px solid #e5e5e5; padding: 0.8rem 0.4rem; text-align: center; background: none; }
+    .coa-tallas .coa-tallas__tabla tr { display: table-row !important; }
+    .coa-tallas .coa-tallas__tabla th, .coa-tallas .coa-tallas__tabla td { display: table-cell !important; width: auto !important; }
+    .coa-tallas .coa-tallas__tabla tr:first-child th, .coa-tallas .coa-tallas__tabla thead th { font-weight: 700; background: #f3f3f3; }
+    .coa-tallas__nota, .coa-tallas__cambios { font-size: 1.3rem; opacity: 0.75; }
+    .coa-tallas__subtitulo { margin: 2rem 0 0.8rem; font-size: 1.6rem; }
+    .coa-tallas__pasos { padding-left: 2rem; font-size: 1.4rem; line-height: 1.6; }
+    .coa-tallas__ayuda { font-size: 1.4rem; margin-top: 1.6rem; }
+    .coa-tallas__whatsapp { margin-top: 0.4rem; }
+  </style>
+{%- endif -%}
