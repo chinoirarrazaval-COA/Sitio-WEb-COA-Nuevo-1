@@ -1,0 +1,77 @@
+{%- comment -%}
+  Fuentes del diccionario coa — credito de las obras de donde sale el material.
+{%- endcomment -%}
+
+{% raw %}
+<style>
+  .coafu{background:#131110;color:#f0ebe6;font-family:"Chivo","Helvetica Neue",Arial,sans-serif;line-height:1.55;padding-inline:20px;padding-block:48px 52px}
+  .coafu *{box-sizing:border-box}
+  .coafu__w{max-width:660px;margin:0 auto}
+  .coafu p{margin:0}
+  .coafu__eye{font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#948a83;margin:0}
+  .coafu__h{font-weight:900;font-size:clamp(26px,7vw,40px);line-height:1;letter-spacing:-.02em;margin:10px 0 0}
+  .coafu__h span{color:#e22120}
+  .coafu__lede{color:#948a83;font-size:16px;margin-top:16px;max-width:52ch}
+  .coafu__list{list-style:none;margin:30px 0 0;padding:0}
+  .coafu__list li{border-top:1px solid #38312d;padding:18px 0}
+  .coafu__list li:last-child{border-bottom:1px solid #38312d}
+  .coafu__yr{font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.14em;color:#f4d400;display:block;margin-bottom:6px}
+  .coafu__ti{font-weight:700;font-size:17px;display:block;line-height:1.3}
+  .coafu__au{display:block;font-size:15px;color:#f0ebe6;margin-top:4px}
+  .coafu__no{display:block;font-size:14px;color:#948a83;margin-top:7px;max-width:56ch}
+  .coafu__foot{margin-top:30px;font-size:14px;color:#948a83;line-height:1.65;max-width:56ch}
+  .coafu__foot strong{color:#f0ebe6}
+</style>
+
+<section class="coafu">
+  <div class="coafu__w">
+    <p class="coafu__eye">Las fuentes</p>
+    <p class="coafu__h">Esto no lo <span>inventamos</span> nosotros</p>
+    <p class="coafu__lede">El coa lleva más de un siglo escribiéndose. Hubo gente que se dio el trabajo de anotarlo cuando a nadie más le importaba, y de ahí sale buena parte de lo que estás leyendo.</p>
+
+    <ul class="coafu__list">
+      <li>
+        <span class="coafu__yr">1910</span>
+        <span class="coafu__ti">Jerga de los delincuentes chilenos. Estudio y vocabulario</span>
+        <span class="coafu__au">Julio Vicuña Cifuentes · Imprenta Universitaria, Santiago</span>
+        <span class="coafu__no">El primero. Lo presentó al Congreso Científico Internacional Americano de Buenos Aires ese mismo año.</span>
+      </li>
+      <li>
+        <span class="coafu__yr">1934</span>
+        <span class="coafu__ti">Jerga usada por los delincuentes nortinos</span>
+        <span class="coafu__au">Aníbal Echeverría y Reyes, de la Academia Chilena · Imprenta «El Águila», Concepción</span>
+        <span class="coafu__no">Recogida en conversaciones, declaraciones y diligencias judiciales del norte del país.</span>
+      </li>
+      <li>
+        <span class="coafu__yr">1979</span>
+        <span class="coafu__ti">Diccionario coa</span>
+        <span class="coafu__au">Armando Méndez Carrasco · Editorial Nascimento, Santiago</span>
+        <span class="coafu__no">El más conocido de todos, del autor de «Chicago Chico» y «El mundo herido». Tiraje original: 2.000 ejemplares.</span>
+      </li>
+      <li>
+        <span class="coafu__yr">2021</span>
+        <span class="coafu__ti">Hablemos sobre el coa, más allá de la cárcel</span>
+        <span class="coafu__au">Gendarmería de Chile · Programa Puentes UC</span>
+        <span class="coafu__no">Funcionarios de todo el país juntaron más de 2.000 términos; quedaron 331. El diseño y la investigación los hicieron los estudiantes Danae Muñoz Bozo y Miguel Bustos Camilo.</span>
+      </li>
+      <li>
+        <span class="coafu__yr">Hoy</span>
+        <span class="coafu__ti">Ustedes</span>
+        <span class="coafu__au">Las palabras que llegan por el formulario de más arriba</span>
+        <span class="coafu__no">El coa cambia a propósito: cuando una palabra se hace conocida afuera, adentro se reemplaza. Por eso ningún diccionario de coa está terminado nunca.</span>
+      </li>
+    </ul>
+
+    <p class="coafu__foot">Los tres primeros los pudimos leer gracias a <strong>Memoria Chilena, de la Biblioteca Nacional de Chile</strong>, que los digitalizó y los dejó al alcance de cualquiera.</p>
+    <p class="coafu__foot" style="margin-top:14px"><strong>Las definiciones de esta página están escritas por nosotros</strong>, en corto y en chileno. Los libros de arriba son de sus autores y de nadie más: acá los nombramos porque sin ellos esta página no existiría. Si ves un error, escríbenos y lo arreglamos.</p>
+  </div>
+</section>
+{% endraw %}
+
+{% schema %}
+{
+  "name": "Fuentes del diccionario",
+  "settings": [],
+  "presets": [{ "name": "Fuentes del diccionario" }]
+}
+{% endschema %}

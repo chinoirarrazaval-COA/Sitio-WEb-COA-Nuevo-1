@@ -1,0 +1,662 @@
+{%- comment -%}
+  Test del coa — seccion COA
+  Vive dentro de /pages/jerga-coa, ARRIBA del listado de palabras.
+  El listado de palabras se queda como texto plano abajo: es lo que Google indexa.
+{%- endcomment -%}
+
+{% raw %}
+<style>
+  .coatest{
+    --ct-ground:#131110; --ct-surface:#1c1917; --ct-surface2:#262220;
+    --ct-line:#38312d; --ct-ink:#f0ebe6; --ct-muted:#948a83;
+    --ct-red:#e22120; --ct-yellow:#f4d400;
+    background:var(--ct-ground); color:var(--ct-ink);
+    font-family:"Chivo","Helvetica Neue",Arial,sans-serif;
+    line-height:1.55; padding-inline:20px; padding-block:44px 52px;
+  }
+  .coatest *{box-sizing:border-box}
+  .coatest__wrap{max-width:560px;margin:0 auto}
+  .coatest p{margin:0}
+  .coatest a{color:var(--ct-ink)}
+  .coatest :focus-visible{outline:2px solid var(--ct-yellow);outline-offset:3px}
+
+  .ct-eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ct-muted);margin:0;font-family:ui-monospace,Menlo,monospace}
+  .ct-h1{font-weight:900;font-size:clamp(34px,10vw,54px);line-height:.95;letter-spacing:-.02em;margin:10px 0 0;color:var(--ct-ink)}
+  .ct-h1 span{color:var(--ct-red)}
+  .ct-lede{color:var(--ct-muted);font-size:16px;margin-top:16px;max-width:44ch}
+
+  .coatest button{font-family:inherit;font-size:inherit;cursor:pointer}
+  .ct-btn{display:block;width:100%;background:var(--ct-red);color:#fff;border:0;padding:17px 20px;font-weight:900;font-size:15px;letter-spacing:.08em;text-transform:uppercase;transition:filter .15s ease}
+  .ct-btn:hover{filter:brightness(1.12)}
+  .ct-btn--ghost{background:transparent;color:var(--ct-ink);border:1px solid var(--ct-line);font-weight:700}
+  .ct-btn--ghost:hover{background:var(--ct-surface2);filter:none}
+
+  .ct-tally{display:flex;gap:14px;align-items:flex-end;height:30px}
+  .ct-tally svg{display:block;overflow:visible}
+  .ct-tally .s{stroke:var(--ct-line);stroke-width:2.6;stroke-linecap:round}
+  .ct-tally .s.on{stroke:var(--ct-ink)}
+  .ct-tally .s.now{stroke:var(--ct-yellow)}
+  .ct-meta{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:30px}
+  .ct-meta .r{text-align:right}
+  .ct-rec{display:block;margin-top:4px;font-size:10px;opacity:.7}
+
+  .ct-word{font-family:ui-monospace,Menlo,monospace;font-weight:700;font-size:clamp(28px,8vw,42px);line-height:1.1;letter-spacing:-.02em;margin:0 0 6px;color:var(--ct-ink)}
+  .ct-prompt{color:var(--ct-muted);font-size:14px;margin-bottom:22px}
+
+  .ct-opts{display:flex;flex-direction:column;gap:10px}
+  .ct-opt{position:relative;display:block;width:100%;text-align:left;background:var(--ct-surface);color:var(--ct-ink);border:1px solid var(--ct-line);padding:15px 17px;font-size:16px;line-height:1.4;transition:background .12s,border-color .12s}
+  .ct-opt:hover:not(:disabled){background:var(--ct-surface2);border-color:#4a423d}
+  .ct-opt:disabled{cursor:default}
+  .ct-opt.ok{border-color:var(--ct-yellow);background:#241f0c;color:var(--ct-yellow);font-weight:700}
+  .ct-opt.ok::before,.ct-opt.ok::after{content:"";position:absolute;top:9px;bottom:9px;width:3px;background:var(--ct-yellow)}
+  .ct-opt.ok::before{left:5px} .ct-opt.ok::after{right:5px}
+  .ct-opt.bad{border-color:var(--ct-red);color:#e88a89;background:#251110}
+  .ct-opt .tg{font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;display:block;margin-top:5px;opacity:.85}
+
+  .ct-after{margin-top:18px;display:none}
+  .ct-after.show{display:block}
+  .ct-note{border-left:2px solid var(--ct-line);padding:2px 0 2px 14px;color:var(--ct-muted);font-size:14px;margin-bottom:16px}
+  .ct-note .use{display:block;margin-top:7px;font-style:italic;color:#b3a89f}
+  .ct-note .tie{display:block;margin-top:10px;font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ct-yellow)}
+  .ct-note .tie a{color:var(--ct-yellow)}
+
+  .ct-rank{font-weight:900;font-size:clamp(38px,11vw,62px);line-height:.92;letter-spacing:-.025em;margin:12px 0 0;color:var(--ct-yellow)}
+  .ct-score{font-family:ui-monospace,Menlo,monospace;font-size:15px;color:var(--ct-muted);margin-top:14px}
+  .ct-score b{color:var(--ct-ink);font-size:22px}
+  .ct-verdict{margin-top:18px;font-size:17px;max-width:42ch}
+
+  .ct-panel{background:var(--ct-surface);border:1px solid var(--ct-line);padding:22px;margin-top:26px}
+  .ct-panel h2{font-size:13px;font-family:ui-monospace,Menlo,monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--ct-muted);margin:0 0 14px;font-weight:400}
+  .ct-missed{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+  .ct-missed li{border-left:2px solid var(--ct-red);padding-left:14px}
+  .ct-missed .w{font-family:ui-monospace,Menlo,monospace;font-weight:700;font-size:17px;display:block}
+  .ct-missed .m{color:var(--ct-muted);font-size:15px}
+
+  .ct-shop{list-style:none;margin:0;padding:0}
+  .ct-shop li{border-top:1px solid var(--ct-line)}
+  .ct-shop li:first-child{border-top:0}
+  .ct-shop a{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:14px 0;text-decoration:none}
+  .ct-shop a:hover .w{color:var(--ct-yellow)}
+  .ct-shop .w{font-family:ui-monospace,Menlo,monospace;font-weight:700;font-size:16px}
+  .ct-shop .m{color:var(--ct-muted);font-size:13px;text-align:right;flex:none}
+
+  .coatest label{display:block;font-size:14px;margin-bottom:7px;color:var(--ct-muted)}
+  .coatest input[type=email],.coatest input[type=text]{width:100%;background:var(--ct-ground);border:1px solid var(--ct-line);color:var(--ct-ink);font-family:inherit;font-size:16px;padding:14px 15px;border-radius:0}
+  .coatest input::placeholder{color:#5f5751}
+  .coatest input:focus{border-color:var(--ct-yellow);outline:none}
+  .ct-consent{display:flex;gap:10px;align-items:flex-start;margin:16px 0 20px;font-size:13px;color:var(--ct-muted);line-height:1.45}
+  .ct-consent input{margin-top:3px;accent-color:var(--ct-red);flex:none;width:16px;height:16px}
+  .ct-err{color:#e88a89;font-size:13px;margin-top:10px;display:none}
+  .ct-err.show{display:block}
+  .ct-code{font-family:ui-monospace,Menlo,monospace;font-weight:700;font-size:clamp(22px,6vw,30px);letter-spacing:.1em;color:var(--ct-yellow);border:1px dashed var(--ct-yellow);padding:16px;text-align:center;margin:4px 0 16px}
+  .ct-share{margin-top:12px;font-size:14px;color:var(--ct-muted)}
+
+  .ct-foot{margin-top:36px;padding-top:22px;border-top:1px solid var(--ct-line);font-size:13px;color:var(--ct-muted);line-height:1.6}
+  .ct-foot strong{color:var(--ct-ink);font-weight:700}
+
+  .ct-screen{display:none}
+  .ct-screen.on{display:block}
+  @media (prefers-reduced-motion:reduce){.coatest *{transition:none!important}}
+
+  .ct-cardbox{text-align:center}
+  .ct-cardbox canvas{width:100%;max-width:236px;height:auto;display:block;margin:0 auto 16px;border:1px solid var(--ct-line);background:var(--ct-ground)}
+  .ct-cardhint{font-size:14px;color:var(--ct-muted);margin-top:12px!important}
+  .ct-cardhint b{color:var(--ct-ink)}
+</style>
+
+<div class="coatest" id="coatest"><span id="test" aria-hidden="true"></span>
+  <div class="coatest__wrap">
+
+    <section class="ct-screen on" data-s="intro">
+      <p class="ct-eyebrow">Diccionario COA · Test</p>
+      <p class="ct-h1">¿Cachái<br>el <span>coa</span>?</p>
+      <p class="ct-lede">Diez palabras de la jerga carcelaria chilena. Cuatro opciones cada una. Nadie saca diez a la primera — y al final te llevas un 15% de descuento.</p>
+      <p class="ct-eyebrow" data-el="recIntro" style="margin-top:22px;display:none"></p>
+      <div style="margin-top:30px"><button class="ct-btn" data-el="start" type="button">Empezar el test</button></div>
+      <p class="ct-foot" style="margin-top:26px;padding-top:0;border:0">Toma menos de dos minutos. Y si te aburre, el diccionario completo está más abajo.<br><br><strong>Las preguntas cambian cada vez.</strong> Son diez sacadas de un banco de 36, así que no le pidas las respuestas a nadie: no le van a servir.</p>
+    </section>
+
+    <section class="ct-screen" data-s="quiz">
+      <div class="ct-meta">
+        <div>
+          <p class="ct-eyebrow" data-el="qnum">Palabra 1 de 10</p>
+          <div class="ct-tally" data-el="tally" aria-hidden="true"></div>
+        </div>
+        <div class="r">
+          <p class="ct-eyebrow" data-el="hits">0 buenas</p>
+          <p class="ct-eyebrow ct-rec" data-el="recLive"></p>
+        </div>
+      </div>
+      <p class="ct-word" data-el="word">—</p>
+      <p class="ct-prompt">¿Qué significa?</p>
+      <div class="ct-opts" data-el="opts"></div>
+      <div class="ct-after" data-el="after">
+        <p class="ct-note" data-el="note"></p>
+        <button class="ct-btn" data-el="next" type="button">Siguiente</button>
+      </div>
+    </section>
+
+    <section class="ct-screen" data-s="result">
+      <p class="ct-eyebrow">Tu resultado</p>
+      <p class="ct-rank" data-el="rank">—</p>
+      <p class="ct-score"><b data-el="final">0</b> de 10 correctas <span data-el="recNote"></span></p>
+      <p class="ct-verdict" data-el="verdict"></p>
+
+      <div class="ct-panel" data-el="missedBox" style="display:none">
+        <h2>Las que se te escaparon</h2>
+        <ul class="ct-missed" data-el="missed"></ul>
+      </div>
+
+      <div class="ct-panel" data-el="prize">
+        <h2>Llévate tu resultado</h2>
+        <p style="font-size:16px;margin-bottom:20px" data-el="prizeText"></p>
+        <label for="ct-mail">Tu correo</label>
+        <input type="email" id="ct-mail" placeholder="tunombre@correo.cl" autocomplete="email">
+        <div class="ct-consent">
+          <input type="checkbox" id="ct-ok">
+          <label for="ct-ok" style="margin:0">Quiero mi tarjeta, mi código y las novedades de COA. Puedo salirme cuando quiera.</label>
+        </div>
+        <button class="ct-btn" data-el="claim" type="button">Mostrarme mi resultado</button>
+        <p class="ct-err" data-el="err"></p>
+      </div>
+
+      <div class="ct-panel" data-el="reveal" style="display:none">
+        <h2>Ahí está</h2>
+        <p class="ct-code" data-el="codeBox">COA15</p>
+        <p style="font-size:15px;color:var(--ct-muted);margin-bottom:18px">Válido en toda la tienda, un uso por persona. Anótalo o sácale una foto.</p>
+        <a class="ct-btn" href="/collections/all" style="text-align:center;text-decoration:none">Ir a la tienda</a>
+        <p class="ct-share">Sacaste <b data-el="shareScore">0</b>/10. <button data-el="copy" type="button" style="background:none;border:0;color:var(--ct-yellow);padding:0;text-decoration:underline;font-size:14px">Compartir</button>
+        &nbsp;·&nbsp; <button data-el="wsp" type="button" style="background:none;border:0;color:var(--ct-yellow);padding:0;text-decoration:underline;font-size:14px">Mandar por WhatsApp</button></p>
+      </div>
+
+      <div class="ct-panel ct-cardbox" data-el="cardbox" style="display:none">
+        <h2>Muéstralo</h2>
+        <canvas data-el="canvas" width="1080" height="1920" aria-label="Tu resultado del test del coa"></canvas>
+        <button class="ct-btn" data-el="savecard" type="button">Guardar mi resultado</button>
+        <button class="ct-btn ct-btn--ghost" data-el="copylink" type="button" style="margin-top:10px">Copiar el link</button>
+        <p class="ct-cardhint">Súbela a tu historia, ponle el <b>sticker de link</b> con el link copiado y etiqueta a <b>@coa.chile</b>. El que la ve, la juega.</p>
+      </div>
+
+      <div class="ct-panel">
+        <h2>Estas palabras andan puestas</h2>
+        <p style="font-size:15px;color:var(--ct-muted);margin-bottom:16px">Cinco de las que salieron están estampadas en una polera, y una le da el nombre a un plan de aporte mensual. No es casualidad: los diseños salieron de ahí.</p>
+        <ul class="ct-shop">
+          <li><a href="/products/polera-anti-perkin-negro"><span class="w">Perkin</span><span class="m">Polera Anti Perkin</span></a></li>
+          <li><a href="/products/polera-encierro-negra"><span class="w">Los cinco puntos</span><span class="m">Polera Encierro</span></a></li>
+          <li><a href="/products/polera-dias-contado-gris"><span class="w">Contar los días</span><span class="m">Polera Días Contado</span></a></li>
+          <li><a href="/products/polera-destacador-gris"><span class="w">El destacador</span><span class="m">Polera Símbolo Destacador</span></a></li>
+          <li><a href="/products/polera-cicatriz-gris"><span class="w">La cicatriz</span><span class="m">Polera Cicatriz</span></a></li>
+          <li><a href="/products/plan-pa-coronar-20-000"><span class="w">Coronar</span><span class="m">Plan pa Coronar · aporte mensual</span></a></li>
+        </ul>
+      </div>
+
+      <div class="ct-panel">
+        <h2>El diccionario lo hacen ustedes</h2>
+        <p style="font-size:15px;color:var(--ct-muted);margin-bottom:18px">¿Sabes una que no está? Déjala acá. Las que más se repitan las vamos a estampar en una polera — y quien la propuso queda con nombre y apellido en la etiqueta.</p>
+        <div data-el="propForm">
+          <label for="ct-np">La palabra</label>
+          <input type="text" id="ct-np" placeholder="pituto" maxlength="40" autocomplete="off">
+          <label for="ct-ns" style="margin-top:14px">Qué significa</label>
+          <input type="text" id="ct-ns" placeholder="un contacto que te consigue algo" maxlength="140" autocomplete="off">
+          <label for="ct-nm" style="margin-top:14px">Tu correo</label>
+          <input type="email" id="ct-nm" placeholder="tunombre@correo.cl" autocomplete="email">
+          <button class="ct-btn ct-btn--ghost" data-el="send" type="button" style="margin-top:16px">Proponer palabra</button>
+          <p class="ct-err" data-el="propErr"></p>
+        </div>
+        <p class="ct-eyebrow" data-el="propOk" style="margin-top:16px;display:none;color:var(--ct-yellow)"></p>
+      </div>
+
+      <p class="ct-foot">
+        <strong>El coa cambia a propósito.</strong> Cuando una palabra se hace conocida afuera, adentro se reemplaza. Por eso este diccionario nunca está terminado.
+        <br><br>
+        <button class="ct-btn ct-btn--ghost" data-el="again" type="button" style="margin-top:6px">Jugar de nuevo</button>
+      </p>
+    </section>
+
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var root = document.getElementById("coatest");
+  if (!root) return;
+  function el(n){ return root.querySelector('[data-el="'+n+'"]'); }
+  function screen(n){ return root.querySelector('[data-s="'+n+'"]'); }
+
+  var BANK = [
+    ["Andar planchado","Andar con plata",["Andar bien vestido","Andar asustado","Andar prófugo"],"«Anda planchado el compadre, se compró zapatillas nuevas.»",null],
+    ["La yuta","La policía",["El celular","La cárcel","Un soplón"],"«Nos cayó la yuta en la esquina.»",null],
+    ["Coronar","Tener éxito",["Ser el jefe","Salir libre","Cumplir la condena"],"«Coronó con el negocio, le fue bien.»",["Hay un plan que se llama así →","Únete al Plan pa Coronar","/products/plan-pa-coronar-20-000"]],
+    ["Decir la posta","Decir la verdad",["Hablar en coa","Delatar a alguien","Prometer algo"],"«Dime la posta, ¿fuiste tú?»",null],
+    ["Andar con la pera","Andar asustado",["Andar enojado","Andar con hambre","Andar sin plata"],"«Anda con la pera desde que lo pillaron.»",null],
+    ["Un taita","Alguien mayor de 35",["El papá de alguien","El jefe de la banda","Un gendarme antiguo"],"«Ese es taita ya, lleva años acá.»",null],
+    ["Tener frío","Andar sin plata",["Tener miedo","Estar solo","Estar enfermo"],"«Ando con frío, préstame pa la micro.»",null],
+    ["Ser ficha","Ser alguien creíble",["Ser conocido por la policía","Ser nuevo en esto","Ser soplón"],"«Ese cabro es ficha, buena tela.»",null],
+    ["Retobar","No hacer caso",["Devolverse","Contestar mal","Escaparse"],"«Le dijeron que parara y retobó.»",null],
+    ["Dejar en la playa","Una condena corta",["Dejar a alguien botado","Salir en libertad","Un negocio redondo"],"«Lo dejaron en la playa, sale en tres meses.»",null],
+    ["Echar el pelo","Te reconocieron",["Te delataron","Te retaron","Te echaron"],"«Le echaron el pelo apenas entró.»",null],
+    ["Andar del corte","Andar bien vestido",["Andar armado","Andar apurado","Andar solo"],"«Viene del corte, algo va a celebrar.»",null],
+    ["Los perkins","Los soldados de choque",["Los novatos","Los soplones","Los guardias"],"«Mandaron a los perkins adelante.»",["Esta palabra anda estampada →","Polera Anti Perkin","/products/polera-anti-perkin-negro"]],
+    ["La empanada","La sorpresa",["La comida","El engaño","El plan"],"«Le llegó la empanada, no se la esperaba.»",null],
+    ["En una baldosa","Quedar bien parado",["Quedar encerrado","Quedar sin nada","Quedar cerca"],"«Quedó en una baldosa con ese negocio.»",null],
+    ["Estar nítido","Estar clarito",["Estar limpio","Estar tranquilo","Estar listo"],"«Está nítido el asunto, no hay vuelta.»",null],
+    ["Tirar la pelá","Tirar mala onda",["Hablar de más","Empezar una pelea","Irse sin avisar"],"«No me tires la pelá, po.»",null],
+    ["Un abonado","La víctima de una estafa",["Un cliente fijo","Un preso con visitas","El que siempre paga"],"«Cayó de abonado el pobre.»",null],
+    ["Ser fichón","Tener harto prontuario",["Ser muy conocido","Tener buenos contactos","Mandar adentro"],"«Ese es fichón, tiene hoja larga.»",null],
+    ["Acuartelado","Preso",["Castigado en la casa","En el servicio militar","Escondido"],"«Lleva dos años acuartelado.»",["Esta palabra anda estampada →","Polera Encierro","/products/polera-encierro-negra"]],
+    ["Hacer tierra","Estorbar",["Escaparse","Enterrar algo","Perder el tiempo"],"«Córrete, estai haciendo tierra.»",null],
+    ["Entero salvado","Enojado",["Con mucha suerte","A salvo","Completamente libre"],"«Quedó entero salvado cuando le contaron.»",null],
+    ["El sistema","El celular",["La cárcel","La organización","El plan"],"«Pásame el sistema, tengo que llamar.»",null],
+    ["Mil","Un millón",["Mil pesos","Muchísimo","Un año adentro"],"«Le ofrecieron dos mil por el auto.»",null],
+    ["Tapao en cebo","Sin plata",["Lleno de comida","Bien escondido","Con mucha ropa encima"],"«Ando tapao en cebo hasta el día 5.»",null],
+    ["Achavado","Confeso",["Aburrido","Encerrado","Descubierto"],"«Salió achavado en el juicio.»",null],
+    ["Andar librando","Andar prófugo",["Andar ganando","Andar libre","Andar peleando"],"«Anda librando hace meses.»",null],
+    ["Andar de lápiz","Ser estafador",["Ser escribiente","Andar anotando","Andar delgado"],"«Ese anda de lápiz, cuidado.»",null],
+    ["Un acordión","Una camisa",["Un instrumento","Un plegable","Un soplón"],"«Le pasaron un acordión limpio.»",null],
+    ["Ponerse amarillo","Ponerse fome",["Ponerse cobarde","Enfermarse","Ponerse celoso"],"«Se puso amarillo el asunto.»",null],
+    ["Reventar una casa","Un allanamiento",["Una fiesta grande","Una pelea","Vender una propiedad"],"«Reventaron la casa de madrugada.»",null],
+    ["Tártaro","Poca cosa",["Alguien duro","Un extranjero","Un plato de comida"],"«Puro tártaro el negocio ese.»",null],
+    ["Los ratones","La PDI",["Los soplones","Los novatos","Los gendarmes"],"«Andaban los ratones en el barrio.»",null],
+    ["Los pacos","Los gendarmes",["Los carabineros","Los presos viejos","Los abogados"],"«Los pacos hicieron la ronda.»",null],
+    ["Funada","Conocida",["Arruinada","Denunciada","Cancelada"],"«Esa movida ya está funada.»",null],
+    ["No comerse la comida","No creer algo",["No tener hambre","No aceptar un trato","No delatar"],"«No me como la comida, esa historia no cuadra.»",null]
+  ];
+
+  var TIERS = [
+    {min:9, rank:"Choro viejo", code:"CHORO15",  text:"Nueve o diez. O te criaste escuchando esto, o te lo estudiaste. Las dos cosas tienen mérito."},
+    {min:7, rank:"Andái piola", code:"PIOLA15",  text:"Siete u ocho. Te manejas. Las que fallaste son las que cambian de significado según quién las diga."},
+    {min:4, rank:"Tay verde",   code:"VERDE15",  text:"Mitad y mitad. Sabes las que se escaparon a la calle, pero las de adentro todavía no."},
+    {min:0, rank:"Soi perkin",  code:"PERKIN15", text:"Bueno, ahora ya sabes diez palabras más que hace dos minutos. Eso también cuenta."}
+  ];
+
+  var TOTAL = 10;
+  var qs=[], idx=0, hits=0, locked=false, missed=[], best=null, tier=null, intento=0;
+
+  function readBest(){ try{ var v=localStorage.getItem("coa_best"); return v===null?null:parseInt(v,10);}catch(e){return null;} }
+  function writeBest(v){ try{ localStorage.setItem("coa_best",String(v)); }catch(e){} }
+  function readNum(k){ try{ var v=localStorage.getItem(k); return v===null?0:parseInt(v,10)||0; }catch(e){ return 0; } }
+  function writeNum(k,v){ try{ localStorage.setItem(k,String(v)); }catch(e){} }
+  function enviado(){ try{ return localStorage.getItem("coa_enviado"); }catch(e){ return null; } }
+
+  function shuffle(a){ a=a.slice(); for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t;} return a; }
+
+  function build(){
+    qs = shuffle(BANK).slice(0,TOTAL).map(function(r){
+      return {word:r[0], right:r[1], opts:shuffle([r[1]].concat(r[2])), use:r[3], tie:r[4]};
+    });
+    idx=0; hits=0; locked=false; missed=[];
+  }
+
+  function drawTally(){
+    var box = el("tally"); box.innerHTML="";
+    for (var g=0;g<2;g++){
+      var svg=document.createElementNS("http://www.w3.org/2000/svg","svg");
+      svg.setAttribute("width","46"); svg.setAttribute("height","28"); svg.setAttribute("viewBox","0 0 46 28");
+      for (var s=0;s<5;s++){
+        var n=g*5+s, cls="s";
+        if(n<idx) cls+=" on"; else if(n===idx) cls+=" now";
+        var ln=document.createElementNS("http://www.w3.org/2000/svg","line");
+        if(s<4){ var x=5+s*8; ln.setAttribute("x1",x); ln.setAttribute("y1","3"); ln.setAttribute("x2",x); ln.setAttribute("y2","25"); }
+        else { ln.setAttribute("x1","1"); ln.setAttribute("y1","24"); ln.setAttribute("x2","33"); ln.setAttribute("y2","4"); }
+        ln.setAttribute("class",cls); svg.appendChild(ln);
+      }
+      box.appendChild(svg);
+    }
+  }
+
+  function render(){
+    var q=qs[idx]; locked=false;
+    el("qnum").textContent = "Palabra "+(idx+1)+" de "+TOTAL;
+    el("hits").textContent = hits+(hits===1?" buena":" buenas");
+    el("recLive").textContent = best===null ? "" : "récord "+best+"/10";
+    el("word").textContent = q.word;
+    el("after").classList.remove("show");
+    drawTally();
+    var box=el("opts"); box.innerHTML="";
+    q.opts.forEach(function(t){
+      var b=document.createElement("button");
+      b.className="ct-opt"; b.type="button"; b.textContent=t;
+      b.addEventListener("click", function(){ answer(b,t,q); });
+      box.appendChild(b);
+    });
+  }
+
+  function answer(btn,picked,q){
+    if(locked) return; locked=true;
+    var good = picked===q.right;
+    if(good) hits++; else missed.push(q);
+    Array.prototype.forEach.call(el("opts").children, function(o){
+      o.disabled=true;
+      if(o.textContent===q.right){
+        o.classList.add("ok");
+        if(!good){ var t=document.createElement("span"); t.className="tg"; t.textContent="Esta era"; o.appendChild(t); }
+      } else if(o===btn){ o.classList.add("bad"); }
+    });
+    el("hits").textContent = hits+(hits===1?" buena":" buenas");
+    var note=el("note");
+    note.textContent = "«"+q.word+"» es "+q.right.toLowerCase()+".";
+    var use=document.createElement("span"); use.className="use"; use.textContent=q.use; note.appendChild(use);
+    if(q.tie){
+      var tie=document.createElement("span"); tie.className="tie";
+      var a=document.createElement("a"); a.href=q.tie[2]; a.textContent=q.tie[1];
+      tie.appendChild(document.createTextNode(q.tie[0]+" ")); tie.appendChild(a);
+      note.appendChild(tie);
+    }
+    el("next").textContent = (idx===TOTAL-1) ? "Ver mi resultado" : "Siguiente";
+    el("after").classList.add("show");
+  }
+
+  function go(n){
+    ["intro","quiz","result"].forEach(function(s){ screen(s).classList.toggle("on", s===n); });
+    root.scrollIntoView({behavior:"smooth", block:"start"});
+  }
+
+  function finish(){
+    tier = TIERS.filter(function(t){ return hits>=t.min; })[0];
+    intento = readNum("coa_intentos") + 1;
+    writeNum("coa_intentos", intento);
+    var prev=best;
+    if(best===null || hits>best){ best=hits; writeBest(hits); }
+    el("rank").textContent = tier.rank.toUpperCase();
+    el("final").textContent = hits;
+    el("shareScore").textContent = hits;
+    el("verdict").textContent = tier.text;
+    el("codeBox").textContent = tier.code;
+    cardReady = false; buildCard();
+    var rn=el("recNote");
+    if(prev!==null && hits>prev) rn.textContent="· récord nuevo, antes "+prev;
+    else if(prev!==null) rn.textContent="· tu récord es "+prev;
+    else rn.textContent="";
+
+    var mb=el("missedBox"), ml=el("missed"); ml.innerHTML="";
+    if(missed.length){
+      missed.forEach(function(q){
+        var li=document.createElement("li");
+        var w=document.createElement("span"); w.className="w"; w.textContent=q.word;
+        var m=document.createElement("span"); m.className="m"; m.textContent=q.right;
+        li.appendChild(w); li.appendChild(m); ml.appendChild(li);
+      });
+      mb.style.display="";
+    } else { mb.style.display="none"; }
+
+    var ya = enviado();
+    if (ya){
+      el("prizeText").textContent = "Ya dejaste tu correo. Tu tarjeta y tu código están abajo.";
+      el("prize").style.display="none";
+      el("reveal").style.display="";
+      el("cardbox").style.display="";
+    } else if (intento > 1){
+      el("prizeText").textContent = "Este es tu intento N\u00b0" + intento + ". Igual te armamos la tarjeta con este puntaje y el c\u00f3digo sigue en pie.";
+    } else {
+      el("prizeText").textContent = hits>=7
+        ? "Te armamos la tarjeta con tu puntaje para que la subas, y va con 15% de descuento adentro. D\u00e9janos d\u00f3nde mandarla."
+        : "Te armamos la tarjeta con tu puntaje para que la subas \u2014 y con 15% de descuento igual, aunque te haya ido as\u00ed. D\u00e9janos d\u00f3nde mandarla.";
+    }
+    if (!ya){ el("prize").style.display=""; el("reveal").style.display="none"; el("cardbox").style.display="none"; }
+    document.getElementById("ct-mail").value="";
+    document.getElementById("ct-ok").checked=false;
+    el("err").classList.remove("show");
+    go("result");
+  }
+
+  function post(fields){
+    var fd = new FormData();
+    fd.append("utf8","✓");
+    Object.keys(fields).forEach(function(k){ fd.append(k, fields[k]); });
+    return fetch("/contact", {method:"POST", body:fd, headers:{"Accept":"text/html"}});
+  }
+
+  var MAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  el("start").addEventListener("click", function(){ build(); render(); go("quiz"); });
+  el("again").addEventListener("click", function(){ build(); render(); go("quiz"); });
+  el("next").addEventListener("click", function(){
+    if(idx===TOTAL-1){ finish(); return; }
+    idx++; render();
+  });
+
+  el("claim").addEventListener("click", function(){
+    var v=document.getElementById("ct-mail").value.trim(), err=el("err");
+    if(!MAIL.test(v)){ err.textContent="Ese correo no se ve bien. Revísalo y prueba de nuevo."; err.classList.add("show"); return; }
+    if(!document.getElementById("ct-ok").checked){ err.textContent="Marca la casilla para que podamos mandarte el código."; err.classList.add("show"); return; }
+    err.classList.remove("show");
+    el("claim").disabled=true;
+    post({"form_type":"customer","contact[email]":v,
+      "contact[tags]":"newsletter,test-coa,"+tier.code+",intento-"+intento+",puntaje-"+hits+(intento===1?",primer-intento":",repeticion")});
+    try{ localStorage.setItem("coa_enviado", String(hits)); }catch(e){}
+    document.getElementById("ct-nm").value = v;
+    el("prize").style.display="none";
+    el("reveal").style.display="";
+    el("cardbox").style.display="";
+    el("reveal").scrollIntoView({behavior:"smooth", block:"center"});
+  });
+
+  el("send").addEventListener("click", function(){
+    var p=document.getElementById("ct-np").value.trim(),
+        s=document.getElementById("ct-ns").value.trim(),
+        m=document.getElementById("ct-nm").value.trim(),
+        err=el("propErr");
+    if(p.length<2){ err.textContent="Escribe la palabra."; err.classList.add("show"); return; }
+    if(s.length<3){ err.textContent="Falta el significado."; err.classList.add("show"); return; }
+    if(!MAIL.test(m)){ err.textContent="Déjanos tu correo para poder darte el crédito."; err.classList.add("show"); return; }
+    err.classList.remove("show");
+    el("send").disabled=true;
+    post({
+      "form_type":"contact",
+      "contact[email]": m,
+      "contact[Palabra propuesta]": p,
+      "contact[Significado]": s,
+      "contact[body]": "PALABRA COA PROPUESTA\nPalabra: "+p+"\nSignificado: "+s
+    }).then(function(){
+      el("propForm").style.display="none";
+      var ok=el("propOk");
+      ok.textContent="Anotada. Si se repite, se estampa.";
+      ok.style.display="";
+    }).catch(function(){
+      el("send").disabled=false;
+      err.textContent="No se pudo enviar. Prueba de nuevo en un rato.";
+      err.classList.add("show");
+    });
+  });
+
+  el("copy").addEventListener("click", function(){
+    var txt=shareText();
+    if(navigator.share){
+      navigator.share({title:"¿Cachái el coa?", text:txt, url:"https://coasurf.com/coa"}).catch(function(){});
+      return;
+    }
+    var done=function(){ el("copy").textContent="Copiado"; };
+    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(done,done); }
+    else { done(); }
+  });
+  el("wsp").addEventListener("click", function(){
+    var txt=shareText();
+    window.open("https://wa.me/?text="+encodeURIComponent(txt),"_blank","noopener");
+  });
+
+  function shareText(){
+    return "Saqué "+hits+"/10 en el test del coa de COA. Salí "+tier.rank+". ¿Cachái más que yo? https://coasurf.com/coa";
+  }
+
+
+  /* ---- tarjeta de resultado para historias ---- */
+  var COA_LOGO = "data:image/png;base64,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";
+  var BLACKF = '"Archivo Black","Arial Black",Arial,sans-serif';
+  var MONOF  = 'ui-monospace,Menlo,Consolas,"Courier New",monospace';
+  var cardReady = false, logoImg = null;
+
+  function loadFont(cb){
+    if (!document.fonts || !document.fonts.load) return cb();
+    if (document.fonts.check('40px "Archivo Black"')) return cb();
+    if (!document.getElementById("coa-ab-font")){
+      var l = document.createElement("link");
+      l.id = "coa-ab-font"; l.rel = "stylesheet";
+      l.href = "https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap";
+      document.head.appendChild(l);
+    }
+    var fired = false, fin = function(){ if(!fired){ fired = true; cb(); } };
+    setTimeout(fin, 2500);
+    document.fonts.load('40px "Archivo Black"').then(fin, fin);
+  }
+
+  function ctxWrap(ctx, text, maxw){
+    var words = text.split(" "), lines = [], cur = "";
+    for (var i=0;i<words.length;i++){
+      var t = cur ? cur+" "+words[i] : words[i];
+      if (ctx.measureText(t).width <= maxw) cur = t;
+      else { if (cur) lines.push(cur); cur = words[i]; }
+    }
+    if (cur) lines.push(cur);
+    return lines;
+  }
+  function trackedW(ctx, t, tr){
+    var w = 0;
+    for (var i=0;i<t.length;i++) w += ctx.measureText(t[i]).width + (i<t.length-1?tr:0);
+    return w;
+  }
+  function trackedC(ctx, t, cx, y, tr){
+    var x = cx - trackedW(ctx, t, tr)/2;
+    for (var i=0;i<t.length;i++){ ctx.fillText(t[i], x, y); x += ctx.measureText(t[i]).width + tr; }
+  }
+
+  function paintCard(){
+    var cv = el("canvas"); if (!cv || !cv.getContext) return;
+    var ctx = cv.getContext("2d");
+    var W = 1080, H = 1920, M = 90, CW = W - 2*M, CX = W/2;
+    var GROUND = "#131110", INK = "#f0ebe6", MUTED = "#948a83", RED = "#e22120", YELLOW = "#f4d400";
+
+    ctx.clearRect(0,0,W,H);
+    ctx.fillStyle = GROUND; ctx.fillRect(0,0,W,H);
+    ctx.textBaseline = "top"; ctx.textAlign = "left";
+
+    if (logoImg && logoImg.complete && logoImg.naturalHeight){
+      var lh = 160, lw = Math.round(logoImg.naturalWidth * lh / logoImg.naturalHeight);
+      ctx.drawImage(logoImg, Math.round((W-lw)/2), 140, lw, lh);
+    }
+
+    var eye = "EL TEST DEL COA";
+    var score = hits + "/10";
+    var rankTxt = (tier ? tier.rank : "").toUpperCase();
+    var verdict = tier ? tier.text : "";
+
+    ctx.font = '29px ' + MONOF;
+    var EYE_H = 36, GAP_EYE = 70, SCORE_H = 210, GAP_SCORE = 50;
+    var RANK_SZ = 88, RANK_LH = Math.round(RANK_SZ*1.04), GAP_RANK = 66;
+    var RULE_H = 8, GAP_RULE = 64, V_LH = 54;
+
+    ctx.font = RANK_SZ + 'px ' + BLACKF;
+    var rlines = ctxWrap(ctx, rankTxt, CW);
+    ctx.font = '35px ' + MONOF;
+    var vlines = ctxWrap(ctx, verdict, CW).slice(0,5);
+
+    var total = EYE_H+GAP_EYE+SCORE_H+GAP_SCORE+rlines.length*RANK_LH+GAP_RANK+RULE_H+GAP_RULE+vlines.length*V_LH;
+    var TOP = 390, BOT = 1520;
+    var y = TOP + Math.max(0, (BOT-TOP-total)/2);
+
+    ctx.fillStyle = MUTED; ctx.font = '29px ' + MONOF;
+    trackedC(ctx, eye, CX, y, 11); y += EYE_H + GAP_EYE;
+
+    ctx.fillStyle = YELLOW; ctx.font = '200px ' + BLACKF;
+    ctx.fillText(score, CX - ctx.measureText(score).width/2, y); y += SCORE_H + GAP_SCORE;
+
+    ctx.fillStyle = INK; ctx.font = RANK_SZ + 'px ' + BLACKF;
+    for (var i=0;i<rlines.length;i++){
+      ctx.fillText(rlines[i], CX - ctx.measureText(rlines[i]).width/2, y); y += RANK_LH;
+    }
+    y += GAP_RANK;
+
+    ctx.fillStyle = RED; ctx.fillRect(CX-80, y, 160, RULE_H); y += RULE_H + GAP_RULE;
+
+    ctx.fillStyle = MUTED; ctx.font = '35px ' + MONOF;
+    for (var j=0;j<vlines.length;j++){
+      ctx.fillText(vlines[j], CX - ctx.measureText(vlines[j]).width/2, y); y += V_LH;
+    }
+
+    ctx.fillStyle = RED; ctx.fillRect(0, 1610, W, 8);
+    ctx.fillStyle = INK; ctx.font = '64px ' + BLACKF;
+    var cta = "\u00bfCACH\u00c1I EL COA?";
+    ctx.fillText(cta, CX - ctx.measureText(cta).width/2, 1690);
+    ctx.fillStyle = MUTED; ctx.font = '31px ' + MONOF;
+    trackedC(ctx, "COASURF.COM/COA", CX, 1790, 9);
+
+    cardReady = true;
+  }
+
+  function buildCard(){
+    if (!logoImg){
+      logoImg = new Image();
+      logoImg.onload = function(){ loadFont(paintCard); };
+      logoImg.onerror = function(){ loadFont(paintCard); };
+      logoImg.src = COA_LOGO;
+    } else {
+      loadFont(paintCard);
+    }
+  }
+
+  var CORTA = "https://coasurf.com/coa";
+  var clink = el("copylink");
+  if (clink) clink.addEventListener("click", function(){
+    var ok = function(){
+      clink.textContent = "Link copiado";
+      setTimeout(function(){ clink.textContent = "Copiar el link"; }, 2500);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(CORTA).then(ok, ok);
+    } else {
+      var ta = document.createElement("textarea");
+      ta.value = CORTA; ta.setAttribute("readonly","");
+      ta.style.position = "absolute"; ta.style.left = "-9999px";
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand("copy"); } catch(e){}
+      document.body.removeChild(ta); ok();
+    }
+  });
+
+  var save = el("savecard");
+  if (save) save.addEventListener("click", function(){
+    var cv = el("canvas"); if (!cv || !cv.toBlob) return;
+    if (!cardReady) paintCard();
+    var nombre = "coa-test-del-coa-" + hits + "-de-10.png";
+    cv.toBlob(function(blob){
+      if (!blob) return;
+      try {
+        var f = new File([blob], nombre, {type:"image/png"});
+        if (navigator.canShare && navigator.canShare({files:[f]}) && navigator.share){
+          navigator.share({files:[f], text:shareText()}).catch(function(){});
+          return;
+        }
+      } catch(e){}
+      var u = URL.createObjectURL(blob);
+      var a = document.createElement("a");
+      a.href = u; a.download = nombre;
+      document.body.appendChild(a); a.click();
+      setTimeout(function(){ document.body.removeChild(a); URL.revokeObjectURL(u); }, 1500);
+      save.textContent = "Guardada";
+      setTimeout(function(){ save.textContent = "Guardar mi resultado"; }, 2500);
+    }, "image/png");
+  });
+
+
+  best = readBest();
+  if(best!==null){
+    var ri=el("recIntro");
+    var iv=readNum("coa_intentos");
+    ri.textContent="Tu récord: "+best+" de 10"+(iv?" · "+iv+(iv===1?" intento":" intentos"):"");
+    ri.style.display="";
+  }
+  // link directo desde Instagram, TikTok o WhatsApp: parte al tiro
+  if (location.hash === "#test" || /[?&]ir=test/.test(location.search)){
+    build(); render(); go("quiz");
+  }
+})();
+</script>
+{% endraw %}
+
+{% schema %}
+{
+  "name": "Test del coa",
+  "settings": [],
+  "presets": [{ "name": "Test del coa" }]
+}
+{% endschema %}

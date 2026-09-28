@@ -12,18 +12,17 @@
     "banner_responsive_kCmhYV": {
       "type": "banner-responsive",
       "settings": {
-        "url_banner": "shopify://collections/all",
-        "desktop_image": "shopify://shop_images/banner_2_5551eb39-4538-4d15-acbb-7779e2c36d15.png",
-        "mobile_image": "shopify://shop_images/banner_2_5551eb39-4538-4d15-acbb-7779e2c36d15.png"
+        "url_banner": "shopify://collections/productos-destacados",
+        "desktop_image": "shopify://shop_images/COA-banner-home-hero-2026.jpg",
+        "mobile_image": "shopify://shop_images/COA-banner-home-hero-movil-2026.jpg"
       }
     },
     "banner_responsive_Ld4GUn": {
       "type": "banner-responsive",
-      "disabled": true,
       "settings": {
         "url_banner": "shopify://collections/all",
-        "desktop_image": "shopify://shop_images/Banner_mujer1.png",
-        "mobile_image": "shopify://shop_images/banner_2_5551eb39-4538-4d15-acbb-7779e2c36d15.png"
+        "desktop_image": "shopify://shop_images/COA-banner-ropa-2026.jpg",
+        "mobile_image": "shopify://shop_images/COA-banner-ropa-movil-2026.jpg"
       }
     },
     "1662138878fd85f8b1": {
@@ -88,66 +87,20 @@
         "9148439c-d120-4c6d-804c-ef818b0d4078"
       ],
       "settings": {
-        "title": "COA es surf chileno con propósito: tablas y ropa con diseño auténtico, calidad duradera y un impacto social real.",
+        "title": "Elige tu código. Cada diseño significa algo, y ninguno lo inventó una agencia.",
         "heading_size": "h2",
         "image_width": "full",
         "image_ratio": "portrait",
         "columns_desktop": 5,
         "column_alignment": "left",
         "background_style": "none",
-        "button_label": "Navega por nuestras categorías.",
-        "button_link": "shopify://collections/all",
+        "button_label": "Ver todo",
+        "button_link": "shopify://collections/productos-destacados",
         "color_scheme": "background-1",
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "padding_top": 36,
         "padding_bottom": 36
-      }
-    },
-    "rich_text_M4YrVe": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_Wg3xmb": {
-          "type": "heading",
-          "settings": {
-            "heading": "<p><strong>Diseño con propósito. Impacto real.</strong></p>",
-            "heading_size": "h2"
-          }
-        },
-        "text_WhTicj": {
-          "type": "text",
-          "settings": {
-            "text": "<p>En COA creemos que la ropa puede ser más que estilo: puede ser una herramienta para cambiar realidades.<br/>Donamos el 1% de cada venta a actividades que inspiran a jóvenes a elegir un nuevo camino.</p>"
-          }
-        },
-        "buttons_HrwDYt": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Ver colección",
-            "button_link_1": "shopify://collections",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false,
-            "target_blank": true
-          }
-        }
-      },
-      "block_order": [
-        "heading_Wg3xmb",
-        "text_WhTicj",
-        "buttons_HrwDYt"
-      ],
-      "disabled": true,
-      "settings": {
-        "enable_wave_border": true,
-        "wave_border_color": "#ffffff",
-        "desktop_content_position": "left",
-        "content_alignment": "left",
-        "color_scheme": "background-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
       }
     },
     "image_banner_hK9Qkp": {
@@ -165,7 +118,7 @@
           "type": "text",
           "disabled": true,
           "settings": {
-            "text": "En esta colección rescata los códigos tatuados más importantes de las cárceles, los que usan para recordar a quienes los esperan a fuera y cuanto tiempo queda para verlos. Esto traído a nuestras vidas cuanto nos queda para hacer lo que de verdad nos gusta!",
+            "text": "",
             "text_style": "caption-with-letter-spacing"
           }
         },
@@ -173,8 +126,8 @@
           "type": "buttons",
           "disabled": true,
           "settings": {
-            "button_label_1": "Button label",
-            "button_link_1": "",
+            "button_label_1": "",
+            "button_link_1": "shopify://pages/nosotros",
             "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
@@ -191,34 +144,34 @@
         "bg_color": "",
         "padding_y": 0,
         "padding_x": 0,
-        "pattern_bg": "shopify://shop_images/simolos.png",
         "pattern_bg_position": "top left",
         "pattern_bg_color": "",
-        "image": "shopify://shop_images/simolos.png",
-        "image_mobile": "shopify://shop_images/simolos.png",
-        "image_overlay_opacity": 20,
-        "image_height": "large",
-        "adapt_height_first_image": false,
+        "image": "shopify://shop_images/COA-banner-historia-2026.jpg",
+        "image_mobile": "shopify://shop_images/COA-banner-historia-movil-2026.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "adapt_height_first_image": true,
         "page-width": false,
         "desktop_content_position": "middle-center",
-        "show_text_box": true,
+        "show_text_box": false,
         "desktop_content_alignment": "center",
         "color_scheme": "background-1",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": true,
-        "show_text_below": true
+        "show_text_below": false,
+        "banner_link": "shopify://pages/nosotros",
+        "banner_link_label": "Conoce la historia"
       }
     },
     "featured_collection_aFA8TM": {
       "type": "featured-collection",
-      "disabled": false,
       "settings": {
-        "title": "Colección COA: surf y propósito",
+        "title": "Lo que más se llevan",
         "heading_size": "h2",
-        "description": "<p>Descubre productos creados con espíritu chileno, diseño auténtico y impacto social. El 1% de cada venta apoya programas de surf educativo y reinserción social.</p>",
-        "show_description": true,
+        "description": "",
+        "show_description": false,
         "description_style": "body",
-        "collection": "coleccion-simbolos-coa",
+        "collection": "productos-destacados",
         "products_to_show": 8,
         "columns_desktop": 4,
         "full_width": true,
@@ -239,7 +192,6 @@
     },
     "image_banner_i6CFfD": {
       "type": "image-banner",
-      "disabled": true,
       "blocks": {
         "heading_mmA9NR": {
           "type": "heading",
@@ -253,7 +205,7 @@
           "type": "text",
           "disabled": true,
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text": "",
             "text_style": "body"
           }
         },
@@ -261,10 +213,10 @@
           "type": "buttons",
           "disabled": true,
           "settings": {
-            "button_label_1": "Button label",
+            "button_label_1": "",
             "button_link_1": "",
             "button_style_secondary_1": false,
-            "button_label_2": "Button label",
+            "button_label_2": "",
             "button_link_2": "",
             "button_style_secondary_2": false
           }
@@ -281,195 +233,21 @@
         "padding_x": 0,
         "pattern_bg_position": "top left",
         "pattern_bg_color": "",
-        "image": "shopify://shop_images/cicatriz.png",
-        "image_mobile": "shopify://shop_images/cicatriz.png",
+        "image": "shopify://shop_images/COA-banner-ropa-mar-2026.jpg",
+        "image_mobile": "shopify://shop_images/COA-banner-ropa-mar-movil-2026.jpg",
         "image_overlay_opacity": 0,
-        "image_height": "medium",
+        "image_height": "adapt",
         "adapt_height_first_image": true,
         "page-width": false,
         "desktop_content_position": "middle-center",
-        "show_text_box": true,
+        "show_text_box": false,
         "desktop_content_alignment": "center",
         "color_scheme": "background-1",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": true,
-        "show_text_below": true
-      }
-    },
-    "collage_RUectX": {
-      "type": "collage",
-      "blocks": {
-        "product_A8rM8y": {
-          "type": "product",
-          "settings": {
-            "product": "polera-cicatriz-gris",
-            "second_image": true
-          }
-        },
-        "collection_Hpnt3g": {
-          "type": "collection",
-          "settings": {
-            "collection": "coleccion-cicatriz"
-          }
-        }
-      },
-      "block_order": [
-        "product_A8rM8y",
-        "collection_Hpnt3g"
-      ],
-      "disabled": true,
-      "settings": {
-        "heading": "¡Para los de verdad! Las cicatrices son una medalla, una prueba visible de haberlo hecho. Hicimos esta polera para representar a los que de verdad se arriesgan, superan sus limites y se llevan una marca en el cuerpo.",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "card_styles": "none",
-        "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "haciendola_featured_collection_yr9rii": {
-      "type": "haciendola-featured-collection",
-      "disabled": true,
-      "settings": {
-        "slider_visual": "dots",
-        "title": "Polerones",
-        "heading_size": "h2",
-        "description": "<p><strong>COA es una marca de surf de espíritu libre que ofrece productos de alta calidad con diseño auténtico y promueve la reinserción social.</strong></p>",
-        "text_alignment": "left",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "poleron-hombre",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "full_width": true,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "background-2",
-        "image_ratio": "adapt",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": true,
-        "enable_quick_add": true,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "icon_tabs_Nx9hF4": {
-      "type": "icon-tabs",
-      "blocks": {
-        "text_jMLe9n": {
-          "type": "text",
-          "settings": {
-            "tab_icon": "shopify://shop_images/cotton-usa-logo-png_seeklogo-436087.png",
-            "tab_heading": "",
-            "tab_text": "Algodón con certificación Cotton USA™, que garantiza fibras de alta resistencia, trazabilidad completa y producción bajo estándares éticos y sostenibles.Mayor durabilidad, suavidad natural y menor desgaste tras cada lavado."
-          }
-        },
-        "text_Jq9DAG": {
-          "type": "text",
-          "settings": {
-            "tab_icon": "shopify://shop_images/wrap-certificatelogo-black.png",
-            "tab_heading": "",
-            "tab_text": "Certificación WRAP (Worldwide Responsible Accredited Production): asegura que cada prenda fue confeccionada bajo condiciones laborales legales, humanas y éticas.Garantiza cumplimiento en derechos laborales, seguridad, salud ocupacional y prácticas responsables en toda la cadena de producción."
-          }
-        },
-        "text_tfxLwD": {
-          "type": "text",
-          "settings": {
-            "tab_icon": "shopify://shop_images/oeko-tex-step-logo-png_seeklogo-458237.png",
-            "tab_heading": "",
-            "tab_text": "Certificación OEKO-TEX® Standard 100: garantiza que cada componente de esta prenda ha sido probado contra más de 300 sustancias nocivas.Textiles seguros para la piel, libres de tóxicos y aptos para un uso responsable y consciente."
-          }
-        },
-        "text_zpfhAk": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "tab_heading": "",
-            "tab_text": "Texto en tab"
-          }
-        }
-      },
-      "block_order": [
-        "text_jMLe9n",
-        "text_Jq9DAG",
-        "text_tfxLwD",
-        "text_zpfhAk"
-      ],
-      "settings": {
-        "enable_wave_border": true,
-        "wave_border_color": "#ffffff",
-        "heading_text": "Calidad y Conciencia en Nuestros productos",
-        "font_size": 32,
-        "heading_font": "sans_serif_n4",
-        "text_wrap": "normal",
-        "font_weigth": "normal",
-        "title_color": "#000000",
-        "autoplay": true,
-        "autoplay_speed": 5,
-        "padding_top1": 20,
-        "padding_bottom1": 20,
-        "padding_top_icons1": 20,
-        "padding_bottom_icons1": 20,
-        "mb_textbox": 25,
-        "background_image1": "shopify://shop_images/Fondo_ceritficaciones.webp",
-        "background_vertical_alignment": "center",
-        "background_horizontal_alignment": "center",
-        "bg_opacity": 0,
-        "color_background1": "#e1e1e1"
-      }
-    },
-    "1662130778381de5a1": {
-      "type": "rich-text",
-      "disabled": true,
-      "blocks": {
-        "1662130778fb8c0f72-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "<p>¡Lets Make Chile Safe Again!</p>",
-            "heading_size": "h1"
-          }
-        },
-        "1662130778fb8c0f72-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p><strong>EL DEPORTE TE SACA DEL OCIO, EL OCIO DE LAS DROGAS Y LA DELINCUENCIA.</strong></p>"
-          }
-        },
-        "1662130778fb8c0f72-2": {
-          "type": "buttons",
-          "disabled": true,
-          "settings": {
-            "button_label_1": "SABER MÁS",
-            "button_link_1": "shopify://pages/escuela-de-surf",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false,
-            "target_blank": false
-          }
-        }
-      },
-      "block_order": [
-        "1662130778fb8c0f72-0",
-        "1662130778fb8c0f72-1",
-        "1662130778fb8c0f72-2"
-      ],
-      "disabled": true,
-      "settings": {
-        "enable_wave_border": true,
-        "wave_border_color": "#ffffff",
-        "desktop_content_position": "left",
-        "content_alignment": "left",
-        "color_scheme": "background-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
+        "show_text_below": false,
+        "banner_link": "shopify://collections/productos-destacados",
+        "banner_link_label": "Ver la tienda"
       }
     },
     "image_banner": {
@@ -477,6 +255,7 @@
       "blocks": {
         "heading": {
           "type": "heading",
+          "disabled": true,
           "settings": {
             "heading": "",
             "heading_size": "h2"
@@ -484,6 +263,7 @@
         },
         "text": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "",
             "text_style": "subtitle"
@@ -491,9 +271,10 @@
         },
         "button": {
           "type": "buttons",
+          "disabled": true,
           "settings": {
             "button_label_1": "",
-            "button_link_1": "shopify://pages/que-es-coa",
+            "button_link_1": "shopify://pages/jerga-coa",
             "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
@@ -512,11 +293,11 @@
         "padding_x": 0,
         "pattern_bg_position": "top left",
         "pattern_bg_color": "",
-        "image": "shopify://shop_images/banner_surf_d.png",
-        "image_mobile": "shopify://shop_images/banner_surf_d.png",
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "adapt_height_first_image": false,
+        "image": "shopify://shop_images/COA-banner-que-es-coa-893.jpg",
+        "image_mobile": "shopify://shop_images/COA-banner-que-es-coa-movil-2026.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "adapt_height_first_image": true,
         "page-width": false,
         "desktop_content_position": "middle-right",
         "show_text_box": false,
@@ -524,119 +305,9 @@
         "color_scheme": "background-1",
         "mobile_content_alignment": "right",
         "stack_images_on_mobile": false,
-        "show_text_below": false
-      }
-    },
-    "16620690755d13855a": {
-      "type": "haciendola-imagenes-regular",
-      "blocks": {
-        "16620690750933a206-0": {
-          "type": "big_image",
-          "settings": {
-            "image": "shopify://shop_images/auto.png",
-            "image_padding": 0,
-            "title": "",
-            "body": "",
-            "link": "",
-            "link-text": "",
-            "h-position": "flex-start",
-            "v-position": "flex-start",
-            "text-alignment": "center",
-            "color": "",
-            "content-spacing": 0
-          }
-        },
-        "16620690750933a206-1": {
-          "type": "text",
-          "settings": {
-            "reverse_rows": true,
-            "text_alignment": "left",
-            "preheading": "",
-            "preheading_color": "#000000",
-            "preheading_fs": 18,
-            "heading": "<p><strong>CUIDAO </strong></p><p><strong>PORTONAZO</strong></p>",
-            "heading_color": "#000000",
-            "heading_fs": 41,
-            "subheading": "",
-            "subheading_color": "#000000",
-            "subheading_fs": 18,
-            "body": "Nosotros ponemos la plata para comprar el auto, para comprar repuestos y realizar reparaciones y los jóvenes tienen la tarea de llevar todo acabo.",
-            "body_color": "#121212",
-            "body_fs": 18,
-            "bg_color": "#ffffff",
-            "button_label": "CONOCE MÁS ➝",
-            "button_link": "shopify://pages/portonazo",
-            "button_color": "#000000",
-            "image": "shopify://shop_images/fake.image.png",
-            "image_height": 50,
-            "mobile_image": "shopify://shop_images/auto_47ff935b-c8de-4621-ba5d-dfdbe5f157e3.png",
-            "padding": 100,
-            "block_bg_color": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "16620690750933a206-0",
-        "16620690750933a206-1"
-      ],
-      "disabled": true,
-      "settings": {
-        "pattern_bg_position": "top left",
-        "pattern_bg_color": "",
-        "color1": "#ffffff",
-        "color2": "#ffffff",
-        "gradient_position": 80,
-        "irregular_section": true,
-        "small_image": false
-      }
-    },
-    "1662070280349f6da1": {
-      "type": "rich-text",
-      "disabled": true,
-      "blocks": {
-        "16620702807688ba7e-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "",
-            "heading_size": "h2"
-          }
-        },
-        "16620702807688ba7e-1": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "<p>CADA UNO ROBA PROMEDIO 5 VECES AL DÍA, SI TENEMOS 10 JOVENES EN CLASES DE SURF ESTAMOS REDUCIENDO 50 ROBOS ESE DÍA.</p>"
-          }
-        },
-        "16620702807688ba7e-2": {
-          "type": "buttons",
-          "disabled": true,
-          "settings": {
-            "button_label_1": "Button label",
-            "button_link_1": "",
-            "button_style_secondary_1": false,
-            "button_label_2": "Button label",
-            "button_link_2": "",
-            "button_style_secondary_2": false,
-            "target_blank": true
-          }
-        }
-      },
-      "block_order": [
-        "16620702807688ba7e-0",
-        "16620702807688ba7e-1",
-        "16620702807688ba7e-2"
-      ],
-      "disabled": true,
-      "settings": {
-        "enable_wave_border": false,
-        "wave_border_color": "#ffffff",
-        "desktop_content_position": "center",
-        "content_alignment": "left",
-        "color_scheme": "background-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
+        "show_text_below": false,
+        "banner_link": "shopify://pages/que-tan-chileno-eri",
+        "banner_link_label": "Hacer el test"
       }
     },
     "166212563046fe7b12": {
@@ -669,102 +340,6 @@
         "padding_bottom": 0
       }
     },
-    "16627507600f0abf9c": {
-      "type": "rich-text",
-      "disabled": true,
-      "blocks": {
-        "1662750760bd39a13d-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Descubre como comenzó COA</p>"
-          }
-        },
-        "1662750760bd39a13d-2": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Ver aquí",
-            "button_link_1": "shopify://pages/que-es-coa",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false,
-            "target_blank": true
-          }
-        }
-      },
-      "block_order": [
-        "1662750760bd39a13d-1",
-        "1662750760bd39a13d-2"
-      ],
-      "disabled": true,
-      "settings": {
-        "enable_wave_border": false,
-        "wave_border_color": "#ffffff",
-        "desktop_content_position": "left",
-        "content_alignment": "left",
-        "color_scheme": "background-1",
-        "full_width": true,
-        "padding_top": 4,
-        "padding_bottom": 52
-      }
-    },
-    "1662126364f842c583": {
-      "type": "multicolumn",
-      "blocks": {
-        "1662126364073bcb97-0": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/membresias.png",
-            "title": "Membresías",
-            "text": "<p>Sé miembro, recibe un regalo mensual y reduce delitos junto a COA. </p><p></p><p></p><p></p><p></p>",
-            "link_label": "Ver más",
-            "link": "shopify://pages/membresias"
-          }
-        },
-        "1662126364073bcb97-1": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/sello-coa.png",
-            "title": "Sello COA",
-            "text": "<p>Un sello COA es capaz de entregar un cierto valor agregado a un elemento determinado. El sello COA es responsable de garantizar y certificar el valor social que puedan entregar otras marcas o proyectos asociados mediante alianzas estratégicas. </p>",
-            "link_label": "Ver más",
-            "link": "shopify://pages/coa"
-          }
-        },
-        "1662126364073bcb97-2": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/weli.png",
-            "title": "Jerga COA",
-            "text": "<p>El COA no tiene como intención<br/>ser un lenguaje indescifrable, no es una jerga secreta, es la expresión de los marginales. </p><p>No solo es un conjunto de léxico sino una manifestación de su subcultura. Hablas más coa de los que crees.</p>",
-            "link_label": "Ver más",
-            "link": "shopify://pages/jerga-coa"
-          }
-        }
-      },
-      "block_order": [
-        "1662126364073bcb97-0",
-        "1662126364073bcb97-1",
-        "1662126364073bcb97-2"
-      ],
-      "disabled": true,
-      "settings": {
-        "title": "Sólo para escurrios",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "left",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "background-1",
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "1662127713380f4285": {
       "type": "collage",
       "blocks": {
@@ -773,7 +348,7 @@
           "settings": {
             "cover_image": "shopify://shop_images/sename_1.png",
             "video_url": "https://www.youtube.com/watch?v=cKMBdvyE7Xg",
-            "description": "Describe the video",
+            "description": "",
             "image_padding": false
           }
         },
@@ -801,47 +376,8 @@
         "padding_bottom": 36
       }
     },
-    "16627510664a1c9e9a": {
-      "type": "rich-text",
-      "blocks": {
-        "1662751065c037c45a-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Les abrimos la mente para ser un aporte positivo a la sociedad.</p>"
-          }
-        },
-        "1662751065c037c45a-2": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Descubre que hacemos",
-            "button_link_1": "shopify://pages/sename",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false,
-            "target_blank": true
-          }
-        }
-      },
-      "block_order": [
-        "1662751065c037c45a-1",
-        "1662751065c037c45a-2"
-      ],
-      "disabled": true,
-      "settings": {
-        "enable_wave_border": false,
-        "wave_border_color": "#ffffff",
-        "desktop_content_position": "left",
-        "content_alignment": "left",
-        "color_scheme": "background-1",
-        "full_width": true,
-        "padding_top": 0,
-        "padding_bottom": 52
-      }
-    },
     "1662130345f5a66a31": {
       "type": "collage",
-      "disabled": true,
       "blocks": {
         "1662130345b0990a10-0": {
           "type": "video",
@@ -856,7 +392,7 @@
         "a04af46a-b3fd-4304-a7ea-391208dca188": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/escuela_de_surf.png",
+            "image": "shopify://shop_images/COA-banner-escuela.jpg",
             "image_padding": false
           }
         },
@@ -890,7 +426,6 @@
     },
     "16621326336839161f": {
       "type": "h-multiname-section",
-      "disabled": true,
       "blocks": {
         "0b97f46c-944f-4f10-9959-1b98eb63fc2c": {
           "type": "name",
@@ -954,7 +489,7 @@
         "012ff7dd-a1fb-4f82-8335-7c9b64ece465"
       ],
       "settings": {
-        "title": "Nuestro gran <destacar>team:</destacar>\nGracias @nombre\nPuros pulentos de  <destacar>COA </destacar>",
+        "title": "Los que se metieron:\nno son influencers, son los que están\n<destacar>cuando hay que estar</destacar>",
         "highlight": "#006eb7",
         "link": "",
         "link_text": "",
@@ -1004,43 +539,20 @@
         "full-width": false
       }
     },
-    "background_video_tNWd4M": {
-      "type": "background-video",
-      "disabled": true,
-      "settings": {
-        "shopify_video": "https://www.youtube.com/watch?v=HwVEB2JY5NU&list=TLGGfxXIDA44tv8xNjA0MjAyNQ",
-        "sub_heading": "Progresar duele. Pero el que más se cae, más avanza.",
-        "subheading_size": 18,
-        "mobile_subheading_size": 14,
-        "subheading_color": "#666666",
-        "heading": "Nadie saca un truco nuevo sin caerse mil veces.\nLas rodillas raspadas, los moretones, las frustraciones…\ntodo eso habla de que lo estás intentando en serio.\n\nAcá respetamos a los que no se rinden.\nA los que progresan, aunque duela.\nEso también es estilo. Eso también es COA.",
-        "heading_size": 17,
-        "mobile_heading_size": 10,
-        "heading_color": "#666666",
-        "text_alignment": "left",
-        "button_label_1": "",
-        "button_link_1": "",
-        "button_style_secondary_1": false,
-        "button_label_2": "",
-        "button_link_2": "",
-        "button_style_secondary_2": false,
-        "desktop_content_position": "top-left"
-      }
-    },
     "newsletter_PLFkhK": {
       "type": "newsletter",
       "blocks": {
         "heading_T8G9tT": {
           "type": "heading",
           "settings": {
-            "heading": "Primero en enterarte. Primero en impactar.",
+            "heading": "No mandamos ofertas. Mandamos historias.",
             "heading_size": "h1"
           }
         },
         "paragraph_3jhPbP": {
           "type": "paragraph",
           "settings": {
-            "text": "<p>Suscríbete y llevate nuestras novedades antes que el resto.</p>"
+            "text": "<p>Cuando pasa algo de verdad — un viaje, un taller, un diseño nuevo — te llega. Nada más.</p>"
           }
         },
         "email_form_7G4AHw": {
@@ -1060,33 +572,86 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
+    },
+    "confianza_coa": {
+      "type": "multicolumn",
+      "blocks": {
+        "confianza_col_0": {
+          "type": "column",
+          "settings": {
+            "title": "Envío gratis sobre $45.000",
+            "text": "<p>A todo Chile.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "confianza_col_1": {
+          "type": "column",
+          "settings": {
+            "title": "Cambios gratis, siempre",
+            "text": "<p>Si la talla no te queda, la cambiamos.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "confianza_col_2": {
+          "type": "column",
+          "settings": {
+            "title": "Diseños que significan algo",
+            "text": "<p>Cada símbolo sale del coa, no de una agencia.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "confianza_col_3": {
+          "type": "column",
+          "settings": {
+            "title": "El 1% vuelve a los cabros",
+            "text": "<p>Va a jóvenes en reinserción: surf, nieve, bici y un taller.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "confianza_col_0",
+        "confianza_col_1",
+        "confianza_col_2",
+        "confianza_col_3"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "center",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-2",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
     }
   },
   "order": [
     "banner_responsive_kCmhYV",
-    "banner_responsive_Ld4GUn",
-    "1662138878fd85f8b1",
-    "rich_text_M4YrVe",
-    "image_banner_hK9Qkp",
     "featured_collection_aFA8TM",
-    "image_banner_i6CFfD",
-    "collage_RUectX",
-    "haciendola_featured_collection_yr9rii",
-    "icon_tabs_Nx9hF4",
-    "1662130778381de5a1",
+    "confianza_coa",
     "image_banner",
-    "16620690755d13855a",
-    "1662070280349f6da1",
+    "1662138878fd85f8b1",
+    "image_banner_hK9Qkp",
+    "image_banner_i6CFfD",
     "166212563046fe7b12",
-    "16627507600f0abf9c",
-    "1662126364f842c583",
     "1662127713380f4285",
-    "16627510664a1c9e9a",
     "1662130345f5a66a31",
     "16621326336839161f",
     "16621387900f129d2d",
     "1663939653a7aeb733",
-    "background_video_tNWd4M",
+    "banner_responsive_Ld4GUn",
     "newsletter_PLFkhK"
   ]
 }

@@ -1,0 +1,39 @@
+{% comment %}
+  Barra de progreso hacia el envío gratis.
+  Uso: {% render 'coa-envio-gratis' %}
+  El umbral se define en pesos (CLP) con el parámetro opcional `umbral`. Por defecto 45.000.
+{% endcomment %}
+{%- liquid
+  assign umbral_clp = umbral | default: 45000
+  assign umbral_centavos = umbral_clp | times: 100
+  assign total = cart.total_price
+  assign faltante = umbral_centavos | minus: total
+  if total > 0
+    assign progreso = total | times: 100 | divided_by: umbral_centavos
+    if progreso > 100
+      assign progreso = 100
+    endif
+  else
+    assign progreso = 0
+  endif
+-%}
+{%- if cart.item_count > 0 -%}
+  <div class="coa-envio" role="status">
+    <p class="coa-envio__texto">
+      {%- if faltante > 0 -%}
+        Te faltan <strong>{{ faltante | money_without_trailing_zeros }}</strong> para el envío gratis a todo Chile.
+      {%- else -%}
+        <strong>Tienes envío gratis</strong> a todo Chile.
+      {%- endif -%}
+    </p>
+    <div class="coa-envio__barra" aria-hidden="true">
+      <span class="coa-envio__relleno" style="width: {{ progreso }}%;"></span>
+    </div>
+  </div>
+  <style>
+    .coa-envio { margin: 0 0 1.6rem; text-align: left; }
+    .coa-envio__texto { margin: 0 0 0.6rem; font-size: 1.4rem; line-height: 1.4; }
+    .coa-envio__barra { height: 6px; background: #e5e5e5; border-radius: 3px; overflow: hidden; }
+    .coa-envio__relleno { display: block; height: 100%; background: #e4032c; transition: width 0.3s ease; }
+  </style>
+{%- endif -%}

@@ -278,7 +278,7 @@
           data-block="block-{{ block.id }}"
         >
           <div class="stl-gallery__image">
-            <img src="{{ block.settings.image | image_url: width: 1400 }}" alt="{{ block.settings.image.alt | escape }}" loading="lazy">
+            <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.image.alt }}">
           </div>
           {% comment %} Producto 1 {% endcomment %}
           {% if block.settings.product1 != blank %}
@@ -401,7 +401,7 @@
           data-block="block-{{ block.id }}"
         >
           <div class="stl-gallery__image">
-            <img src="{{ block.settings.image-mobile | image_url: width: 900 }}" alt="{{ block.settings.image.alt | escape }}" loading="lazy">
+            <img src="{{ block.settings.image-mobile | img_url: 'master' }}" alt="{{ block.settings.image.alt }}">
           </div>
 
 

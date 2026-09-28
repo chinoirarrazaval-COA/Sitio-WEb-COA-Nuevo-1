@@ -1,0 +1,304 @@
+{%- comment -%}
+  Diccionario coa — seccion COA
+  Las fichas viven en snippets/coa-palabras.liquid (HTML estatico: Google lo indexa).
+  Esta seccion pone el buscador, los filtros y el estilo.
+{%- endcomment -%}
+
+{% raw %}
+<style>
+  .coadic{
+    --cd-ground:#131110; --cd-surface:#1c1917; --cd-surface2:#262220;
+    --cd-line:#38312d; --cd-ink:#f0ebe6; --cd-muted:#968c84;
+    --cd-red:#e22120; --cd-yellow:#f4d400;
+    background:var(--cd-ground); color:var(--cd-ink);
+    font-family:"Chivo","Helvetica Neue",Arial,sans-serif;
+    line-height:1.5; padding-inline:20px; padding-block:46px 54px;
+  }
+  .coadic *{box-sizing:border-box}
+  .coadic__w{max-width:720px;margin:0 auto}
+  .coadic p{margin:0}
+
+  .cd-eye{font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--cd-muted);margin:0}
+  .cd-h{font-weight:900;font-size:clamp(30px,8vw,48px);line-height:.97;letter-spacing:-.025em;margin:8px 0 0}
+  .cd-h span{color:var(--cd-red)}
+  .cd-lede{color:var(--cd-muted);font-size:16px;margin-top:14px;max-width:56ch}
+
+  .cd-sus{margin-top:24px;border:1px solid var(--cd-yellow);background:#1a1710;padding:20px}
+  .cd-sus h3{font-weight:900;font-size:19px;line-height:1.15;margin:0 0 6px;color:var(--cd-ink)}
+  .cd-sus p{font-size:15px;color:var(--cd-muted);margin-bottom:14px}
+  .cd-sus form{display:flex;flex-direction:column;gap:9px}
+  .cd-sus input{width:100%;background:var(--cd-ground);border:1px solid var(--cd-line);color:var(--cd-ink);
+    font-family:inherit;font-size:16px;padding:13px 14px;border-radius:0;-webkit-appearance:none}
+  .cd-sus input:focus{border-color:var(--cd-yellow);outline:none}
+  .cd-sus button{background:var(--cd-yellow);color:#13110f;border:0;padding:14px;font-family:inherit;
+    font-weight:900;font-size:13px;letter-spacing:.09em;text-transform:uppercase;cursor:pointer}
+  .cd-sus button:hover{filter:brightness(1.08)}
+  .cd-sus .cd-mini{font-size:12px;color:#7c736c;margin:0}
+  .cd-sus .cd-ok2{display:none;font-family:ui-monospace,Menlo,monospace;font-size:13px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--cd-yellow)}
+  .cd-fich{margin-top:24px;border:1px solid var(--cd-line);background:var(--cd-surface);padding:20px}
+  .cd-fich h3{font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--cd-muted);margin:0 0 6px;font-weight:400}
+  .cd-fich p{font-size:15px;color:var(--cd-muted);margin-bottom:14px}
+  .cd-fich ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+  .cd-fich a{display:inline-block;border:1px solid var(--cd-line);color:var(--cd-ink);text-decoration:none;
+    font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.06em;padding:8px 11px}
+  .cd-fich a:hover{border-color:var(--cd-yellow);color:var(--cd-yellow)}
+  .cd-tools{position:sticky;top:0;z-index:4;background:var(--cd-ground);padding-block:14px 10px;margin-top:22px;border-bottom:1px solid var(--cd-line)}
+  .cd-q{display:block;width:100%;background:var(--cd-surface);border:1px solid var(--cd-line);color:var(--cd-ink);
+    font-family:inherit;font-size:16px;padding:14px 15px;border-radius:0;-webkit-appearance:none}
+  .cd-q::placeholder{color:#5f5751}
+  .cd-q:focus{outline:2px solid var(--cd-yellow);outline-offset:-2px;border-color:transparent}
+
+  .cd-chips{display:flex;gap:7px;overflow-x:auto;margin-top:10px;padding-bottom:3px}
+  .cd-chip{flex:none;background:transparent;border:1px solid var(--cd-line);color:var(--cd-muted);
+    font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.09em;text-transform:uppercase;
+    padding:7px 11px;cursor:pointer;white-space:nowrap}
+  .cd-chip[aria-pressed="true"]{background:var(--cd-ink);color:var(--cd-ground);border-color:var(--cd-ink)}
+
+  .cd-az{display:flex;flex-wrap:wrap;gap:4px;margin-top:10px}
+  .cd-az button{background:transparent;border:0;color:var(--cd-muted);font-family:ui-monospace,Menlo,monospace;
+    font-size:12px;text-transform:uppercase;padding:5px 7px;cursor:pointer;min-width:26px}
+  .cd-az button[aria-pressed="true"]{color:var(--cd-yellow);text-decoration:underline}
+  .cd-az button:disabled{opacity:.28;cursor:default}
+  .cd-count{font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--cd-muted);margin-top:9px}
+
+  .cd-list{list-style:none;margin:0;padding:0}
+  .cd-i{border-bottom:1px solid var(--cd-line);padding-block:17px;display:flex;flex-direction:column;gap:5px}
+  .cd-i[hidden]{display:none}
+  .cd-i.hit .cd-w{color:var(--cd-yellow)}
+  .cd-w{font-family:ui-monospace,Menlo,monospace;font-weight:700;font-size:19px;letter-spacing:-.01em}
+  .cd-d{font-size:16px;font-weight:400}
+  .cd-n{font-size:14px;font-weight:400;color:var(--cd-muted);border-left:2px solid var(--cd-line);padding-left:12px}
+  .cd-f{font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:#7c736c}
+  .cd-b{align-self:flex-start;font-family:ui-monospace,Menlo,monospace;font-size:9.5px;letter-spacing:.13em;
+    text-transform:uppercase;color:var(--cd-yellow);border:1px solid var(--cd-yellow);padding:3px 7px}
+  .cd-none{color:var(--cd-muted);padding-block:34px;font-size:16px}
+  .cd-more{display:block;width:100%;margin-top:22px;background:transparent;border:1px solid var(--cd-line);
+    color:var(--cd-ink);font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;padding:15px;cursor:pointer}
+  .cd-more:hover{background:var(--cd-surface2)}
+
+  .cd-add{background:var(--cd-surface);border:1px solid var(--cd-line);padding:22px;margin-top:30px}
+  .cd-add h3{font-family:ui-monospace,Menlo,monospace;font-size:13px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--cd-muted);margin:0 0 12px;font-weight:400}
+  .cd-add p{font-size:15px;color:var(--cd-muted);margin-bottom:16px}
+  .coadic label{display:block;font-size:14px;margin-bottom:7px;color:var(--cd-muted)}
+  .coadic input[type=text],.coadic input[type=email]{width:100%;background:var(--cd-ground);border:1px solid var(--cd-line);
+    color:var(--cd-ink);font-family:inherit;font-size:16px;padding:13px 14px;border-radius:0}
+  .coadic input:focus{border-color:var(--cd-yellow);outline:none}
+  .cd-send{display:block;width:100%;margin-top:16px;background:var(--cd-red);color:#fff;border:0;padding:16px;
+    font-family:inherit;font-weight:900;font-size:14px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+  .cd-err{color:#e88a89;font-size:13px;margin-top:10px;display:none}
+  .cd-err.show{display:block}
+  .cd-ok{font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--cd-yellow);display:none}
+  @media (prefers-reduced-motion:reduce){.coadic *{transition:none!important}}
+</style>
+{% endraw %}
+
+<div class="coadic" id="coadic">
+  <div class="coadic__w">
+    <p class="cd-eye">Diccionario</p>
+    <p class="cd-h">El <span>coa</span>, palabra por palabra</p>
+    <p class="cd-lede">Lo que se habla adentro y lo que se escapó a la calle. Sacado de los tres diccionarios que se escribieron sobre el coa desde 1910, más lo que llega de ustedes. Busca por palabra o por significado.</p>
+
+
+    <div class="cd-sus">
+      <h3>Una palabra de coa cada lunes</h3>
+      <p>Una sola, con su significado y de dónde salió. Nada más. Si te aburre, te sales en un clic.</p>
+      <form id="cd-sus-form" onsubmit="return false">
+        <label for="cd-sus-mail" style="display:none">Tu correo</label>
+        <input type="email" id="cd-sus-mail" placeholder="tunombre@correo.cl" autocomplete="email">
+        <button type="submit" id="cd-sus-btn">Quiero la palabra de la semana</button>
+      </form>
+      <p class="cd-mini" id="cd-sus-msg">Sin ofertas, sin spam. Solo una palabra.</p>
+      <p class="cd-ok2" id="cd-sus-ok">Listo. El lunes te llega la primera.</p>
+    </div>
+
+    <div class="cd-fich">
+      <h3>Explicadas en detalle</h3>
+      <p>Once palabras tienen su propia ficha: de dónde salen, cómo se escriben de verdad y qué palabras andan con ellas.</p>
+      <ul>
+        <li><a href="/blogs/diccionario-coa/que-significa-barretin">Barretín (barrotín)</a></li>
+        <li><a href="/blogs/diccionario-coa/que-significa-carambisambi">Carambisambi</a></li>
+        <li><a href="/blogs/diccionario-coa/que-significa-tirar-la-pela">Tirar la pela</a></li>
+        <li><a href="/blogs/diccionario-coa/que-significa-andar-pato-ficha">Andar pato ficha</a></li>
+        <li><a href="/blogs/diccionario-coa/que-significa-hacer-tierra">Hacer tierra</a></li>
+        <li><a href="/blogs/diccionario-coa/que-significa-lavadora-en-la-carcel">Lavadora</a></li>
+        <li><a href="/blogs/diccionario-coa/que-significa-coronar-en-chile">Coronar</a></li>
+        <li><a href="/blogs/diccionario-coa/que-significa-retobar">Retobar</a></li>
+        <li><a href="/blogs/diccionario-coa/que-significa-echar-el-pelo">Echar el pelo</a></li>
+        <li><a href="/blogs/diccionario-coa/que-es-el-hampa-en-chile">El hampa</a></li>
+        <li><a href="/blogs/diccionario-coa/que-es-flaite-y-que-tiene-que-ver-con-el-coa">Flaite y coa</a></li>
+      </ul>
+    </div>
+
+    <div class="cd-tools">
+      <input id="cd-q" class="cd-q" type="search" placeholder="Buscar palabra o significado…" autocomplete="off" spellcheck="false">
+      <div class="cd-chips" id="cd-chips">
+        <button class="cd-chip" data-f="todas" aria-pressed="true" type="button">Todas</button>
+        <button class="cd-chip" data-f="siglo" aria-pressed="false" type="button">Más de un siglo</button>
+        <button class="cd-chip" data-f="hoy" aria-pressed="false" type="button">Vigentes hoy</button>
+        <button class="cd-chip" data-f="1910" aria-pressed="false" type="button">1910</button>
+        <button class="cd-chip" data-f="1934" aria-pressed="false" type="button">1934</button>
+      </div>
+      <div class="cd-az" id="cd-az"></div>
+      <p class="cd-count" id="cd-count"></p>
+    </div>
+
+    {% render 'coa-palabras' %}
+    <p class="cd-none" id="cd-none" hidden>Nada con eso. Prueba con parte de la palabra, o con el significado.</p>
+    <button class="cd-more" id="cd-more" type="button" hidden>Ver todas</button>
+
+    <div class="cd-add">
+      <h3>El diccionario lo hacen ustedes</h3>
+      <p>¿Sabes una que no está? Déjala acá. Las que más se repitan las vamos a estampar — y quien la propuso queda con nombre y apellido en la etiqueta.</p>
+      <div id="cd-form">
+        <label for="cd-np">La palabra</label>
+        <input type="text" id="cd-np" placeholder="pituto" maxlength="40" autocomplete="off">
+        <label for="cd-ns" style="margin-top:14px">Qué significa</label>
+        <input type="text" id="cd-ns" placeholder="un contacto que te consigue algo" maxlength="140" autocomplete="off">
+        <label for="cd-nm" style="margin-top:14px">Tu correo</label>
+        <input type="email" id="cd-nm" placeholder="tunombre@correo.cl" autocomplete="email">
+        <button class="cd-send" id="cd-send" type="button">Proponer palabra</button>
+        <p class="cd-err" id="cd-perr"></p>
+      </div>
+      <p class="cd-ok" id="cd-pok">Anotada. Si se repite, se estampa.</p>
+    </div>
+  </div>
+</div>
+
+{% raw %}
+<script>
+(function(){
+  "use strict";
+  var root=document.getElementById('coadic'); if(!root) return;
+  var items=Array.prototype.slice.call(root.querySelectorAll('.cd-i'));
+  var q=document.getElementById('cd-q'), az=document.getElementById('cd-az'),
+      count=document.getElementById('cd-count'), none=document.getElementById('cd-none'),
+      more=document.getElementById('cd-more');
+  var filtro='todas', letra='', TOPE=60, verTodo=false;
+
+  function norm(s){return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');}
+
+  var letras=[];
+  items.forEach(function(it){ var l=it.dataset.l; if(letras.indexOf(l)<0) letras.push(l); });
+  letras.sort();
+  var abc='abcdefghijklmnñopqrstuvwxyz'.split('');
+  var btnTodas=document.createElement('button');
+  btnTodas.type='button'; btnTodas.textContent='Todo'; btnTodas.dataset.l='';
+  btnTodas.setAttribute('aria-pressed','true'); az.appendChild(btnTodas);
+  abc.forEach(function(l){
+    var b=document.createElement('button'); b.type='button'; b.textContent=l; b.dataset.l=l;
+    b.setAttribute('aria-pressed','false');
+    if(letras.indexOf(l)<0) b.disabled=true;
+    az.appendChild(b);
+  });
+
+  function pasa(it){
+    if(filtro==='siglo') return it.dataset.v==='1';
+    if(filtro==='hoy')   return it.dataset.v!=='0';
+    if(filtro==='1910' || filtro==='1934') return it.dataset.y.indexOf(filtro)>=0;
+    return true;
+  }
+
+  function aplica(){
+    var n=norm(q.value.trim()), vistos=0, total=0;
+    items.forEach(function(it){
+      var ok = pasa(it)
+        && (!letra || it.dataset.l===letra)
+        && (!n || it.dataset.t.indexOf(n)>=0);
+      if(ok){
+        total++;
+        var mostrar = verTodo || vistos<TOPE;
+        it.hidden=!mostrar;
+        if(mostrar) vistos++;
+        it.classList.toggle('hit', !!n && it.querySelector('.cd-w').textContent.toLowerCase().indexOf(n)>=0);
+      } else {
+        it.hidden=true; it.classList.remove('hit');
+      }
+    });
+    none.hidden = total>0;
+    more.hidden = verTodo || total<=TOPE;
+    if(!more.hidden) more.textContent='Ver las '+total+' palabras';
+    count.textContent = total===items.length ? items.length+' palabras' : total+' de '+items.length+' palabras';
+  }
+
+  document.getElementById('cd-chips').addEventListener('click', function(ev){
+    var b=ev.target.closest('.cd-chip'); if(!b) return;
+    filtro=b.dataset.f; verTodo=false;
+    Array.prototype.forEach.call(this.querySelectorAll('.cd-chip'), function(c){
+      c.setAttribute('aria-pressed', String(c===b)); });
+    aplica();
+  });
+  az.addEventListener('click', function(ev){
+    var b=ev.target.closest('button'); if(!b || b.disabled) return;
+    letra=b.dataset.l; verTodo=false;
+    Array.prototype.forEach.call(this.querySelectorAll('button'), function(c){
+      c.setAttribute('aria-pressed', String(c===b)); });
+    aplica();
+  });
+  var t; q.addEventListener('input', function(){ clearTimeout(t); t=setTimeout(function(){ verTodo=false; aplica(); },120); });
+  more.addEventListener('click', function(){ verTodo=true; aplica(); });
+
+  var MAIL=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  document.getElementById('cd-send').addEventListener('click', function(){
+    var p=document.getElementById('cd-np').value.trim(),
+        s=document.getElementById('cd-ns').value.trim(),
+        m=document.getElementById('cd-nm').value.trim(),
+        err=document.getElementById('cd-perr');
+    if(p.length<2){ err.textContent='Escribe la palabra.'; err.classList.add('show'); return; }
+    if(s.length<3){ err.textContent='Falta el significado.'; err.classList.add('show'); return; }
+    if(!MAIL.test(m)){ err.textContent='Déjanos tu correo para poder darte el crédito.'; err.classList.add('show'); return; }
+    err.classList.remove('show');
+    this.disabled=true;
+    var slug=norm(p).replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,40);
+    var body=new URLSearchParams();
+    body.append('form_type','customer');
+    body.append('utf8','✓');
+    body.append('contact[email]', m);
+    body.append('contact[tags]','newsletter,palabra-propuesta,palabra-'+slug);
+    fetch('/contact',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body.toString()})
+      .then(function(){
+        document.getElementById('cd-form').style.display='none';
+        document.getElementById('cd-pok').style.display='block';
+      })
+      .catch(function(){
+        document.getElementById('cd-send').disabled=false;
+        err.textContent='No se pudo enviar. Prueba de nuevo en un rato.'; err.classList.add('show');
+      });
+  });
+
+
+  var susBtn=document.getElementById('cd-sus-btn');
+  if(susBtn){
+    susBtn.addEventListener('click', function(){
+      var v=document.getElementById('cd-sus-mail').value.trim(), msg=document.getElementById('cd-sus-msg');
+      if(!MAIL.test(v)){ msg.textContent='Ese correo no se ve bien. Revísalo.'; msg.style.color='#e88a89'; return; }
+      msg.style.color=''; susBtn.disabled=true;
+      var b=new URLSearchParams();
+      b.append('form_type','customer'); b.append('utf8','\u2713');
+      b.append('contact[email]', v);
+      b.append('contact[tags]','newsletter,palabra-semana');
+      fetch('/contact',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:b.toString()})
+        .then(function(){
+          document.getElementById('cd-sus-form').style.display='none';
+          msg.style.display='none';
+          document.getElementById('cd-sus-ok').style.display='block';
+        })
+        .catch(function(){ susBtn.disabled=false; msg.textContent='No se pudo. Prueba de nuevo en un rato.'; msg.style.color='#e88a89'; });
+    });
+  }
+
+  aplica();
+})();
+</script>
+{% endraw %}
+
+{% schema %}
+{
+  "name": "Diccionario coa",
+  "settings": [],
+  "presets": [{ "name": "Diccionario coa" }]
+}
+{% endschema %}

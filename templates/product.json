@@ -50,13 +50,6 @@
             "show_dynamic_checkout": true
           }
         },
-        "venti_widget_ventipay_widget_UHJiYh": {
-          "type": "shopify://apps/venti-widget/blocks/ventipay-widget/593e972e-0379-4dab-ab73-fcfb3301399e",
-          "settings": {
-            "message_type": "IF_DC_IC",
-            "remove_anchor_logo": false
-          }
-        },
         "description": {
           "type": "description",
           "settings": {
@@ -92,7 +85,7 @@
           "type": "collapsible_tab",
           "disabled": true,
           "settings": {
-            "heading": "Dimensions",
+            "heading": "Medidas",
             "icon": "ruler",
             "content": "",
             "page": ""
@@ -102,7 +95,7 @@
           "type": "collapsible_tab",
           "disabled": true,
           "settings": {
-            "heading": "Care Instructions",
+            "heading": "Cuidado de la prenda",
             "icon": "heart",
             "content": "",
             "page": ""
@@ -112,7 +105,14 @@
           "type": "share",
           "disabled": true,
           "settings": {
-            "share_label": "Share"
+            "share_label": "Compartir"
+          }
+        },
+        "envio_cambios": {
+          "type": "text",
+          "settings": {
+            "text": "Envío gratis sobre $45.000 a todo Chile · Cambios gratis, siempre",
+            "text_style": "subtitle"
           }
         }
       },
@@ -124,7 +124,7 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "venti_widget_ventipay_widget_UHJiYh",
+        "envio_cambios",
         "description",
         "collapsible-row-0",
         "collapsible-row-1",
@@ -154,7 +154,7 @@
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
-        "heading": "No seai perkin tapízate con una marca chilena y social COA",
+        "heading": "No seai perkin: tápizate con una marca chilena",
         "heading_size": "h2",
         "products_to_show": 4,
         "columns_desktop": 4,
@@ -174,7 +174,7 @@
         "1662573692625955d1-0": {
           "type": "heading",
           "settings": {
-            "heading": "TENEMOS UNA MIRADA",
+            "heading": "LO QUE FINANCIA TU COMPRA",
             "heading_size": 26,
             "mobile_heading_size": 18,
             "heading_color": "#000000",
@@ -184,7 +184,7 @@
         "51b2ad1e-354a-413c-ab2e-8b94de6de66d": {
           "type": "caption",
           "settings": {
-            "caption": "POSITIVA<destacar> \nde las cosas </destacar>",
+            "caption": "Como mínimo el 1%<destacar> \nde cada venta </destacar>",
             "caption_size": 40,
             "mobile_caption_size": 27,
             "caption_color": "#e22120",
@@ -196,7 +196,7 @@
         "1662573692625955d1-1": {
           "type": "text",
           "settings": {
-            "text": "<p>En COA vemos siempre el lado bueno de las cosas. Para nosotros es importante poder transmitir esta forma de ver la vida a todos, a través de todas nuestras iniciativas, productos o servicios. Queremos inspirar a las personas, para que tengan la capacidad de ver al “vaso medio lleno”, atreverse a enfrentar nuevos desafíos.</p>",
+            "text": "<p>Parte de lo que pagas acá se va en llevar cabros en reinserción a surfear, a la nieve, a andar en bici. Y en un taller donde aprenden un oficio de verdad.</p><p>No prometemos que tu compra reduce un delito. Nadie puede prometer eso en serio. Lo que sí podemos decirte es en qué se usa la plata y quién está del otro lado.</p>",
             "text_size": 17,
             "mobile_text_size": 14,
             "text_color": "#000000",

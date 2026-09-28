@@ -47,6 +47,7 @@
         {%- if item.selling_plan_allocation != nil -%}
           <p class="product-option">{{ item.selling_plan_allocation.selling_plan.name }}</p>
         {%- endif -%}
+        {%- render 'coa-envio-gratis' -%}
       </div>
     </div>
   {%- endfor -%}

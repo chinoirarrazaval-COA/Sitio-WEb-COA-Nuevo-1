@@ -1,50 +1,47 @@
 {% if section.settings.desktop_image != blank or section.settings.mobile_image != blank %}
 <div class="responsive-banner">
-  {% if section.settings.url_banner != blank %}
-    <a href="{{ section.settings.url_banner }}" class="banner-link">
-  {% endif %}
-
-  {% assign image_alt = section.settings.desktop_image.alt | default: section.settings.mobile_image.alt %}
-
-  {% if section.settings.desktop_image != blank and section.settings.mobile_image != blank %}
-    <picture>
-      <source media="(max-width: 768px)"
-        srcset="{{ section.settings.mobile_image | image_url: width: 640 }} 640w, {{ section.settings.mobile_image | image_url: width: 900 }} 900w, {{ section.settings.mobile_image | image_url: width: 1200 }} 1200w"
-        sizes="100vw">
-      <source media="(min-width: 769px)"
-        srcset="{{ section.settings.desktop_image | image_url: width: 900 }} 900w, {{ section.settings.desktop_image | image_url: width: 1400 }} 1400w, {{ section.settings.desktop_image | image_url: width: 1800 }} 1800w"
-        sizes="100vw">
-      <img src="{{ section.settings.desktop_image | image_url: width: 1400 }}"
-        alt="{{ image_alt | escape }}"
-        loading="lazy"
-        class="responsive-banner__image">
-    </picture>
-  {% elsif section.settings.desktop_image != blank %}
-    <img src="{{ section.settings.desktop_image | image_url: width: 1400 }}"
-      alt="{{ section.settings.desktop_image.alt | escape }}"
-      loading="lazy"
-      class="responsive-banner__image">
-  {% elsif section.settings.mobile_image != blank %}
-    <img src="{{ section.settings.mobile_image | image_url: width: 900 }}"
-      alt="{{ section.settings.mobile_image.alt | escape }}"
-      loading="lazy"
-      class="responsive-banner__image">
-  {% endif %}
-
-  {% if section.settings.url_banner != blank %}
-    </a>
-  {% endif %}
+{% if section.settings.url_banner != blank %}
+<a href="{{ section.settings.url_banner }}" class="banner-link">
+{% endif %}
+{% if section.settings.desktop_image != blank %}
+<div class="desktop-banner-container hide-on-mobile">
+<img src="{{ section.settings.desktop_image | img_url: 'master' }}" alt="{{ section.settings.desktop_image.alt | escape }}" class="desktop-banner">
+</div>
+{% endif %}
+{% if section.settings.mobile_image != blank %}
+<div class="mobile-banner-container hide-on-desktop">
+<img src="{{ section.settings.mobile_image | img_url: 'master' }}" alt="{{ section.settings.mobile_image.alt | escape }}" class="mobile-banner">
+</div>
+{% endif %}
+{% if section.settings.url_banner != blank %}
+</a>
+{% endif %}
 </div>
 <style>
 .responsive-banner {
-  width: 100%;
-  position: relative;
-  overflow: hidden;
+width: 100%;
+position: relative;
+overflow: hidden;
 }
-.responsive-banner__image {
-  width: 100%;
-  height: auto;
-  display: block;
+.desktop-banner, .mobile-banner {
+width: 100%;
+display: block;
+}
+@media screen and (max-width: 768px) {
+.hide-on-mobile {
+display: none;
+}
+.hide-on-desktop {
+display: block;
+}
+}
+@media screen and (min-width: 769px) {
+.hide-on-desktop {
+display: none;
+}
+.hide-on-mobile {
+display: block;
+}
 }
 </style>
 {% endif %}

@@ -1,0 +1,127 @@
+{%- comment -%}
+  Pie de las fichas de palabra del diccionario coa.
+{%- endcomment -%}
+
+{% raw %}
+<style>
+  .cpie{background:#131110;color:#f0ebe6;font-family:"Chivo","Helvetica Neue",Arial,sans-serif;
+    line-height:1.55;padding-inline:20px;padding-block:44px 52px}
+  .cpie *{box-sizing:border-box}
+  .cpie__w{max-width:660px;margin:0 auto}
+  .cpie p{margin:0}
+  .cpie__eye{font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.18em;
+    text-transform:uppercase;color:#968c84;margin:0}
+  .cpie__h{font-weight:900;font-size:clamp(24px,6.5vw,34px);line-height:1.02;letter-spacing:-.02em;margin:8px 0 0}
+  .cpie__h span{color:#e22120}
+  .cpie__t{color:#968c84;font-size:16px;margin-top:14px;max-width:54ch}
+  .cpie__btns{display:flex;flex-direction:column;gap:10px;margin-top:26px}
+  .cpie__b{display:block;width:100%;background:#e22120;color:#fff;border:0;padding:16px 20px;
+    font-weight:900;font-size:14px;letter-spacing:.08em;text-transform:uppercase;text-align:center;
+    text-decoration:none;transition:filter .15s}
+  .cpie__b:hover{filter:brightness(1.12)}
+  .cpie__b--g{background:transparent;color:#f0ebe6;border:1px solid #38312d;font-weight:700}
+  .cpie__b--g:hover{background:#262220;filter:none}
+  .cpie__nota{margin-top:30px;padding-top:20px;border-top:1px solid #38312d;
+    font-size:13px;color:#968c84;line-height:1.6}
+  .cpie__nota strong{color:#f0ebe6}
+
+  .cpie__sus{margin-top:26px;border:1px solid #f4d400;background:#1a1710;padding:20px}
+  .cpie__sus h3{font-weight:900;font-size:19px;line-height:1.15;margin:0 0 6px;color:#f0ebe6}
+  .cpie__sus p{font-size:15px;color:#968c84;margin:0 0 14px}
+  .cpie__sus input{width:100%;background:#131110;border:1px solid #38312d;color:#f0ebe6;font-family:inherit;
+    font-size:16px;padding:13px 14px;border-radius:0;-webkit-appearance:none;margin-bottom:9px}
+  .cpie__sus input:focus{border-color:#f4d400;outline:none}
+  .cpie__sus button{width:100%;background:#f4d400;color:#13110f;border:0;padding:14px;font-family:inherit;
+    font-weight:900;font-size:13px;letter-spacing:.09em;text-transform:uppercase;cursor:pointer}
+  .cpie__sus .mini{font-size:12px;color:#7c736c;margin:10px 0 0}
+  .cpie__sus .ok{display:none;font-family:ui-monospace,Menlo,monospace;font-size:13px;letter-spacing:.08em;
+    text-transform:uppercase;color:#f4d400;margin:10px 0 0}
+  .coapal{--g:#131110;--s:#1c1917;--l:#38312d;--i:#f0ebe6;--m:#968c84;--r:#e22120;--y:#f4d400;
+   background:var(--g);color:var(--i);font-family:"Chivo","Helvetica Neue",Arial,sans-serif;
+   line-height:1.6;padding:34px 22px 40px}
+  .coapal *{box-sizing:border-box}
+  .coapal__w{max-width:660px;margin:0 auto}
+  .coapal p{margin:0 0 14px;font-weight:400}
+  .coapal li{font-weight:400}
+  .coapal a{color:var(--y)}
+  .coapal .cp-eye{font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.18em;
+   text-transform:uppercase;color:var(--m);margin-bottom:10px}
+  .coapal .cp-w{font-family:ui-monospace,Menlo,monospace;font-weight:700;font-size:clamp(26px,7vw,38px);
+   letter-spacing:-.02em;margin:0 0 4px;color:var(--i)}
+  .coapal .cp-def{font-size:20px;line-height:1.45;margin:0 0 18px;color:var(--i)}
+  .coapal .cp-uso{border-left:2px solid var(--y);padding:2px 0 2px 14px;font-style:italic;
+   color:#c9bfb7;font-size:16px;margin:0 0 24px}
+  .coapal h2{font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.16em;
+   text-transform:uppercase;color:var(--m);font-weight:400;margin:30px 0 12px;padding-top:20px;
+   border-top:1px solid var(--l)}
+  .coapal ul{margin:0 0 14px;padding-left:20px}
+  .coapal li{margin-bottom:7px}
+  .coapal .cp-rel{list-style:none;padding:0;margin:0}
+  .coapal .cp-rel li{border-top:1px solid var(--l);padding:11px 0;margin:0}
+  .coapal .cp-rel li:first-child{border-top:0}
+  .coapal .cp-rel b{font-family:ui-monospace,Menlo,monospace;font-size:15px;color:var(--i)}
+  .coapal .cp-rel span{color:var(--m);font-size:15px}
+  .coapal strong{color:var(--i)}
+</style>
+{% endraw %}
+
+<section class="cpie">
+  <div class="cpie__w">
+    <p class="cpie__eye">Diccionario coa · COA</p>
+    <p class="cpie__h">Hay <span>893</span> palabras más</p>
+    <p class="cpie__t">El diccionario completo del coa: lo que se habló desde 1910 y lo que se habla hoy, cada palabra con la fecha en que alguien la anotó por primera vez. Se busca por palabra o por significado.</p>
+    <div class="cpie__btns">
+      <a class="cpie__b" href="/pages/jerga-coa">Ver el diccionario completo</a>
+      <a class="cpie__b cpie__b--g" href="/pages/jerga-coa#test">Hacer el test del coa</a>
+      <a class="cpie__b cpie__b--g" href="/collections/coleccion-simbolos-coa">La colección Símbolos</a>
+    </div>
+
+    <div class="cpie__sus">
+      <h3>Una palabra de coa cada lunes</h3>
+      <p>Una sola, con su significado y de dónde salió. Nada más. Si te aburre, te sales en un clic.</p>
+      <label for="cp-mail" style="display:none">Tu correo</label>
+      <input type="email" id="cp-mail" placeholder="tunombre@correo.cl" autocomplete="email">
+      <button type="button" id="cp-btn">Quiero la palabra de la semana</button>
+      <p class="mini" id="cp-msg">Sin ofertas, sin spam. Solo una palabra.</p>
+      <p class="ok" id="cp-ok">Listo. El lunes te llega la primera.</p>
+    </div>
+
+    <p class="cpie__nota">
+      <strong>De dónde sale esto.</strong> De los tres diccionarios que se han escrito sobre el coa: Julio Vicuña Cifuentes (1910), Aníbal Echeverría y Reyes (1934) y el registro de Gendarmería de Chile (2021). Las definiciones de esta página están escritas por COA. Si ves un error, escríbenos y lo arreglamos.
+    </p>
+  </div>
+</section>
+
+
+{% raw %}
+<script>
+(function(){
+  var b=document.getElementById('cp-btn'); if(!b) return;
+  var MAIL=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  b.addEventListener('click', function(){
+    var v=document.getElementById('cp-mail').value.trim(), m=document.getElementById('cp-msg');
+    if(!MAIL.test(v)){ m.textContent='Ese correo no se ve bien. Revísalo.'; m.style.color='#e88a89'; return; }
+    m.style.color=''; b.disabled=true;
+    var body=new URLSearchParams();
+    body.append('form_type','customer'); body.append('utf8','\u2713');
+    body.append('contact[email]', v);
+    body.append('contact[tags]','newsletter,palabra-semana,ficha');
+    fetch('/contact',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body.toString()})
+      .then(function(){
+        document.getElementById('cp-mail').style.display='none';
+        b.style.display='none'; m.style.display='none';
+        document.getElementById('cp-ok').style.display='block';
+      })
+      .catch(function(){ b.disabled=false; m.textContent='No se pudo. Prueba de nuevo en un rato.'; m.style.color='#e88a89'; });
+  });
+})();
+</script>
+{% endraw %}
+
+{% schema %}
+{
+  "name": "Pie ficha de palabra",
+  "settings": [],
+  "presets": [{ "name": "Pie ficha de palabra" }]
+}
+{% endschema %}

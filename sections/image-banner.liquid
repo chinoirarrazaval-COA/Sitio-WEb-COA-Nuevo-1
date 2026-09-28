@@ -162,6 +162,27 @@
       </div>
   {% endif %}
   {%- endif -%}
+  {%- if section.settings.banner_link != blank -%}
+    <style>
+      #Banner-{{ section.id }} { position: relative; }
+      #Banner-{{ section.id }} .banner__full-link {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        display: block;
+        z-index: 3;
+        font-size: 0;
+        text-decoration: none;
+      }
+      #Banner-{{ section.id }} .banner__content { pointer-events: none; z-index: 4; }
+      #Banner-{{ section.id }} .banner__content a,
+      #Banner-{{ section.id }} .banner__content button { pointer-events: auto; }
+    </style>
+    <a class="banner__full-link"
+       href="{{ section.settings.banner_link }}"
+       aria-label="{% if section.settings.banner_link_label != blank %}{{ section.settings.banner_link_label | escape }}{% else %}{{ section.settings.image.alt | escape }}{% endif %}">
+      {% if section.settings.banner_link_label != blank %}{{ section.settings.banner_link_label | escape }}{% endif %}
+    </a>
+  {%- endif -%}
   <div class="banner__content banner__content--{{ section.settings.desktop_content_position }} page-width">
     <div class="banner__box content-container content-container--full-width-mobile color-{{ section.settings.color_scheme }} gradient">
       {%- for block in section.blocks -%}
@@ -282,6 +303,22 @@
       "type": "color",
       "id": "pattern_bg_color",
       "label": "Color del patrón"
+    },
+    {
+      "type": "header",
+      "content": "Enlace del banner completo"
+    },
+    {
+      "type": "url",
+      "id": "banner_link",
+      "label": "URL del banner",
+      "info": "Si la pones, toda la imagen del banner queda clickeable. Úsala cuando el botón viene dibujado dentro de la imagen."
+    },
+    {
+      "type": "text",
+      "id": "banner_link_label",
+      "label": "Texto accesible del enlace",
+      "info": "Lo que leen los lectores de pantalla y Google. Ej: Hacer el test."
     },
     {
       "type": "image_picker",
