@@ -50,6 +50,13 @@
             "show_dynamic_checkout": true
           }
         },
+        "venti_widget_ventipay_widget_UHJiYh": {
+          "type": "shopify://apps/venti-widget/blocks/ventipay-widget/593e972e-0379-4dab-ab73-fcfb3301399e",
+          "settings": {
+            "message_type": "IF_DC_IC",
+            "remove_anchor_logo": false
+          }
+        },
         "description": {
           "type": "description",
           "settings": {
@@ -117,6 +124,7 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
+        "venti_widget_ventipay_widget_UHJiYh",
         "description",
         "collapsible-row-0",
         "collapsible-row-1",

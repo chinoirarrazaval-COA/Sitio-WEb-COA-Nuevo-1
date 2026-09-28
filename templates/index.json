@@ -13,8 +13,17 @@
       "type": "banner-responsive",
       "settings": {
         "url_banner": "shopify://collections/all",
-        "desktop_image": "shopify://shop_images/Desktop-no-seguimos-tendencias-segimos-propositos_copia33333.jpg",
-        "mobile_image": "shopify://shop_images/Tendencias-proposito-1.122.jpg"
+        "desktop_image": "shopify://shop_images/banner_2_5551eb39-4538-4d15-acbb-7779e2c36d15.png",
+        "mobile_image": "shopify://shop_images/banner_2_5551eb39-4538-4d15-acbb-7779e2c36d15.png"
+      }
+    },
+    "banner_responsive_Ld4GUn": {
+      "type": "banner-responsive",
+      "disabled": true,
+      "settings": {
+        "url_banner": "shopify://collections/all",
+        "desktop_image": "shopify://shop_images/Banner_mujer1.png",
+        "mobile_image": "shopify://shop_images/banner_2_5551eb39-4538-4d15-acbb-7779e2c36d15.png"
       }
     },
     "1662138878fd85f8b1": {
@@ -23,7 +32,7 @@
         "1662138878de4ecdd9-2": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Poleron-Camuflado-con-cierre-frente.jpg",
+            "image": "shopify://shop_images/Cortaviento-Camo-Verde_d62a026d-4fcf-47df-9617-745269f8129b.jpg",
             "title": "",
             "text": "",
             "link_label": "POLERONES",
@@ -87,7 +96,7 @@
         "column_alignment": "left",
         "background_style": "none",
         "button_label": "Navega por nuestras categorías.",
-        "button_link": "shopify://collections",
+        "button_link": "shopify://collections/all",
         "color_scheme": "background-1",
         "columns_mobile": "2",
         "swipe_on_mobile": true,
@@ -129,6 +138,7 @@
         "text_WhTicj",
         "buttons_HrwDYt"
       ],
+      "disabled": true,
       "settings": {
         "enable_wave_border": true,
         "wave_border_color": "#ffffff",
@@ -181,13 +191,13 @@
         "bg_color": "",
         "padding_y": 0,
         "padding_x": 0,
-        "pattern_bg": "shopify://shop_images/Captura_de_pantalla_2025-02-25_a_las_11.14.44_a._m..png",
+        "pattern_bg": "shopify://shop_images/simolos.png",
         "pattern_bg_position": "top left",
         "pattern_bg_color": "",
-        "image": "shopify://shop_images/Banner-Wcodigos-web-COA2.png",
-        "image_mobile": "shopify://shop_images/0bb564bd-0502-40ca-be9e-c946eb7031ac.png",
+        "image": "shopify://shop_images/simolos.png",
+        "image_mobile": "shopify://shop_images/simolos.png",
         "image_overlay_opacity": 20,
-        "image_height": "medium",
+        "image_height": "large",
         "adapt_height_first_image": false,
         "page-width": false,
         "desktop_content_position": "middle-center",
@@ -271,8 +281,8 @@
         "padding_x": 0,
         "pattern_bg_position": "top left",
         "pattern_bg_color": "",
-        "image": "shopify://shop_images/CICATRIZ-1-1-1.png",
-        "image_mobile": "shopify://shop_images/2c26305b-7746-4025-92fc-11f4c6871e65.png",
+        "image": "shopify://shop_images/cicatriz.png",
+        "image_mobile": "shopify://shop_images/cicatriz.png",
         "image_overlay_opacity": 0,
         "image_height": "medium",
         "adapt_height_first_image": true,
@@ -450,6 +460,7 @@
         "1662130778fb8c0f72-1",
         "1662130778fb8c0f72-2"
       ],
+      "disabled": true,
       "settings": {
         "enable_wave_border": true,
         "wave_border_color": "#ffffff",
@@ -467,21 +478,21 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "¡Tan simple como una oportunidad te puede cambiar la vida!",
+            "heading": "",
             "heading_size": "h2"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "¡En COA les damos una segunda oportunidad a los que no han tenido ni siquiera una!",
+            "text": "",
             "text_style": "subtitle"
           }
         },
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "¿Qué es COA?",
+            "button_label_1": "",
             "button_link_1": "shopify://pages/que-es-coa",
             "button_style_secondary_1": true,
             "button_label_2": "",
@@ -501,10 +512,10 @@
         "padding_x": 0,
         "pattern_bg_position": "top left",
         "pattern_bg_color": "",
-        "image": "shopify://shop_images/banner_2.png",
-        "image_mobile": "shopify://shop_images/banner-2-mobile.png",
+        "image": "shopify://shop_images/banner_surf_d.png",
+        "image_mobile": "shopify://shop_images/banner_surf_d.png",
         "image_overlay_opacity": 40,
-        "image_height": "medium",
+        "image_height": "large",
         "adapt_height_first_image": false,
         "page-width": false,
         "desktop_content_position": "middle-right",
@@ -586,7 +597,7 @@
         "16620702807688ba7e-0": {
           "type": "heading",
           "settings": {
-            "heading": "<p>Ponemos el tema sobre la mesa, ¿crees que solo el gobierno debe hacerse cargo o es labor de <strong>todos los chilenos</strong>?</p>",
+            "heading": "",
             "heading_size": "h2"
           }
         },
@@ -616,6 +627,7 @@
         "16620702807688ba7e-1",
         "16620702807688ba7e-2"
       ],
+      "disabled": true,
       "settings": {
         "enable_wave_border": false,
         "wave_border_color": "#ffffff",
@@ -633,33 +645,28 @@
         "16621256294cbf5e3f-0": {
           "type": "video",
           "settings": {
-            "cover_image": "shopify://shop_images/portada-video_a6285f2a-73fa-48e6-b0be-bcc459cca402.png",
+            "cover_image": "shopify://shop_images/baner_oportunidades.png",
             "video_url": "https://youtu.be/70msym8XQFo?si=A6AxuG85kh9H4-3c",
-            "description": "Reinserción de reos en la sociedad",
+            "description": "",
             "image_padding": true
-          }
-        },
-        "cee388cd-f2c1-42a7-bd25-dd1c24850df7": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/foto2-sin_raya.png",
-            "image_padding": false
           }
         }
       },
       "block_order": [
-        "16621256294cbf5e3f-0",
-        "cee388cd-f2c1-42a7-bd25-dd1c24850df7"
+        "16621256294cbf5e3f-0"
+      ],
+      "custom_css": [
+        ".page-width {max-width: 100%; padding-left: 0; padding-right: 0;}"
       ],
       "settings": {
-        "heading": "Ve este video de nuestras actividades",
-        "heading_size": "h2",
+        "heading": "",
+        "heading_size": "h0",
         "desktop_layout": "left",
         "mobile_layout": "collage",
         "card_styles": "none",
         "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "16627507600f0abf9c": {
@@ -689,6 +696,7 @@
         "1662750760bd39a13d-1",
         "1662750760bd39a13d-2"
       ],
+      "disabled": true,
       "settings": {
         "enable_wave_border": false,
         "wave_border_color": "#ffffff",
@@ -763,7 +771,7 @@
         "166212771331566eba-0": {
           "type": "video",
           "settings": {
-            "cover_image": "shopify://shop_images/portada-video-sename.png",
+            "cover_image": "shopify://shop_images/sename_1.png",
             "video_url": "https://www.youtube.com/watch?v=cKMBdvyE7Xg",
             "description": "Describe the video",
             "image_padding": false
@@ -771,6 +779,7 @@
         },
         "a5d5f647-3cd5-4dba-8706-6b465e414265": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/sename-peque_cf0408f0-b3c6-470e-9463-050791f0d60e.gif",
             "image_padding": false
@@ -782,7 +791,7 @@
         "a5d5f647-3cd5-4dba-8706-6b465e414265"
       ],
       "settings": {
-        "heading": "El 1% de las ventas va a talleres y actividades para el SENAME",
+        "heading": "",
         "heading_size": "h2",
         "desktop_layout": "left",
         "mobile_layout": "collage",
@@ -818,6 +827,7 @@
         "1662751065c037c45a-1",
         "1662751065c037c45a-2"
       ],
+      "disabled": true,
       "settings": {
         "enable_wave_border": false,
         "wave_border_color": "#ffffff",
@@ -835,6 +845,7 @@
       "blocks": {
         "1662130345b0990a10-0": {
           "type": "video",
+          "disabled": true,
           "settings": {
             "cover_image": "shopify://shop_images/portada-video_d903f197-108e-4e29-b328-657de8d48403.png",
             "video_url": "https://www.youtube.com/watch?v=BLZsNvL8KAM",
@@ -845,7 +856,7 @@
         "a04af46a-b3fd-4304-a7ea-391208dca188": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/escuelita-horizontal-home.png",
+            "image": "shopify://shop_images/escuela_de_surf.png",
             "image_padding": false
           }
         },
@@ -863,15 +874,18 @@
         "a04af46a-b3fd-4304-a7ea-391208dca188",
         "51de9525-09c0-4354-b31c-3ffeadfddf92"
       ],
+      "custom_css": [
+        ".page-width {max-width: 100%; padding-left: 0; padding-right: 0;}"
+      ],
       "settings": {
-        "heading": "Escuela de Surf",
+        "heading": "",
         "heading_size": "h2",
         "desktop_layout": "right",
         "mobile_layout": "collage",
         "card_styles": "none",
         "color_scheme": "background-1",
-        "padding_top": 20,
-        "padding_bottom": 24
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "16621326336839161f": {
@@ -1050,6 +1064,7 @@
   },
   "order": [
     "banner_responsive_kCmhYV",
+    "banner_responsive_Ld4GUn",
     "1662138878fd85f8b1",
     "rich_text_M4YrVe",
     "image_banner_hK9Qkp",
