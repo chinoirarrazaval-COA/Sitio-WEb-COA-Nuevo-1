@@ -1,0 +1,17 @@
+{% comment %}
+  Aviso sobre el botón de compra en las tablas de surf: el envío gratis no aplica.
+  Uso: {% render 'coa-aviso-tablas', product: product %}
+  Se muestra solo si el tipo de producto contiene "Tabla".
+{% endcomment %}
+{%- if product.type contains 'Tabla' -%}
+  <div class="coa-aviso-tablas" role="note">
+    <p><strong>La entrega de tablas se coordina aparte.</strong> El envío gratis no aplica. Cuando compres te escribimos para acordar la entrega o el retiro y su costo.</p>
+    <p>¿Dudas antes de comprar? <a href="https://wa.me/56964326322" target="_blank" rel="noopener">WhatsApp +56 9 6432 6322</a></p>
+  </div>
+  <style>
+    .coa-aviso-tablas { border-left: 4px solid #e4032c; background: #f6f3ee; padding: 1.2rem 1.6rem; margin: 0 0 1.6rem; font-size: 1.4rem; line-height: 1.5; }
+    .coa-aviso-tablas p { margin: 0; }
+    .coa-aviso-tablas p + p { margin-top: 0.6rem; }
+    .coa-aviso-tablas a { text-decoration: underline; }
+  </style>
+{%- endif -%}

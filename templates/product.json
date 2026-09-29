@@ -111,7 +111,7 @@
         "envio_cambios": {
           "type": "text",
           "settings": {
-            "text": "Envío gratis sobre $45.000 a todo Chile · Cambios gratis, siempre",
+            "text": "Envío gratis sobre $45.000 a todo Chile · Cambios gratis por 30 días",
             "text_style": "subtitle"
           }
         },
@@ -119,6 +119,12 @@
           "type": "custom_liquid",
           "settings": {
             "custom_liquid": "{% render 'coa-guia-tallas', product: product %}"
+          }
+        },
+        "aviso_tablas": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'coa-aviso-tablas', product: product %}"
           }
         }
       },
@@ -130,6 +136,7 @@
         "variant_picker",
         "guia_tallas",
         "quantity_selector",
+        "aviso_tablas",
         "buy_buttons",
         "envio_cambios",
         "description",

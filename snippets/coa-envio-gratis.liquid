@@ -2,11 +2,22 @@
   Barra de progreso hacia el envío gratis.
   Uso: {% render 'coa-envio-gratis' %}
   El umbral se define en pesos (CLP) con el parámetro opcional `umbral`. Por defecto 45.000.
+  Las tablas de surf no cuentan para el envío gratis: su entrega se coordina aparte.
 {% endcomment %}
 {%- liquid
   assign umbral_clp = umbral | default: 45000
   assign umbral_centavos = umbral_clp | times: 100
-  assign total = cart.total_price
+  assign total = 0
+  assign hay_tablas = false
+  assign hay_otros = false
+  for item in cart.items
+    if item.product.type contains 'Tabla'
+      assign hay_tablas = true
+    else
+      assign hay_otros = true
+      assign total = total | plus: item.final_line_price
+    endif
+  endfor
   assign faltante = umbral_centavos | minus: total
   if total > 0
     assign progreso = total | times: 100 | divided_by: umbral_centavos
@@ -19,21 +30,27 @@
 -%}
 {%- if cart.item_count > 0 -%}
   <div class="coa-envio" role="status">
-    <p class="coa-envio__texto">
-      {%- if faltante > 0 -%}
-        Te faltan <strong>{{ faltante | money_without_trailing_zeros }}</strong> para el envío gratis a todo Chile.
-      {%- else -%}
-        <strong>Tienes envío gratis</strong> a todo Chile.
-      {%- endif -%}
-    </p>
-    <div class="coa-envio__barra" aria-hidden="true">
-      <span class="coa-envio__relleno" style="width: {{ progreso }}%;"></span>
-    </div>
+    {%- if hay_otros -%}
+      <p class="coa-envio__texto">
+        {%- if faltante > 0 -%}
+          Te faltan <strong>{{ faltante | money_without_trailing_zeros }}</strong> para el envío gratis a todo Chile.
+        {%- else -%}
+          <strong>Tienes envío gratis</strong> a todo Chile.
+        {%- endif -%}
+      </p>
+      <div class="coa-envio__barra" aria-hidden="true">
+        <span class="coa-envio__relleno" style="width: {{ progreso }}%;"></span>
+      </div>
+    {%- endif -%}
+    {%- if hay_tablas -%}
+      <p class="coa-envio__tablas">La entrega de tablas se coordina aparte: te escribimos para acordar la entrega o el retiro y su costo.</p>
+    {%- endif -%}
   </div>
   <style>
     .coa-envio { margin: 0 0 1.6rem; text-align: left; }
     .coa-envio__texto { margin: 0 0 0.6rem; font-size: 1.4rem; line-height: 1.4; }
     .coa-envio__barra { height: 6px; background: #e5e5e5; border-radius: 3px; overflow: hidden; }
     .coa-envio__relleno { display: block; height: 100%; background: #e4032c; transition: width 0.3s ease; }
+    .coa-envio__tablas { margin: 0.8rem 0 0; font-size: 1.3rem; line-height: 1.4; }
   </style>
 {%- endif -%}

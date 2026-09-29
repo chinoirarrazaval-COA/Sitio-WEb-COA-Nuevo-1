@@ -35,17 +35,17 @@
         "1662746775a4a8de7a-0": {
           "type": "column",
           "settings": {
-            "preheading": "ORÍGENES",
+            "preheading": "EL IDIOMA",
             "preheading_weight": "bold",
             "preheading_color": "#e4022c",
             "preheading_size": 14,
             "preheading_mobile_size": 12,
-            "title": "¿QUÉ ES COA?",
+            "title": "¿QUÉ ES EL COA?",
             "title_weight": "bold",
             "title_color": "#000000",
             "title_size": 29,
             "title_mobile_size": 18,
-            "text": "<p>COA nació en 2011 con una pregunta: ¿qué pasa con las personas después de la cárcel? Hicimos una marca de surf, una industria llena de marcas gigantes, y le pusimos el nombre del idioma que se habla adentro: el coa.</p>",
+            "text": "<p>El coa es la jerga que nació en las cárceles de Chile. Se inventó para hablar sin que entendieran los de afuera, y lleva más de un siglo escribiéndose: la primera vez que alguien lo anotó fue en 1910.</p><p>Buena parte de lo que hoy habla todo Chile salió de ahí sin que nadie lo notara: choro, cana, guita, sapo, caleta, cachar, pituto.</p>",
             "text_weight": "normal",
             "text_color": "#000000",
             "text_size": 18,
@@ -82,17 +82,17 @@
         "1662745064f5c67e0c-0": {
           "type": "column",
           "settings": {
-            "preheading": "LO QUE NOS HACE DISTINTOS",
+            "preheading": "",
             "preheading_weight": "normal",
             "preheading_color": "#000000",
             "preheading_size": 14,
             "preheading_mobile_size": 12,
-            "title": "EL IDIOMA",
+            "title": "DE AHÍ SALE LA MARCA",
             "title_weight": "bold",
             "title_color": "#e4022c",
             "title_size": 24,
             "title_mobile_size": 18,
-            "text": "<p>Nuestros diseños no son decoración: son códigos reales del coa. Las rayas que cuentan los días, los cinco puntos, el destacador. Eso no lo inventó una agencia y no se puede copiar.</p>",
+            "text": "<p>Le pusimos COA a la marca hace quince años, y no como guiño de diseño. Los diseños que vendemos son códigos que se leen adentro: las rayas que cuentan los días, los cinco puntos, el destacador. Ninguno lo inventó una agencia.</p>",
             "text_weight": "normal",
             "text_color": "#000000",
             "text_size": 18,
@@ -125,7 +125,8 @@
             "link": "",
             "text_alignment": "left",
             "mobile_text_alignment": "left"
-          }
+          },
+          "disabled": true
         }
       },
       "block_order": [
@@ -217,23 +218,23 @@
         "16627425069171d0a3-0": {
           "type": "column",
           "settings": {
-            "preheading": "HOY",
+            "preheading": "",
             "preheading_weight": "bold",
             "preheading_color": "#e4022c",
             "preheading_size": 14,
             "preheading_mobile_size": 12,
-            "title": "TRABAJAMOS CON JÓVENES EN REINSERCIÓN",
+            "title": "LO QUE HACEMOS CON LA PLATA",
             "title_weight": "normal",
             "title_color": "#000000",
             "title_size": 24,
             "title_mobile_size": 18,
-            "text": "<p>Tenemos convenio con el Servicio Nacional de Reinserción Social Juvenil. El 1% de cada venta va a llevar a esos cabros a surfear, a la nieve, a andar en bici, y a un taller de serigrafía donde aprenden un oficio.</p>",
+            "text": "<p>Empezamos trabajando dentro de recintos penitenciarios: talleres, oficios y producción junto a personas privadas de libertad. Esa etapa dejó los diseños y el nombre.</p><p>Hoy el 1% de cada venta se usa en llevar a jóvenes en reinserción a surfear, a la nieve y a andar en bici, y en un taller de serigrafía dentro del Servicio Nacional de Reinserción Social Juvenil, donde aprenden un oficio.</p><p>No prometemos que tu compra reduce un delito. Nadie puede prometer eso con seriedad. Lo que sí podemos decirte es en qué se usa la plata y quién está del otro lado.</p>",
             "text_weight": "normal",
             "text_color": "#000000",
             "text_size": 18,
             "text_mobile_size": 14,
-            "link_label": "",
-            "link": "",
+            "link_label": "Conoce la historia completa →",
+            "link": "shopify://pages/nosotros",
             "text_alignment": "center",
             "mobile_text_alignment": "center"
           }
@@ -328,7 +329,8 @@
         "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
-      }
+      },
+      "disabled": true
     },
     "166272691560f0005f": {
       "type": "haciendola-imagenes-regular",
@@ -389,7 +391,8 @@
         "gradient_position": 80,
         "irregular_section": true,
         "small_image": true
-      }
+      },
+      "disabled": true
     },
     "1662726939611501ef": {
       "type": "haciendola-imagenes-regular",
@@ -461,7 +464,7 @@
         "padding_x": 0,
         "pattern_bg_position": "top left",
         "pattern_bg_color": "",
-        "heading": "Ponte vivo, vé el video",
+        "heading": "Ponte vivo, ve el video",
         "heading_size": "h1",
         "cover_image": "shopify://shop_images/portada-video_57155dc7-157e-4be7-9f1c-b164bf6288ff.png",
         "video_url": "https://www.youtube.com/watch?v=LYk1AB29kbc",

@@ -306,7 +306,7 @@
         "mobile_content_alignment": "right",
         "stack_images_on_mobile": false,
         "show_text_below": false,
-        "banner_link": "shopify://pages/que-tan-chileno-eri",
+        "banner_link": "shopify://pages/jerga-coa",
         "banner_link_label": "Hacer el test"
       }
     },
@@ -588,7 +588,7 @@
         "confianza_col_1": {
           "type": "column",
           "settings": {
-            "title": "Cambios gratis, siempre",
+            "title": "Cambios gratis por 30 días",
             "text": "<p>Si la talla no te queda, la cambiamos.</p>",
             "link_label": "",
             "link": ""

@@ -14,17 +14,24 @@
     endif
   endfor
   assign tabla = product.metafields.custom.guia_tallas
-  assign tabla_html = ''
-  if tabla != blank
-    if tabla.type == 'rich_text_field'
-      assign tabla_html = tabla | metafield_tag
-    else
-      assign tabla_html = tabla.value
+  assign sku_base = product.selected_or_first_available_variant.sku
+  capture tabla_html
+    render 'coa-tablas-tallas', sku: sku_base
+  endcapture
+  assign tabla_html = tabla_html | strip
+  # Prioridad: 1) tabla del modelo base del proveedor, 2) metafield, 3) tabla en la descripción
+  if tabla_html == blank
+    if tabla != blank
+      if tabla.type == 'rich_text_field'
+        assign tabla_html = tabla | metafield_tag
+      else
+        assign tabla_html = tabla.value
+      endif
+    elsif product.description contains '<table'
+      assign partes = product.description | split: '<table'
+      assign resto = partes[1] | split: '</table>'
+      assign tabla_html = '<table' | append: resto.first | append: '</table>'
     endif
-  elsif product.description contains '<table'
-    assign partes = product.description | split: '<table'
-    assign resto = partes[1] | split: '</table>'
-    assign tabla_html = '<table' | append: resto.first | append: '</table>'
   endif
   assign whatsapp_texto = 'Hola COA, ¿qué talla me recomiendan para ' | append: product.title | append: '? Mido ___ cm y peso ___ kg.'
 -%}
@@ -65,7 +72,7 @@
       >
         Preguntar por WhatsApp
       </a>
-      <p class="coa-tallas__cambios">Y si igual no te queda, el cambio es gratis. Siempre.</p>
+      <p class="coa-tallas__cambios">Y si igual no te queda, tienes 30 días para cambiarla gratis.</p>
     </dialog>
   </div>
   <style>

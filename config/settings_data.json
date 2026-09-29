@@ -237,7 +237,7 @@
           "c3cc0b6b-468c-473d-88fd-0b1ac51cb3a3": {
             "type": "annuncement",
             "settings": {
-              "content": "<p>Envío gratis en todo Chile sobre $45.000</p>",
+              "content": "<p>Envío gratis en todo Chile sobre $45.000 · tablas aparte</p>",
               "link": "shopify://collections/all",
               "target_blank": false
             }
@@ -246,14 +246,14 @@
             "type": "annuncement",
             "settings": {
               "content": "<p>¿Cachái el coa? Haz el test y llévate 15% de descuento</p>",
-              "link": "shopify://pages/que-tan-chileno-eri",
+              "link": "shopify://pages/jerga-coa",
               "target_blank": false
             }
           },
           "annuncement_cambios": {
             "type": "annuncement",
             "settings": {
-              "content": "<p>Cambios gratis, siempre. ¿Dudas? WhatsApp +56 9 6432 6322</p>",
+              "content": "<p>Cambios gratis dentro de 30 días. ¿Dudas? WhatsApp +56 9 6432 6322</p>",
               "link": "https://wa.me/56964326322",
               "target_blank": true
             }

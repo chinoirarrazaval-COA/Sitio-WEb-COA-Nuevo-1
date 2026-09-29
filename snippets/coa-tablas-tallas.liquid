@@ -1,0 +1,39 @@
+{% comment %}
+  Tablas de medidas por prenda base (en cm, prenda tomada en plano).
+  Uso: {% render 'coa-tablas-tallas', sku: variant.sku %}
+  Devuelve la tabla HTML si el SKU contiene un modelo conocido; si no, no devuelve nada.
+  Fuente: fichas técnicas del proveedor (S&S Activewear), convertidas de pulgadas a cm.
+  Largo = desde el hombro junto al cuello. Ancho = pecho de axila a axila. Manga = desde el centro de la espalda.
+{% endcomment %}
+{%- liquid
+  assign s = sku | upcase
+  assign filas = ''
+  if s contains 'SF500'
+    assign filas = 'XS,69,46,84|S,71,51,86|M,74,56,89|L,76,61,91|XL,79,66,94|XXL,81,71,97'
+  elsif s contains 'SS4500Z'
+    assign filas = 'XS,69,48,85|S,71,51,88|M,74,56,90|L,76,61,93|XL,79,66,95|XXL,81,69,98'
+  elsif s contains 'EXP54LWZ'
+    assign filas = 'XS,67,51,84|S,70,53,88|M,72,56,92|L,75,58,96|XL,77,62,100|XXL,80,66,104'
+  elsif s contains '8454'
+    assign filas = 'S,69,53,84|M,71,57,86|L,74,61,89|XL,76,65,91|XXL,79,69,94'
+  elsif s contains '8890'
+    assign filas = 'S,71,52,84|M,73,56,88|L,75,60,91|XL,77,64,95|XXL,79,67,99'
+  elsif s contains 'MANGALLARGA'
+    assign filas = 'S,71,46,83|M,74,51,88|L,76,56,92|XL,79,61,96|XXL,81,66,100'
+  endif
+-%}
+{%- if filas != blank -%}
+  <table>
+    <thead>
+      <tr><th>Talla</th><th>Largo</th><th>Ancho</th><th>Manga*</th></tr>
+    </thead>
+    <tbody>
+      {%- assign lista = filas | split: '|' -%}
+      {%- for fila in lista -%}
+        {%- assign c = fila | split: ',' -%}
+        <tr><td>{{ c[0] }}</td><td>{{ c[1] }}</td><td>{{ c[2] }}</td><td>{{ c[3] }}</td></tr>
+      {%- endfor -%}
+    </tbody>
+  </table>
+  <p class="coa-tallas__nota">*Manga medida desde el centro de la espalda.</p>
+{%- endif -%}
