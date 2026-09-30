@@ -47,7 +47,7 @@
         "bajada": {
           "type": "text",
           "settings": {
-            "text": "<p>Poleras, polerones, polars, chaquetas, camisas, pantalón de trabajo y regalos corporativos con el logo de tu empresa bordado o estampado. Diseños que salen del coa y un aporte real: el 1% de cada pedido vuelve a jóvenes en reinserción.</p>"
+            "text": "<p>Uniformes, ropa corporativa, merch y regalos con el logo de tu empresa, bordado o estampado. Y un aporte real: el 1% de cada pedido va a actividades con jóvenes en reinserción.</p>"
           }
         },
         "boton": {
@@ -237,7 +237,7 @@
           "type": "column",
           "settings": {
             "title": "Con propósito",
-            "text": "<p>El 1% de cada pedido va a jóvenes en reinserción: surf, nieve, bici y un taller de serigrafía.</p>",
+            "text": "<p>El 1% de cada pedido va a actividades con jóvenes en reinserción: surf, nieve y bici. Y los primeros pedidos corporativos serán los que pongan en marcha el taller de serigrafía que estamos preparando con el Servicio Nacional de Reinserción Social Juvenil.</p>",
             "link_label": "",
             "link": ""
           }

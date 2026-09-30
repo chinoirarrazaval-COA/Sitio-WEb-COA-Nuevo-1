@@ -196,7 +196,7 @@
             "type": "text",
             "settings": {
               "heading": "Qué es COA",
-              "subtext": "<p>Ropa y tablas hechas en Chile. Como mínimo el 1% de cada venta vuelve a los talleres y a las actividades con jóvenes en reinserción.</p><p>Envío gratis sobre $45.000 · Cambios gratis · WhatsApp +56 9 6432 6322</p>"
+              "subtext": "<p>Marca chilena de ropa y tablas. El 1% de cada venta va a actividades con jóvenes en reinserción.</p><p>Envío gratis sobre $45.000 · Cambios gratis por 30 días · WhatsApp +56 9 6432 6322</p>"
             }
           }
         },
@@ -237,7 +237,7 @@
           "c3cc0b6b-468c-473d-88fd-0b1ac51cb3a3": {
             "type": "annuncement",
             "settings": {
-              "content": "<p>Envío gratis en todo Chile sobre $45.000 · tablas aparte</p>",
+              "content": "<p>Envío gratis en todo Chile sobre $45.000 · tablas: retiro en Puertecillo</p>",
               "link": "shopify://collections/all",
               "target_blank": false
             }

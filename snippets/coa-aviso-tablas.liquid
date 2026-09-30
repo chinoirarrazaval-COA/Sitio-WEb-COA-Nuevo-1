@@ -1,11 +1,11 @@
 {% comment %}
-  Aviso sobre el botón de compra en las tablas de surf: el envío gratis no aplica.
+  Aviso sobre el botón de compra en las tablas de surf: solo retiro en Puertecillo, sin despacho.
   Uso: {% render 'coa-aviso-tablas', product: product %}
   Se muestra solo si el tipo de producto contiene "Tabla".
 {% endcomment %}
 {%- if product.type contains 'Tabla' -%}
   <div class="coa-aviso-tablas" role="note">
-    <p><strong>La entrega de tablas se coordina aparte.</strong> El envío gratis no aplica. Cuando compres te escribimos para acordar la entrega o el retiro y su costo.</p>
+    <p><strong>Las tablas se retiran en nuestra tienda de Puertecillo.</strong> No hacemos despachos de tablas. Cuando compres te escribimos para coordinar el día del retiro.</p>
     <p>¿Dudas antes de comprar? <a href="https://wa.me/56964326322" target="_blank" rel="noopener">WhatsApp +56 9 6432 6322</a></p>
   </div>
   <style>

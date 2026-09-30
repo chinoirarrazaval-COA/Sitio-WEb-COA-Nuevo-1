@@ -2,7 +2,7 @@
   Barra de progreso hacia el envío gratis.
   Uso: {% render 'coa-envio-gratis' %}
   El umbral se define en pesos (CLP) con el parámetro opcional `umbral`. Por defecto 45.000.
-  Las tablas de surf no cuentan para el envío gratis: su entrega se coordina aparte.
+  Las tablas de surf no cuentan para el envío gratis: solo se retiran en Puertecillo.
 {% endcomment %}
 {%- liquid
   assign umbral_clp = umbral | default: 45000
@@ -43,7 +43,7 @@
       </div>
     {%- endif -%}
     {%- if hay_tablas -%}
-      <p class="coa-envio__tablas">La entrega de tablas se coordina aparte: te escribimos para acordar la entrega o el retiro y su costo.</p>
+      <p class="coa-envio__tablas">Las tablas se retiran en nuestra tienda de Puertecillo: te escribimos para coordinar el retiro.</p>
     {%- endif -%}
   </div>
   <style>

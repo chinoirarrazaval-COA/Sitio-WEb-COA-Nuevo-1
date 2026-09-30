@@ -198,7 +198,7 @@
         "51b2ad1e-354a-413c-ab2e-8b94de6de66d": {
           "type": "caption",
           "settings": {
-            "caption": "Como mínimo el 1%<destacar> \nde cada venta </destacar>",
+            "caption": "El 1%<destacar> \nde cada venta </destacar>",
             "caption_size": 40,
             "mobile_caption_size": 27,
             "caption_color": "#e22120",
@@ -210,7 +210,7 @@
         "1662573692625955d1-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Parte de lo que pagas acá se va en llevar cabros en reinserción a surfear, a la nieve, a andar en bici. Y en un taller donde aprenden un oficio de verdad.</p><p>No prometemos que tu compra reduce un delito. Nadie puede prometer eso en serio. Lo que sí podemos decirte es en qué se usa la plata y quién está del otro lado.</p>",
+            "text": "<p>El 1% de lo que pagas acá va a actividades con jóvenes en reinserción: surf, nieve y bici, que estamos retomando junto al Servicio Nacional de Reinserción Social Juvenil. Y estamos preparando un taller de serigrafía donde puedan aprender un oficio.</p><p>No prometemos que tu compra reduce un delito. Nadie puede prometer eso en serio. Lo que sí podemos decirte es en qué se usa la plata y quién está del otro lado.</p>",
             "text_size": 17,
             "mobile_text_size": 14,
             "text_color": "#000000",
