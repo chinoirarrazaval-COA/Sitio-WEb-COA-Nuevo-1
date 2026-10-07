@@ -65,8 +65,82 @@
 </style>
 {% endraw %}
 
+{%- comment -%} Puente palabra → prenda: cada ficha muestra la polera de su mundo. {%- endcomment -%}
+{%- liquid
+  assign ph = ''
+  assign pl = ''
+  assign ah = article.handle | split: '/' | last
+  case ah
+    when 'que-significa-barretin'
+      assign ph = 'polera-anti-perkin-negro'
+      assign pl = 'Barretín es desafiar al sistema. Anti Perkin es elegir tú dónde te paras.'
+    when 'que-significa-retobar'
+      assign ph = 'polera-anti-perkin-negro'
+      assign pl = 'Retobar es plantarse y no obedecer. Anti Perkin es elegir tú dónde te paras.'
+    when 'que-significa-perkin'
+      assign ph = 'polera-anti-perkin-negro'
+      assign pl = 'Todos conocemos uno. Muchos hemos sido uno.'
+    when 'que-significa-carambisambi'
+      assign ph = 'polera-skar-blanca'
+      assign pl = 'Estar donde pasó la cosa deja marca. Una cicatriz es la prueba de que pasaste por ahí.'
+    when 'que-significa-pitearse-un-condoro'
+      assign ph = 'polera-skar-blanca'
+      assign pl = 'Una cicatriz no te la dan: te la ganas cayéndote.'
+    when 'que-es-el-hampa-en-chile', 'que-significa-cana-en-chile'
+      assign ph = 'polera-encierro-negra'
+      assign pl = 'Los cinco puntos: cuatro paredes y uno encerrado al medio. Le pusimos Encierro porque no queríamos suavizarlo.'
+    when 'que-significa-andar-pato-ficha'
+      assign ph = 'polera-dias-contado'
+      assign pl = 'Adentro el tiempo se cuenta con rayas. Afuera contamos igual, pero al revés.'
+    when 'que-significa-coronar-en-chile'
+      assign ph = 'plan-pa-coronar-20-000'
+      assign pl = 'Coronar es que te resulte. Este plan mensual financia actividades con jóvenes en reinserción.'
+    when 'que-significa-lavadora-en-la-carcel'
+      assign ph = 'polera-hand-paint'
+      assign pl = 'Cuando no tienes nada, lo que sabes hacer con las manos es lo único que es tuyo.'
+    when 'que-es-flaite-y-que-tiene-que-ver-con-el-coa'
+      assign ph = 'polera-logo-surf-blanca'
+      assign pl = 'Las etiquetas las pone otro. Nuestro logo está dibujado a mano: ningún trazo es perfecto, y esa es la idea.'
+    when 'que-significa-echar-el-pelo', 'que-significa-sapo-en-chile'
+      assign ph = 'polera-logo-flecha-azul-marino'
+      assign pl = 'Solo COA. El que sabe, sabe. Al que no, le va a dar curiosidad.'
+    when 'que-significa-hacer-tierra', 'que-significa-tirar-la-pela'
+      assign ph = 'polera-destacador-blanca'
+      assign pl = 'La marca que rodea lo que no se negocia. Cada uno sabe qué pondría adentro del suyo.'
+    when 'que-significa-choro-en-chile'
+      assign ph = 'polera-concurso-heliski-rotortec'
+      assign pl = 'Hecha para un concurso de heliski. Alguien ganó, fue, y volvió. Quedan las últimas.'
+  endcase
+  if ph != ''
+    assign pp = all_products[ph]
+  endif
+-%}
+{%- if pp and pp.available -%}
+<style>
+  .cpie__prod{display:flex;gap:16px;align-items:center;margin:0 0 30px;padding:16px;border:1px solid #38312d;
+    background:#1c1917;color:#f0ebe6;text-decoration:none}
+  .cpie__prod img{width:96px;height:96px;object-fit:cover;flex:none;background:#262220}
+  .cpie__prod .k{font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#f4d400}
+  .cpie__prod .n{font-weight:900;font-size:18px;line-height:1.15;margin:4px 0}
+  .cpie__prod .l{font-size:14px;color:#968c84;line-height:1.45}
+  .cpie__prod .p{font-weight:700;font-size:14px;margin-top:6px}
+  .cpie__prod:hover{border-color:#f4d400}
+</style>
+{%- endif -%}
+
 <section class="cpie">
   <div class="cpie__w">
+    {%- if pp and pp.available -%}
+      <a class="cpie__prod" href="{{ pp.url }}?utm_source=diccionario&utm_medium=ficha&utm_campaign={{ ah }}">
+        {%- if pp.featured_image -%}{{ pp.featured_image | image_url: width: 240 | image_tag: loading: 'lazy', alt: pp.title }}{%- endif -%}
+        <span>
+          <span class="k">{% if ph contains "plan-" %}Esta palabra tiene plan{% else %}Esta palabra tiene polera{% endif %}</span>
+          <span class="n" style="display:block">{{ pp.title }}</span>
+          <span class="l" style="display:block">{{ pl }}</span>
+          <span class="p" style="display:block">{{ pp.price | money_without_trailing_zeros }}{% if ph contains "plan-" %} al mes{% else %} · cambios gratis 30 días{% endif %}</span>
+        </span>
+      </a>
+    {%- endif -%}
     <p class="cpie__eye">Diccionario coa · COA</p>
     <p class="cpie__h">Hay <span>893</span> palabras más</p>
     <p class="cpie__t">El diccionario completo del coa: lo que se habló desde 1910 y lo que se habla hoy, cada palabra con la fecha en que alguien la anotó por primera vez. Se busca por palabra o por significado.</p>

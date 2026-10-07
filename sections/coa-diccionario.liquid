@@ -103,14 +103,16 @@
     <p class="cd-lede">Lo que se habla adentro y lo que se escapó a la calle. Sacado de los tres diccionarios que se escribieron sobre el coa desde 1910, más lo que llega de ustedes. Busca por palabra o por significado.</p>
 
 
-    <div class="cd-sus">
+    <div class="cd-sus" id="cd-sus">
       <h3>Una palabra de coa cada lunes</h3>
       <p>Una sola, con su significado y de dónde salió. Nada más. Si te aburre, te sales en un clic.</p>
-      <form id="cd-sus-form" onsubmit="return false">
+      {%- form 'customer', id: 'cd-sus-form' -%}
+        <input type="hidden" name="contact[tags]" value="newsletter,palabra-semana">
+        <input type="hidden" name="contact[accepts_marketing]" value="true">
         <label for="cd-sus-mail" style="display:none">Tu correo</label>
-        <input type="email" id="cd-sus-mail" placeholder="tunombre@correo.cl" autocomplete="email">
+        <input type="email" id="cd-sus-mail" name="contact[email]" placeholder="tunombre@correo.cl" autocomplete="email">
         <button type="submit" id="cd-sus-btn">Quiero la palabra de la semana</button>
-      </form>
+      {%- endform -%}
       <p class="cd-mini" id="cd-sus-msg">Sin ofertas, sin spam. Solo una palabra.</p>
       <p class="cd-ok2" id="cd-sus-ok">Listo. El lunes te llega la primera.</p>
     </div>
@@ -150,19 +152,21 @@
     <p class="cd-none" id="cd-none" hidden>Nada con eso. Prueba con parte de la palabra, o con el significado.</p>
     <button class="cd-more" id="cd-more" type="button" hidden>Ver todas</button>
 
-    <div class="cd-add">
+    <div class="cd-add" id="cd-prop">
       <h3>El diccionario lo hacen ustedes</h3>
       <p>¿Sabes una que no está? Déjala acá. Las que más se repitan las vamos a estampar — y quien la propuso queda con nombre y apellido en la etiqueta.</p>
-      <div id="cd-form">
+      {%- form 'customer', id: 'cd-form' -%}
+        <input type="hidden" name="contact[tags]" id="cd-ptags" value="newsletter,palabra-propuesta">
+        <input type="hidden" name="contact[accepts_marketing]" value="true">
         <label for="cd-np">La palabra</label>
         <input type="text" id="cd-np" placeholder="pituto" maxlength="40" autocomplete="off">
         <label for="cd-ns" style="margin-top:14px">Qué significa</label>
         <input type="text" id="cd-ns" placeholder="un contacto que te consigue algo" maxlength="140" autocomplete="off">
         <label for="cd-nm" style="margin-top:14px">Tu correo</label>
-        <input type="email" id="cd-nm" placeholder="tunombre@correo.cl" autocomplete="email">
-        <button class="cd-send" id="cd-send" type="button">Proponer palabra</button>
+        <input type="email" id="cd-nm" name="contact[email]" placeholder="tunombre@correo.cl" autocomplete="email">
+        <button class="cd-send" id="cd-send" type="submit">Proponer palabra</button>
         <p class="cd-err" id="cd-perr"></p>
-      </div>
+      {%- endform -%}
       <p class="cd-ok" id="cd-pok">Anotada. Si se repite, se estampa.</p>
     </div>
   </div>
@@ -242,52 +246,35 @@
   more.addEventListener('click', function(){ verTodo=true; aplica(); });
 
   var MAIL=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-  document.getElementById('cd-send').addEventListener('click', function(){
+  // Formularios reales de Shopify (traen el captcha invisible): solo validamos antes de enviar.
+  document.getElementById('cd-form').addEventListener('submit', function(e){
     var p=document.getElementById('cd-np').value.trim(),
         s=document.getElementById('cd-ns').value.trim(),
         m=document.getElementById('cd-nm').value.trim(),
         err=document.getElementById('cd-perr');
-    if(p.length<2){ err.textContent='Escribe la palabra.'; err.classList.add('show'); return; }
-    if(s.length<3){ err.textContent='Falta el significado.'; err.classList.add('show'); return; }
-    if(!MAIL.test(m)){ err.textContent='Déjanos tu correo para poder darte el crédito.'; err.classList.add('show'); return; }
+    if(p.length<2){ e.preventDefault(); err.textContent='Escribe la palabra.'; err.classList.add('show'); return; }
+    if(s.length<3){ e.preventDefault(); err.textContent='Falta el significado.'; err.classList.add('show'); return; }
+    if(!MAIL.test(m)){ e.preventDefault(); err.textContent='Déjanos tu correo para poder darte el crédito.'; err.classList.add('show'); return; }
     err.classList.remove('show');
-    this.disabled=true;
     var slug=norm(p).replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,40);
-    var body=new URLSearchParams();
-    body.append('form_type','customer');
-    body.append('utf8','✓');
-    body.append('contact[email]', m);
-    body.append('contact[tags]','newsletter,palabra-propuesta,palabra-'+slug);
-    fetch('/contact',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body.toString()})
-      .then(function(){
-        document.getElementById('cd-form').style.display='none';
-        document.getElementById('cd-pok').style.display='block';
-      })
-      .catch(function(){
-        document.getElementById('cd-send').disabled=false;
-        err.textContent='No se pudo enviar. Prueba de nuevo en un rato.'; err.classList.add('show');
-      });
+    document.getElementById('cd-ptags').value='newsletter,palabra-propuesta,palabra-'+slug;
   });
 
+  document.getElementById('cd-sus-form').addEventListener('submit', function(e){
+    var v=document.getElementById('cd-sus-mail').value.trim(), msg=document.getElementById('cd-sus-msg');
+    if(!MAIL.test(v)){ e.preventDefault(); msg.textContent='Ese correo no se ve bien. Revísalo.'; msg.style.color='#e88a89'; }
+  });
 
-  var susBtn=document.getElementById('cd-sus-btn');
-  if(susBtn){
-    susBtn.addEventListener('click', function(){
-      var v=document.getElementById('cd-sus-mail').value.trim(), msg=document.getElementById('cd-sus-msg');
-      if(!MAIL.test(v)){ msg.textContent='Ese correo no se ve bien. Revísalo.'; msg.style.color='#e88a89'; return; }
-      msg.style.color=''; susBtn.disabled=true;
-      var b=new URLSearchParams();
-      b.append('form_type','customer'); b.append('utf8','\u2713');
-      b.append('contact[email]', v);
-      b.append('contact[tags]','newsletter,palabra-semana');
-      fetch('/contact',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:b.toString()})
-        .then(function(){
-          document.getElementById('cd-sus-form').style.display='none';
-          msg.style.display='none';
-          document.getElementById('cd-sus-ok').style.display='block';
-        })
-        .catch(function(){ susBtn.disabled=false; msg.textContent='No se pudo. Prueba de nuevo en un rato.'; msg.style.color='#e88a89'; });
-    });
+  if(/customer_posted=true/.test(location.search)){
+    if(location.hash==='#cd-sus-form' && document.getElementById('cd-sus-ok')){
+      document.getElementById('cd-sus-form').style.display='none';
+      document.getElementById('cd-sus-msg').style.display='none';
+      document.getElementById('cd-sus-ok').style.display='block';
+    }
+    if(location.hash==='#cd-form' && document.getElementById('cd-pok')){
+      document.getElementById('cd-form').style.display='none';
+      document.getElementById('cd-pok').style.display='block';
+    }
   }
 
   aplica();

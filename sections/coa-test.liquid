@@ -89,6 +89,7 @@
   .ct-err{color:#e88a89;font-size:13px;margin-top:10px;display:none}
   .ct-err.show{display:block}
   .ct-code{font-family:ui-monospace,Menlo,monospace;font-weight:700;font-size:clamp(22px,6vw,30px);letter-spacing:.1em;color:var(--ct-yellow);border:1px dashed var(--ct-yellow);padding:16px;text-align:center;margin:4px 0 16px}
+  .ct-missed a.t{display:block;margin-top:4px;font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ct-yellow)}
   .ct-share{margin-top:12px;font-size:14px;color:var(--ct-muted)}
 
   .ct-foot{margin-top:36px;padding-top:22px;border-top:1px solid var(--ct-line);font-size:13px;color:var(--ct-muted);line-height:1.6}
@@ -113,7 +114,7 @@
       <p class="ct-lede">Diez palabras de la jerga carcelaria chilena. Cuatro opciones cada una. Nadie saca diez a la primera — y al final te llevas un 15% de descuento.</p>
       <p class="ct-eyebrow" data-el="recIntro" style="margin-top:22px;display:none"></p>
       <div style="margin-top:30px"><button class="ct-btn" data-el="start" type="button">Empezar el test</button></div>
-      <p class="ct-foot" style="margin-top:26px;padding-top:0;border:0">Toma menos de dos minutos. Y si te aburre, el diccionario completo está más abajo.<br><br><strong>Las preguntas cambian cada vez.</strong> Son diez sacadas de un banco de 36, así que no le pidas las respuestas a nadie: no le van a servir.</p>
+      <p class="ct-foot" style="margin-top:26px;padding-top:0;border:0">Toma menos de dos minutos. Y si te aburre, el diccionario completo está más abajo.<br><br><strong>Las preguntas cambian cada vez.</strong> Son diez sacadas de un banco de 39, así que no le pidas las respuestas a nadie: no le van a servir.</p>
     </section>
 
     <section class="ct-screen" data-s="quiz">
@@ -141,30 +142,42 @@
       <p class="ct-rank" data-el="rank">—</p>
       <p class="ct-score"><b data-el="final">0</b> de 10 correctas <span data-el="recNote"></span></p>
       <p class="ct-verdict" data-el="verdict"></p>
+      <div class="ct-panel" data-el="prize" style="margin-top:18px">
+        <h2>Llévate tu resultado</h2>
+        <p style="font-size:16px;margin-bottom:20px" data-el="prizeText"></p>
+{% endraw %}{%- form 'customer', id: 'ct-claim-form' -%}{% raw %}
+        <input type="hidden" name="contact[tags]" id="ct-tags" value="newsletter,test-coa">
+        <input type="hidden" name="contact[accepts_marketing]" value="true">
+        <label for="ct-mail">Tu correo</label>
+        <input type="email" id="ct-mail" name="contact[email]" placeholder="tunombre@correo.cl" autocomplete="email">
+        <div class="ct-consent">
+          <input type="checkbox" id="ct-ok">
+          <label for="ct-ok" style="margin:0">Quiero mi tarjeta, mi código y las novedades de COA. Puedo salirme cuando quiera.</label>
+        </div>
+        <button class="ct-btn" data-el="claim" type="submit">Mostrarme mi resultado</button>
+        <p class="ct-err" data-el="err"></p>
+{% endraw %}{%- endform -%}{% raw %}
+      </div>
+
+      <a class="ct-panel" data-el="myTee" href="/collections/poleras" style="display:block;text-decoration:none;color:inherit;margin-top:18px;border-color:var(--ct-yellow)">
+        <span style="display:block;font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ct-yellow)">Tu polera según tu rango</span>
+        <span style="display:block;font-weight:900;font-size:22px;margin:6px 0 4px" data-el="myTeeName">—</span>
+        <span style="display:block;font-size:15px;color:var(--ct-muted)" data-el="myTeeWhy"></span>
+        <span style="display:block;font-weight:700;font-size:14px;margin-top:10px;color:var(--ct-yellow)">Ver la polera →</span>
+      </a>
+      <button class="ct-btn ct-btn--ghost" data-el="retar" type="button" style="margin-top:14px">Reta a un amigo por WhatsApp</button>
 
       <div class="ct-panel" data-el="missedBox" style="display:none">
         <h2>Las que se te escaparon</h2>
         <ul class="ct-missed" data-el="missed"></ul>
       </div>
 
-      <div class="ct-panel" data-el="prize">
-        <h2>Llévate tu resultado</h2>
-        <p style="font-size:16px;margin-bottom:20px" data-el="prizeText"></p>
-        <label for="ct-mail">Tu correo</label>
-        <input type="email" id="ct-mail" placeholder="tunombre@correo.cl" autocomplete="email">
-        <div class="ct-consent">
-          <input type="checkbox" id="ct-ok">
-          <label for="ct-ok" style="margin:0">Quiero mi tarjeta, mi código y las novedades de COA. Puedo salirme cuando quiera.</label>
-        </div>
-        <button class="ct-btn" data-el="claim" type="button">Mostrarme mi resultado</button>
-        <p class="ct-err" data-el="err"></p>
-      </div>
-
       <div class="ct-panel" data-el="reveal" style="display:none">
         <h2>Ahí está</h2>
         <p class="ct-code" data-el="codeBox">COA15</p>
-        <p style="font-size:15px;color:var(--ct-muted);margin-bottom:18px">Válido en toda la tienda, un uso por persona. Anótalo o sácale una foto.</p>
-        <a class="ct-btn" href="/collections/all" style="text-align:center;text-decoration:none">Ir a la tienda</a>
+        <p style="font-size:15px;color:var(--ct-muted);margin-bottom:18px">15% en ropa y accesorios, un uso por persona, hasta el 30 de octubre. El botón de abajo ya lo deja aplicado: no tienes que copiarlo.</p>
+        <a class="ct-btn" data-el="buyTee" href="/collections/poleras" style="text-align:center;text-decoration:none">Comprar mi polera con 15%</a>
+        <a class="ct-btn ct-btn--ghost" data-el="buyAll" href="/collections/all" style="text-align:center;text-decoration:none;margin-top:10px">Ver toda la tienda con 15%</a>
         <p class="ct-share">Sacaste <b data-el="shareScore">0</b>/10. <button data-el="copy" type="button" style="background:none;border:0;color:var(--ct-yellow);padding:0;text-decoration:underline;font-size:14px">Compartir</button>
         &nbsp;·&nbsp; <button data-el="wsp" type="button" style="background:none;border:0;color:var(--ct-yellow);padding:0;text-decoration:underline;font-size:14px">Mandar por WhatsApp</button></p>
       </div>
@@ -179,7 +192,7 @@
 
       <div class="ct-panel">
         <h2>Estas palabras andan puestas</h2>
-        <p style="font-size:15px;color:var(--ct-muted);margin-bottom:16px">Cinco de las que salieron están estampadas en una polera, y una le da el nombre a un plan de aporte mensual. No es casualidad: los diseños salieron de ahí.</p>
+        <p style="font-size:15px;color:var(--ct-muted);margin-bottom:16px">Cada una de estas palabras está estampada en una polera, y una le da el nombre a un plan de aporte mensual. Los diseños salieron de ahí: entra y lee la historia de cada una.</p>
         <ul class="ct-shop">
           <li><a href="/products/polera-anti-perkin-negro"><span class="w">Perkin</span><span class="m">Polera Anti Perkin</span></a></li>
           <li><a href="/products/polera-encierro-negra"><span class="w">Los cinco puntos</span><span class="m">Polera Encierro</span></a></li>
@@ -194,14 +207,17 @@
         <h2>El diccionario lo hacen ustedes</h2>
         <p style="font-size:15px;color:var(--ct-muted);margin-bottom:18px">¿Sabes una que no está? Déjala acá. Las que más se repitan las vamos a estampar en una polera — y quien la propuso queda con nombre y apellido en la etiqueta.</p>
         <div data-el="propForm">
+{% endraw %}{%- form 'contact', id: 'ct-prop-form' -%}{% raw %}
+          <input type="hidden" name="contact[body]" id="ct-nb" value="">
           <label for="ct-np">La palabra</label>
-          <input type="text" id="ct-np" placeholder="pituto" maxlength="40" autocomplete="off">
+          <input type="text" id="ct-np" name="contact[Palabra propuesta]" placeholder="pituto" maxlength="40" autocomplete="off">
           <label for="ct-ns" style="margin-top:14px">Qué significa</label>
-          <input type="text" id="ct-ns" placeholder="un contacto que te consigue algo" maxlength="140" autocomplete="off">
+          <input type="text" id="ct-ns" name="contact[Significado]" placeholder="un contacto que te consigue algo" maxlength="140" autocomplete="off">
           <label for="ct-nm" style="margin-top:14px">Tu correo</label>
-          <input type="email" id="ct-nm" placeholder="tunombre@correo.cl" autocomplete="email">
-          <button class="ct-btn ct-btn--ghost" data-el="send" type="button" style="margin-top:16px">Proponer palabra</button>
+          <input type="email" id="ct-nm" name="contact[email]" placeholder="tunombre@correo.cl" autocomplete="email">
+          <button class="ct-btn ct-btn--ghost" data-el="send" type="submit" style="margin-top:16px">Proponer palabra</button>
           <p class="ct-err" data-el="propErr"></p>
+{% endraw %}{%- endform -%}{% raw %}
         </div>
         <p class="ct-eyebrow" data-el="propOk" style="margin-top:16px;display:none;color:var(--ct-yellow)"></p>
       </div>
@@ -260,7 +276,10 @@
     ["Los ratones","La PDI",["Los soplones","Los novatos","Los gendarmes"],"«Andaban los ratones en el barrio.»",null],
     ["Los pacos","Los gendarmes",["Los carabineros","Los presos viejos","Los abogados"],"«Los pacos hicieron la ronda.»",null],
     ["Funada","Conocida",["Arruinada","Denunciada","Cancelada"],"«Esa movida ya está funada.»",null],
-    ["No comerse la comida","No creer algo",["No tener hambre","No aceptar un trato","No delatar"],"«No me como la comida, esa historia no cuadra.»",null]
+    ["No comerse la comida","No creer algo",["No tener hambre","No aceptar un trato","No delatar"],"«No me como la comida, esa historia no cuadra.»",null],
+    ["Los cinco puntos","Un tatuaje: las cuatro paredes y uno encerrado al medio",["Cinco años de condena","Los cinco de la pandilla","Una marca de dados"],"«Tiene los cinco puntos en la mano, estuvo adentro.»",["Esta palabra anda estampada →","Polera Encierro","/products/polera-encierro-negra"]],
+    ["Contar los días","Marcar con rayas el tiempo que pasa adentro",["Esperar el día de pago","Llevar la cuenta de una deuda","Hacer dieta"],"«Cuatro rayas y una cruzada: así se cuentan los días.»",["Esta palabra anda estampada →","Polera Días Contado","/products/polera-dias-contado-gris"]],
+    ["El destacador","Un tatuaje que rodea lo que no se negocia",["Un plumón para subrayar","El que más destaca en el patio","El jefe de la carreta"],"«Tiene el nombre de la hija adentro del destacador.»",["Esta palabra anda estampada →","Polera Símbolo Destacador","/products/polera-destacador-gris"]]
   ];
 
   var TIERS = [
@@ -363,6 +382,21 @@
     el("shareScore").textContent = hits;
     el("verdict").textContent = tier.text;
     el("codeBox").textContent = tier.code;
+    var TEES = {
+      "CHORO15":  ["Polera Encierro", "/products/polera-encierro-negra", "Los cinco puntos: el tatuaje que solo reconoce el que sabe."],
+      "PIOLA15":  ["Polera Días Contado", "/products/polera-dias-contado-gris", "Las rayas de la pared. Afuera también contamos días: para el swell."],
+      "VERDE15":  ["Polera Símbolo Destacador", "/products/polera-destacador-gris", "La marca que rodea lo que no se negocia."],
+      "PERKIN15": ["Polera Anti Perkin", "/products/polera-anti-perkin-negro", "Para dejar de ser el que mandan adelante."]
+    };
+    var tee = TEES[tier.code];
+    if(tee){
+      el("myTeeName").textContent = tee[0];
+      el("myTeeWhy").textContent = tee[2];
+      el("myTee").href = tee[1] + "?utm_source=test-coa&utm_medium=resultado&utm_campaign=" + tier.code.toLowerCase();
+      el("buyTee").href = "/discount/" + tier.code + "?redirect=" + encodeURIComponent(tee[1]);
+      el("buyTee").textContent = "Comprar la " + tee[0] + " con 15%";
+    }
+    el("buyAll").href = "/discount/" + tier.code + "?redirect=%2Fcollections%2Fall";
     cardReady = false; buildCard();
     var rn=el("recNote");
     if(prev!==null && hits>prev) rn.textContent="· récord nuevo, antes "+prev;
@@ -375,7 +409,9 @@
         var li=document.createElement("li");
         var w=document.createElement("span"); w.className="w"; w.textContent=q.word;
         var m=document.createElement("span"); m.className="m"; m.textContent=q.right;
-        li.appendChild(w); li.appendChild(m); ml.appendChild(li);
+        li.appendChild(w); li.appendChild(m);
+        if(q.tie){ var a=document.createElement("a"); a.href=q.tie[2]; a.className="t"; a.textContent="Anda estampada: "+q.tie[1]+" →"; li.appendChild(a); }
+        ml.appendChild(li);
       });
       mb.style.display="";
     } else { mb.style.display="none"; }
@@ -400,13 +436,6 @@
     go("result");
   }
 
-  function post(fields){
-    var fd = new FormData();
-    fd.append("utf8","✓");
-    Object.keys(fields).forEach(function(k){ fd.append(k, fields[k]); });
-    return fetch("/contact", {method:"POST", body:fd, headers:{"Accept":"text/html"}});
-  }
-
   var MAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
   el("start").addEventListener("click", function(){ build(); render(); go("quiz"); });
@@ -416,48 +445,26 @@
     idx++; render();
   });
 
-  el("claim").addEventListener("click", function(){
+  // Formularios reales de Shopify (traen el captcha invisible). Solo validamos y guardamos el resultado.
+  document.getElementById("ct-claim-form").addEventListener("submit", function(e){
     var v=document.getElementById("ct-mail").value.trim(), err=el("err");
-    if(!MAIL.test(v)){ err.textContent="Ese correo no se ve bien. Revísalo y prueba de nuevo."; err.classList.add("show"); return; }
-    if(!document.getElementById("ct-ok").checked){ err.textContent="Marca la casilla para que podamos mandarte el código."; err.classList.add("show"); return; }
+    if(!MAIL.test(v)){ e.preventDefault(); err.textContent="Ese correo no se ve bien. Revísalo y prueba de nuevo."; err.classList.add("show"); return; }
+    if(!document.getElementById("ct-ok").checked){ e.preventDefault(); err.textContent="Marca la casilla para que podamos mandarte el código."; err.classList.add("show"); return; }
     err.classList.remove("show");
-    el("claim").disabled=true;
-    post({"form_type":"customer","contact[email]":v,
-      "contact[tags]":"newsletter,test-coa,"+tier.code+",intento-"+intento+",puntaje-"+hits+(intento===1?",primer-intento":",repeticion")});
-    try{ localStorage.setItem("coa_enviado", String(hits)); }catch(e){}
-    document.getElementById("ct-nm").value = v;
-    el("prize").style.display="none";
-    el("reveal").style.display="";
-    el("cardbox").style.display="";
-    el("reveal").scrollIntoView({behavior:"smooth", block:"center"});
+    document.getElementById("ct-tags").value = "newsletter,test-coa,"+tier.code+",intento-"+intento+",puntaje-"+hits+(intento===1?",primer-intento":",repeticion");
+    try{ sessionStorage.setItem("coa_pendiente", JSON.stringify({hits:hits, intento:intento})); }catch(e2){}
   });
 
-  el("send").addEventListener("click", function(){
+  document.getElementById("ct-prop-form").addEventListener("submit", function(e){
     var p=document.getElementById("ct-np").value.trim(),
         s=document.getElementById("ct-ns").value.trim(),
         m=document.getElementById("ct-nm").value.trim(),
         err=el("propErr");
-    if(p.length<2){ err.textContent="Escribe la palabra."; err.classList.add("show"); return; }
-    if(s.length<3){ err.textContent="Falta el significado."; err.classList.add("show"); return; }
-    if(!MAIL.test(m)){ err.textContent="Déjanos tu correo para poder darte el crédito."; err.classList.add("show"); return; }
+    if(p.length<2){ e.preventDefault(); err.textContent="Escribe la palabra."; err.classList.add("show"); return; }
+    if(s.length<3){ e.preventDefault(); err.textContent="Falta el significado."; err.classList.add("show"); return; }
+    if(!MAIL.test(m)){ e.preventDefault(); err.textContent="Déjanos tu correo para poder darte el crédito."; err.classList.add("show"); return; }
     err.classList.remove("show");
-    el("send").disabled=true;
-    post({
-      "form_type":"contact",
-      "contact[email]": m,
-      "contact[Palabra propuesta]": p,
-      "contact[Significado]": s,
-      "contact[body]": "PALABRA COA PROPUESTA\nPalabra: "+p+"\nSignificado: "+s
-    }).then(function(){
-      el("propForm").style.display="none";
-      var ok=el("propOk");
-      ok.textContent="Anotada. Si se repite, se estampa.";
-      ok.style.display="";
-    }).catch(function(){
-      el("send").disabled=false;
-      err.textContent="No se pudo enviar. Prueba de nuevo en un rato.";
-      err.classList.add("show");
-    });
+    document.getElementById("ct-nb").value = "PALABRA COA PROPUESTA\nPalabra: "+p+"\nSignificado: "+s;
   });
 
   el("copy").addEventListener("click", function(){
@@ -473,6 +480,10 @@
   el("wsp").addEventListener("click", function(){
     var txt=shareText();
     window.open("https://wa.me/?text="+encodeURIComponent(txt),"_blank","noopener");
+  });
+
+  el("retar").addEventListener("click", function(){
+    window.open("https://wa.me/?text="+encodeURIComponent("Saqué "+hits+"/10 en el test del coa y salí "+tier.rank+". Apuesto que no me ganái: https://coasurf.com/coa"),"_blank","noopener");
   });
 
   function shareText(){
@@ -649,6 +660,18 @@
   if (location.hash === "#test" || /[?&]ir=test/.test(location.search)){
     build(); render(); go("quiz");
   }
+  if(/contact_posted=true/.test(location.search) && location.hash==="#ct-prop-form"){
+    root.scrollIntoView({block:"start"});
+  }
+  // Vuelta del envío nativo: mostrar el resultado guardado con el código.
+  (function(){
+    var p=null;
+    try{ p=JSON.parse(sessionStorage.getItem("coa_pendiente")); }catch(e){}
+    if(!p || !(/customer_posted=true/.test(location.search) || location.hash==="#ct-claim-form")) return;
+    try{ sessionStorage.removeItem("coa_pendiente"); localStorage.setItem("coa_enviado", String(p.hits)); }catch(e){}
+    build(); hits=p.hits; writeNum("coa_intentos", Math.max(0,(p.intento||1)-1)); finish();
+    setTimeout(function(){ el("reveal").scrollIntoView({block:"center"}); }, 1200);
+  })();
 })();
 </script>
 {% endraw %}

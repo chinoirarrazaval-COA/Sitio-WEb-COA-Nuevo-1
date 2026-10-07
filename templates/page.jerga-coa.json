@@ -120,7 +120,7 @@
         "b"
       ],
       "settings": {
-        "enable_wave_border": true,
+        "enable_wave_border": false,
         "wave_border_color": "#ffffff",
         "desktop_content_position": "left",
         "content_alignment": "left",
@@ -298,9 +298,9 @@
     }
   },
   "order": [
+    "coa_test",
     "banner",
     "intro",
-    "coa_test",
     "codigos",
     "simbolos",
     "coa_diccionario",
